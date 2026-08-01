@@ -15,11 +15,13 @@ No contiene persistencia, controladores HTTP ni nombres concretos de Aseprite. `
 - cada componente vive en un módulo independiente;
 - los tonos y props están tipados y se exportan desde un barrel estable;
 - `PixelProgress` normaliza valores finitos y falla cerrado ante `NaN`/`Infinity`;
+- `PixelQualityGate` expone estados `status`/`alert` y lista violaciones sin conocer el dominio;
+- los estilos incluyen una política `prefers-reduced-motion`;
 - build ESM, declaraciones TypeScript y `npm pack --dry-run` están automatizados.
 
 ### Fase 2 · Accesibilidad visual
 
-- añadir `prefers-reduced-motion` a las transiciones pixeladas;
+- completar `prefers-reduced-motion` en futuras animaciones específicas;
 - completar estados `:focus-visible`, disabled y error con contraste verificable;
 - mantener nombres ARIA y roles semánticos en cada primitive;
 - cubrir teclado y estados de error con pruebas de interacción.
