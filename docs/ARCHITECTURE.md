@@ -8,10 +8,31 @@ contracts/tokens → componentes pequeños → aplicación consumidora
 
 No contiene persistencia, controladores HTTP ni nombres concretos de Aseprite. `asset-studio` decide cómo conectar los eventos de los componentes con sus casos de uso.
 
-## Mejoras previstas
+## Plan de implementación
 
-1. separar cada componente en su propio módulo;
-2. extraer contratos visuales reutilizables;
-3. añadir navegación por teclado, alto contraste y reduced motion;
-4. publicar ESM + declaraciones TypeScript;
-5. añadir pruebas de interacción y regresión visual.
+### Fase 1 · Foundation — implementada
+
+- cada componente vive en un módulo independiente;
+- los tonos y props están tipados y se exportan desde un barrel estable;
+- `PixelProgress` normaliza valores finitos y falla cerrado ante `NaN`/`Infinity`;
+- build ESM, declaraciones TypeScript y `npm pack --dry-run` están automatizados.
+
+### Fase 2 · Accesibilidad visual
+
+- añadir `prefers-reduced-motion` a las transiciones pixeladas;
+- completar estados `:focus-visible`, disabled y error con contraste verificable;
+- mantener nombres ARIA y roles semánticos en cada primitive;
+- cubrir teclado y estados de error con pruebas de interacción.
+
+### Fase 3 · Sistema reusable para Studio
+
+- agregar primitives de comparación, frame strip, quality gate y recipe selector;
+- mantenerlas presentacionales: reciben datos y callbacks, nunca conocen MCP ni filesystem;
+- publicar tokens de color, spacing y motion como contratos versionables;
+- probar la integración desde `asset-studio` sin acoplar la librería a su dominio.
+
+### Fase 4 · Release
+
+- validar tarball limpio en una instalación externa;
+- generar changelog y etiquetas semver;
+- publicar mediante GitHub Actions usando el secreto `NPM_TOKEN` sin incluir credenciales en el repositorio.

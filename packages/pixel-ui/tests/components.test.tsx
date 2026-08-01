@@ -8,6 +8,12 @@ describe("pixel-ui primitives", () => {
     expect(result.props.children[1].props["aria-valuenow"]).toBe(100);
   });
 
+  it("fails closed for non-finite progress values", () => {
+    const result = PixelProgress({ value: Number.NaN });
+    expect(result.props.children[1].props["aria-valuenow"]).toBe(0);
+    expect(result.props.children[1].props.children.props.style.width).toBe("0%");
+  });
+
   it("exposes accessible semantics for operational feedback", () => {
     const result = PixelNotice({ tone: "danger", title: "GATEWAY", children: "No se pudo iniciar" });
     expect(result.props.role).toBe("alert");
