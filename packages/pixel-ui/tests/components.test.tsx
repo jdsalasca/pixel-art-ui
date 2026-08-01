@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PixelNotice, PixelProgress } from "../src/components.js";
+import { PixelNotice, PixelProgress, PixelQualityGate } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -19,5 +19,12 @@ describe("pixel-ui primitives", () => {
     expect(result.props.role).toBe("alert");
     expect(result.props["aria-live"]).toBe("assertive");
     expect(result.props.className).toContain("pixel-notice--danger");
+  });
+
+  it("renders quality violations as an accessible alert", () => {
+    const result = PixelQualityGate({ valid: false, violations: ["3 isolated pixels", "contrast below threshold"] });
+    expect(result.props.role).toBe("alert");
+    expect(result.props["aria-live"]).toBe("assertive");
+    expect(result.props.children[1].props.children).toHaveLength(2);
   });
 });
