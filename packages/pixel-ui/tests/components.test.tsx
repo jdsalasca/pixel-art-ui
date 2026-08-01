@@ -5,5 +5,6 @@ describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
     const result = PixelProgress({ value: 140, label: "JOB" });
     expect(result.props.children[1].props.children.props.style.width).toBe("100%");
+    expect(result.props.children[1].props["aria-valuenow"]).toBe(100);
   });
 });

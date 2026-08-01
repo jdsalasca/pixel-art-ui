@@ -13,6 +13,7 @@
 }
 
 * { box-sizing: border-box; }
+.sr-only { height: 1px; margin: -1px; overflow: hidden; position: absolute; width: 1px; clip: rect(0, 0, 0, 0); }
 .pixel-button, .pixel-panel, .pixel-field input, .pixel-dropzone, .pixel-tool-card { border: 2px solid var(--pixel-cyan); box-shadow: 4px 4px 0 var(--pixel-shadow); }
 .pixel-button { background: var(--pixel-panel); color: var(--pixel-text); cursor: pointer; font: inherit; font-weight: 700; letter-spacing: .08em; padding: .65rem .8rem; image-rendering: pixelated; }
 .pixel-button:hover, .pixel-button:focus-visible { background: var(--pixel-cyan); color: var(--pixel-ink); outline: 2px solid var(--pixel-text); outline-offset: 2px; }
