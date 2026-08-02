@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAmbientOcclusionControls, PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelGlowControls, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelRimLightControls, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpecularHighlightControls, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAmbientOcclusionControls, PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelColorRampControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelGlowControls, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelRimLightControls, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpecularHighlightControls, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders typed isolated-pixel cleanup controls", () => {
@@ -37,6 +37,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("DIRECTION · NORTH");
     expect(markup).toContain("RADIUS · 2");
     expect(markup).toContain("STRENGTH · 0.8");
+  });
+
+  it("renders typed color-ramp controls with bounded palette thresholds", () => {
+    const markup = renderToStaticMarkup(<PixelColorRampControls shadowColor="#101020" midColor="#6080A0" highlightColor="#FFFFFF" shadowThreshold={0.3} highlightThreshold={0.7} onShadowColorChange={() => undefined} onMidColorChange={() => undefined} onHighlightColorChange={() => undefined} onShadowThresholdChange={() => undefined} onHighlightThresholdChange={() => undefined} />);
+    expect(markup).toContain('aria-label="Sprite color ramp controls"');
+    expect(markup).toContain("SHADOW THRESHOLD · 0.3");
+    expect(markup).toContain("HIGHLIGHT THRESHOLD · 0.7");
   });
 
   it("renders typed background removal controls without a component superclass", () => {
