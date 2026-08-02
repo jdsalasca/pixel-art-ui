@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelCompare, PixelFrameStrip, PixelNotice, PixelProgress, PixelQualityGate, PixelSelect } from "../src/components.js";
+import { PixelCompare, PixelFrameStrip, PixelLogViewer, PixelNotice, PixelProgress, PixelQualityGate, PixelSelect, PixelTextarea } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -48,5 +48,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain('aria-label="Frame 2"');
     expect(markup).toContain('aria-pressed="true"');
     expect(markup).toContain("120ms");
+  });
+
+  it("keeps JSON arguments labeled and operation logs live", () => {
+    const markup = renderToStaticMarkup(<><PixelTextarea label="ARGUMENTS JSON" value="{}" readOnly /><PixelLogViewer entries={[{ id: "1", timestamp: "2026-08-01T00:00:00.000Z", title: "inspect_asset", status: "success", detail: "12ms" }]} /></>);
+
+    expect(markup).toContain('for="');
+    expect(markup).toContain('aria-label="Operation log"');
+    expect(markup).toContain("inspect_asset");
   });
 });

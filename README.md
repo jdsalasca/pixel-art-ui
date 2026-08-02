@@ -27,11 +27,13 @@ import {
   PixelDropzone,
   PixelField,
   PixelFrameStrip,
+  PixelLogViewer,
   PixelNotice,
   PixelPanel,
   PixelProgress,
   PixelQualityGate,
   PixelSelect,
+  PixelTextarea,
   PixelToolCard,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -71,6 +73,9 @@ export function PixelUiShowcase() {
         onSelectedIndexChange={(index) => console.log("selected frame", index)}
       />
 
+      <PixelTextarea label="TOOL ARGUMENTS" value='{"filename":"asset.png"}' readOnly />
+      <PixelLogViewer entries={[{ id: "run-1", timestamp: new Date().toISOString(), title: "inspect_asset", status: "success", detail: "42ms" }]} />
+
       <PixelQualityGate valid={false} violations={["3 isolated pixels", "contrast below threshold"]} />
 
       <PixelToolCard
@@ -94,12 +99,14 @@ export function PixelUiShowcase() {
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
 | `PixelFrameStrip` | Navegación de thumbnails y selección de frames con teclado. |
+| `PixelLogViewer` | Bitácora accesible de ejecuciones, duración y errores. |
 | `PixelNotice` | Mensajes operativos con `status` o `alert` semántico. |
 | `PixelPanel` | Contenedor visual con título y acento pixel art. |
 | `PixelProgress` | Progreso normalizado entre 0 y 100. |
 | `PixelQualityGate` | Resultado de calidad y lista de violaciones accionables. |
 | `PixelSelect` | Selector etiquetado para recetas y opciones. |
 | `PixelToolCard` | Catálogo de herramientas con estado y acción opcional. |
+| `PixelTextarea` | Área etiquetada para JSON, scripts o parámetros largos. |
 
 Todos los props están tipados y los componentes aceptan los atributos HTML relevantes. Los primitives de feedback incluyen roles ARIA; los estilos respetan `prefers-reduced-motion`.
 
