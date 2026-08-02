@@ -2033,6 +2033,41 @@ button, input, select, textarea {
   line-height: 1.35;
 }
 
+.pixel-glow-controls {
+  border: 1px solid var(--pixel-panel-2);
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.6rem;
+  padding: 0.55rem;
+}
+
+.pixel-glow-controls label {
+  color: var(--pixel-muted);
+  display: grid;
+  font-size: 0.62rem;
+  gap: 0.25rem;
+  letter-spacing: 0.06em;
+}
+
+.pixel-glow-controls__color {
+  align-items: center;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pixel-glow-controls__color input {
+  background: var(--pixel-panel);
+  border: 1px solid var(--pixel-pink);
+  height: 1.5rem;
+  padding: 0.1rem;
+  width: 3rem;
+}
+
+.pixel-glow-controls input[type=range] {
+  accent-color: var(--pixel-pink);
+}
+
 .pixel-manifest-audit {
   border: 1px solid var(--pixel-panel-2);
   margin-top: 0.8rem;

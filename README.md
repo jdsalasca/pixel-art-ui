@@ -33,6 +33,7 @@ import {
   PixelButton,
   PixelBackgroundRemoval,
   PixelCleanupControls,
+  PixelGlowControls,
   PixelCompare,
   PixelDropzone,
   PixelField,
@@ -110,6 +111,7 @@ export function PixelUiShowcase() {
         onConnectedOnlyChange={(nextMode) => console.log("connected only", nextMode)}
       />
       <PixelCleanupControls minNeighbors={1} iterations={2} onMinNeighborsChange={(value) => console.log("neighbors", value)} onIterationsChange={(value) => console.log("iterations", value)} />
+      <PixelGlowControls color="#FFD166" radius={2} opacity={0.8} onColorChange={(value) => console.log("glow", value)} onRadiusChange={(value) => console.log("radius", value)} onOpacityChange={(value) => console.log("opacity", value)} />
 
       <PixelNotice tone="cyan" title="LATEST EVENT">
         Plan determinista listo para revisión.
@@ -179,6 +181,7 @@ export function PixelUiShowcase() {
 | `PixelButton` | Acciones con tonos `cyan`, `amber`, `pink`, `danger` y `neutral`. |
 | `PixelBackgroundRemoval` | Control tipado para color de fondo, tolerancia y modo conectado para eliminación determinista. |
 | `PixelCleanupControls` | Umbral e iteraciones para eliminar píxeles aislados preservando grupos conectados. |
+| `PixelGlowControls` | Color, radio y opacidad para auras deterministas alrededor de sprites. |
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
@@ -242,6 +245,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelTimeline activeId="sunset" items={[{ id: "day", label: "DAY", state: "complete" }, { id: "sunset", label: "SUNSET", state: "current" }, { id: "night", label: "NIGHT" }]} />
 <PixelBackgroundRemoval color="#142850" tolerance={12} connectedOnly onColorChange={() => undefined} onToleranceChange={() => undefined} onConnectedOnlyChange={() => undefined} />
 <PixelCleanupControls minNeighbors={1} iterations={2} onMinNeighborsChange={() => undefined} onIterationsChange={() => undefined} />
+<PixelGlowControls color="#FFD166" radius={2} opacity={0.8} onColorChange={() => undefined} onRadiusChange={() => undefined} onOpacityChange={() => undefined} />
 ```
 
 ## Desarrollo y publicación

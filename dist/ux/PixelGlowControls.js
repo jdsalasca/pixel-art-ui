@@ -1,0 +1,7 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { pixelClassNames } from "../model/pixelClassNames.js";
+export function PixelGlowControls({ color, radius, opacity, disabled = false, onColorChange, onRadiusChange, onOpacityChange, className = "", ...props }) {
+    const boundedRadius = Math.max(1, Math.min(8, Number.isFinite(radius) ? Math.round(radius) : 2));
+    const boundedOpacity = Math.max(0, Math.min(1, Number.isFinite(opacity) ? opacity : 0.8));
+    return _jsxs("div", { className: pixelClassNames("pixel-glow-controls", className), "aria-label": "Sprite glow controls", ...props, children: [_jsxs("label", { className: "pixel-glow-controls__color", children: [_jsx("span", { children: "GLOW COLOR" }), _jsx("input", { type: "color", value: color, disabled: disabled, onChange: (event) => onColorChange(event.target.value) })] }), _jsxs("label", { className: "pixel-glow-controls__radius", children: [_jsxs("span", { children: ["RADIUS \u00B7 ", boundedRadius] }), _jsx("input", { type: "range", min: 1, max: 8, step: 1, value: boundedRadius, disabled: disabled, onChange: (event) => onRadiusChange(Number(event.target.value)) })] }), _jsxs("label", { className: "pixel-glow-controls__opacity", children: [_jsxs("span", { children: ["OPACITY \u00B7 ", boundedOpacity] }), _jsx("input", { type: "range", min: 0, max: 1, step: 0.05, value: boundedOpacity, disabled: disabled, onChange: (event) => onOpacityChange(Number(event.target.value)) })] })] });
+}
