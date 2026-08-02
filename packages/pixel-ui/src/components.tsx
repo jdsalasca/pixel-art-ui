@@ -46,6 +46,7 @@ export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
 export { PixelLibraryVariantPack } from "./ux/PixelLibraryVariantPack.js";
 export { PixelManifestAudit } from "./ux/PixelManifestAudit.js";
 export { PixelSceneRecommendations } from "./ux/PixelSceneRecommendations.js";
+export { PixelSceneBundle } from "./ux/PixelSceneBundle.js";
 export { PixelScenePlan } from "./ux/PixelScenePlan.js";
 export { PixelSceneComposition } from "./ux/PixelSceneComposition.js";
 export { PixelSceneAnimation } from "./ux/PixelSceneAnimation.js";
@@ -99,6 +100,7 @@ export type { PixelLibrarySummaryCategory, PixelLibrarySummaryPreset, PixelLibra
 export type { PixelLibraryVariantPackAsset, PixelLibraryVariantPackProps } from "./ux/PixelLibraryVariantPack.js";
 export type { PixelManifestAuditArtifact, PixelManifestAuditProps } from "./ux/PixelManifestAudit.js";
 export type { PixelSceneRecommendation, PixelSceneRecommendationsProps } from "./ux/PixelSceneRecommendations.js";
+export type { PixelSceneBundleProps } from "./ux/PixelSceneBundle.js";
 export type { PixelScenePlanLayer, PixelScenePlanProps } from "./ux/PixelScenePlan.js";
 export type { PixelSceneCompositionLayer, PixelSceneCompositionProps } from "./ux/PixelSceneComposition.js";
 export type { PixelSceneAnimationProps } from "./ux/PixelSceneAnimation.js";

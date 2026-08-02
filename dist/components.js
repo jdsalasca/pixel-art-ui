@@ -46,6 +46,7 @@ export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
 export { PixelLibraryVariantPack } from "./ux/PixelLibraryVariantPack.js";
 export { PixelManifestAudit } from "./ux/PixelManifestAudit.js";
 export { PixelSceneRecommendations } from "./ux/PixelSceneRecommendations.js";
+export { PixelSceneBundle } from "./ux/PixelSceneBundle.js";
 export { PixelScenePlan } from "./ux/PixelScenePlan.js";
 export { PixelSceneComposition } from "./ux/PixelSceneComposition.js";
 export { PixelSceneAnimation } from "./ux/PixelSceneAnimation.js";

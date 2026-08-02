@@ -76,6 +76,7 @@ import {
   PixelLibraryVariantPack,
   PixelManifestAudit,
   PixelSceneRecommendations,
+  PixelSceneBundle,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -151,6 +152,7 @@ export function PixelUiShowcase() {
       <PixelLibraryVariantPack manifestUrl="/assets/library-variants.json" frames={6} seed={9} assets={[{ assetId: "oak", title: "Oak", outputPrefix: "out/oak", variants: ["rain", "walk"] }]} />
       <PixelManifestAudit manifest="out/scene.json" valid={false} missingArtifacts={1} emptyArtifacts={0} artifacts={[{ filename: "out/scene.png", status: "ok", sizeBytes: 2048, format: "png", sha256: "abcdef123456" }, { filename: "out/scene.gif", status: "missing", sizeBytes: 0, format: "gif", sha256: null }]} />
       <PixelSceneRecommendations libraryVersion="catalog-v1" suggestedItemIds={["ocean", "palm"]} coveredKinds={["scene", "sprite"]} coveredTags={["water", "tropical"]} coveredVariants={["water_reflection", "rain"]} recommendations={[{ assetId: "ocean", title: "Ocean Waves", category: "coast", kind: "scene", score: 21, reasons: ["prompt:water", "variant:water_reflection"], tags: ["water"], variants: ["water_reflection"] }]} />
+      <PixelSceneBundle staticSrc="/assets/scene.png" staticManifestUrl="/assets/scene.json" animationSrc="/assets/scene.gif" animationManifestUrl="/assets/scene-animation.json" width={64} height={48} frames={8} delayMs={90} />
     </main>
   );
 }
@@ -207,6 +209,7 @@ export function PixelUiShowcase() {
 | `PixelLibraryVariantPack` | Resumen compacto de variantes generadas para múltiples assets de la biblioteca. |
 | `PixelManifestAudit` | Integridad de manifests: faltantes, archivos vacíos, formato y hash SHA-256. |
 | `PixelSceneRecommendations` | Selección explicable de assets compatibles, tags cubiertos y efectos sugeridos para una escena. |
+| `PixelSceneBundle` | Preview unificado de PNG, GIF y los dos manifests de una escena generada. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
