@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAssetCard, PixelAssetGrid, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast } from "../src/components.js";
+import { PixelAssetCard, PixelAssetGrid, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -102,5 +102,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("Scene presets");
     expect(markup).toContain("FOREST");
     expect(markup).toContain('aria-selected="true"');
+  });
+
+  it("renders typed accessible scene padding controls", () => {
+    const markup = renderToStaticMarkup(<PixelPaddingControl label="Scene padding" value={{ top: 2, right: 8, bottom: 1, left: 4 }} onChange={() => undefined} />);
+    expect(markup).toContain("Scene padding");
+    expect(markup).toContain('aria-label="Scene padding"');
+    expect(markup).toContain("TOP");
+    expect(markup).toContain('value="8"');
   });
 });
