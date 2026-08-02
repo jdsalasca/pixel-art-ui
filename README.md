@@ -70,6 +70,7 @@ import {
   PixelSpriteAnchors,
   PixelLibraryAudit,
   PixelLibrarySummary,
+  PixelScenePlan,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -139,6 +140,7 @@ export function PixelUiShowcase() {
       <PixelSpriteAnchors frameCount={8} anchorTypes={6} baselineDrift={2} manifestUrl="/assets/hero-anchors.json" />
       <PixelLibraryAudit totalItems={339} totalCategories={24} totalPresets={12} totalFolders={339} readmePaths={339} previewPaths={339} spritePaths={339} valid />
       <PixelLibrarySummary totalItems={339} totalCategories={24} totalPresets={12} categories={[{ id: "flora", title: "Flora", itemCount: 42, examples: ["oak", "pine"] }]} presets={[{ id: "grove", title: "Living grove", category: "flora", itemCount: 8 }]} />
+      <PixelScenePlan libraryVersion="catalog-scene-v1" layers={[{ id: "scene-oak", assetId: "oak", title: "Oak", role: "background", order: 0 }]} />
     </main>
   );
 }
@@ -189,6 +191,7 @@ export function PixelUiShowcase() {
 | `PixelSpriteAnchors` | Resumen de puntos de placement, drift de baseline, manifest y garantías deterministas. |
 | `PixelLibraryAudit` | Métricas compactas de integridad del catálogo y lista acotada de referencias rotas. |
 | `PixelLibrarySummary` | Mapa compacto de categorías, ejemplos y presets para navegar bibliotecas con menos tokens. |
+| `PixelScenePlan` | Capas ordenadas de una escena seleccionada con roles y garantías deterministas. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |

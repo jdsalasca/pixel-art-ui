@@ -43,6 +43,7 @@ export { PixelSpriteRuntimeBundle } from "./ux/PixelSpriteRuntimeBundle.js";
 export { PixelSpriteAnchors } from "./ux/PixelSpriteAnchors.js";
 export { PixelLibraryAudit } from "./ux/PixelLibraryAudit.js";
 export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
+export { PixelScenePlan } from "./ux/PixelScenePlan.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
 export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
@@ -90,4 +91,5 @@ export type { PixelSpriteRuntimeBundleProps } from "./ux/PixelSpriteRuntimeBundl
 export type { PixelSpriteAnchorsProps } from "./ux/PixelSpriteAnchors.js";
 export type { PixelLibraryAuditProps } from "./ux/PixelLibraryAudit.js";
 export type { PixelLibrarySummaryCategory, PixelLibrarySummaryPreset, PixelLibrarySummaryProps } from "./ux/PixelLibrarySummary.js";
+export type { PixelScenePlanLayer, PixelScenePlanProps } from "./ux/PixelScenePlan.js";
 export type { PixelClassNameProps } from "./model/pixelClassNames.js";
