@@ -73,6 +73,7 @@ import {
   PixelScenePlan,
   PixelSceneComposition,
   PixelSceneAnimation,
+  PixelLibraryVariantPack,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -145,6 +146,7 @@ export function PixelUiShowcase() {
       <PixelScenePlan libraryVersion="catalog-scene-v1" layers={[{ id: "scene-oak", assetId: "oak", title: "Oak", role: "background", order: 0 }]} />
       <PixelSceneComposition src="/assets/scene.png" manifestUrl="/assets/scene.json" width={64} height={64} layers={[{ assetId: "oak", title: "Oak", role: "background", order: 0, x: 2, y: 2, width: 60, height: 60 }]} />
       <PixelSceneAnimation src="/assets/scene.gif" manifestUrl="/assets/scene-animation.json" width={64} height={64} frames={8} delayMs={90} layers={[{ assetId: "rain", title: "Rain", role: "effect", order: 0, x: 2, y: 2, width: 60, height: 60 }]} />
+      <PixelLibraryVariantPack manifestUrl="/assets/library-variants.json" frames={6} seed={9} assets={[{ assetId: "oak", title: "Oak", outputPrefix: "out/oak", variants: ["rain", "walk"] }]} />
     </main>
   );
 }
@@ -198,6 +200,7 @@ export function PixelUiShowcase() {
 | `PixelScenePlan` | Capas ordenadas de una escena seleccionada con roles y garantías deterministas. |
 | `PixelSceneComposition` | Preview PNG pixelado, placements por capa y enlace al manifest generado por el compositor. |
 | `PixelSceneAnimation` | Preview GIF pixelado con frames, delay, capas y enlace al manifest por frame. |
+| `PixelLibraryVariantPack` | Resumen compacto de variantes generadas para múltiples assets de la biblioteca. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
