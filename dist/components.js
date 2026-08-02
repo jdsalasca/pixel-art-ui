@@ -2,6 +2,7 @@
 export { PixelBadge } from "./ux/PixelBadge.js";
 export { PixelButton } from "./ux/PixelButton.js";
 export { PixelBackgroundRemoval } from "./ux/PixelBackgroundRemoval.js";
+export { PixelCleanupControls } from "./ux/PixelCleanupControls.js";
 export { PixelDropzone } from "./ux/PixelDropzone.js";
 export { PixelCompare } from "./ux/PixelCompare.js";
 export { PixelField } from "./ux/PixelField.js";

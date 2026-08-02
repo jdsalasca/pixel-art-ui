@@ -246,6 +246,11 @@
 .pixel-background-removal__mode { align-items: center; display: flex !important; flex-direction: row; gap: .4rem !important; }
 .pixel-background-removal__mode input { accent-color: var(--pixel-cyan); }
 
+.pixel-cleanup-controls { border: 1px solid var(--pixel-panel-2); display: grid; gap: .55rem; margin-top: .6rem; padding: .55rem; }
+.pixel-cleanup-controls label { color: var(--pixel-muted); display: grid; font-size: .62rem; gap: .25rem; letter-spacing: .06em; }
+.pixel-cleanup-controls input { accent-color: var(--pixel-pink); }
+.pixel-cleanup-controls small { color: var(--pixel-muted); font-size: .6rem; line-height: 1.35; }
+
 .pixel-manifest-audit { border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .65rem; }
 .pixel-manifest-audit--valid { border-color: var(--pixel-cyan); }
 .pixel-manifest-audit--invalid { border-color: var(--pixel-amber); }

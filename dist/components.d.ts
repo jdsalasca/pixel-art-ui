@@ -1,6 +1,7 @@
 export { PixelBadge } from "./ux/PixelBadge.js";
 export { PixelButton } from "./ux/PixelButton.js";
 export { PixelBackgroundRemoval } from "./ux/PixelBackgroundRemoval.js";
+export { PixelCleanupControls } from "./ux/PixelCleanupControls.js";
 export { PixelDropzone } from "./ux/PixelDropzone.js";
 export { PixelCompare } from "./ux/PixelCompare.js";
 export { PixelField } from "./ux/PixelField.js";
@@ -57,6 +58,7 @@ export type { PixelTone } from "./model/PixelTone.js";
 export type { PixelBadgeProps } from "./ux/PixelBadge.js";
 export type { PixelButtonProps } from "./ux/PixelButton.js";
 export type { PixelBackgroundRemovalProps } from "./ux/PixelBackgroundRemoval.js";
+export type { PixelCleanupControlsProps } from "./ux/PixelCleanupControls.js";
 export type { PixelDropzoneProps } from "./ux/PixelDropzone.js";
 export type { PixelCompareProps } from "./ux/PixelCompare.js";
 export type { PixelFieldProps } from "./ux/PixelField.js";

@@ -1,8 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
+  it("renders typed isolated-pixel cleanup controls", () => {
+    const markup = renderToStaticMarkup(<PixelCleanupControls minNeighbors={1} iterations={2} onMinNeighborsChange={() => undefined} onIterationsChange={() => undefined} />);
+    expect(markup).toContain('aria-label="Isolated pixel cleanup controls"');
+    expect(markup).toContain("MIN NEIGHBORS · 1");
+    expect(markup).toContain("ITERATIONS · 2");
+  });
+
   it("renders typed background removal controls without a component superclass", () => {
     const markup = renderToStaticMarkup(<PixelBackgroundRemoval color="#142850" tolerance={12} connectedOnly onColorChange={() => undefined} onToleranceChange={() => undefined} onConnectedOnlyChange={() => undefined} />);
     expect(markup).toContain('aria-label="Background removal controls"');
