@@ -23,6 +23,7 @@ import { useState } from "react";
 import {
   PixelBadge,
   PixelButton,
+  PixelCompare,
   PixelDropzone,
   PixelField,
   PixelNotice,
@@ -57,6 +58,13 @@ export function PixelUiShowcase() {
 
       <PixelProgress value={72} label="PROCESSING" />
 
+      <PixelCompare
+        before="/assets/original.png"
+        after="/assets/enhanced.png"
+        beforeAlt="Original source"
+        afterAlt="Enhanced output"
+      />
+
       <PixelQualityGate valid={false} violations={["3 isolated pixels", "contrast below threshold"]} />
 
       <PixelToolCard
@@ -76,6 +84,7 @@ export function PixelUiShowcase() {
 | --- | --- |
 | `PixelBadge` | Estado corto como `READY`, `FAILED` o `AVAILABLE`. |
 | `PixelButton` | Acciones con tonos `cyan`, `amber`, `pink`, `danger` y `neutral`. |
+| `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
 | `PixelNotice` | Mensajes operativos con `status` o `alert` semántico. |

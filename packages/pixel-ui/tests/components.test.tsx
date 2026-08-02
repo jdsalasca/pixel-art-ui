@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelNotice, PixelProgress, PixelQualityGate, PixelSelect } from "../src/components.js";
+import { PixelCompare, PixelNotice, PixelProgress, PixelQualityGate, PixelSelect } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -33,5 +33,12 @@ describe("pixel-ui primitives", () => {
     const markup = renderToStaticMarkup(<PixelSelect label="RECIPE" id="recipe-input">options</PixelSelect>);
     expect(markup).toContain('for="recipe-input"');
     expect(markup).toContain('id="recipe-input"');
+  });
+
+  it("clamps compare position and exposes an accessible range control", () => {
+    const markup = renderToStaticMarkup(<PixelCompare before="before.png" after="after.png" position={140} />);
+    expect(markup).toContain('aria-valuenow="100"');
+    expect(markup).toContain('aria-label="Compare original and output"');
+    expect(markup).toContain("pixel-compare__after");
   });
 });
