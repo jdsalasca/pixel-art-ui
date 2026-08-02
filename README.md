@@ -60,6 +60,7 @@ import {
   PixelOperationSummary,
   PixelPaletteStrip,
   PixelContactSheet,
+  PixelQualityMatrix,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -119,6 +120,7 @@ export function PixelUiShowcase() {
       <PixelOperationSummary label="SCENE STACK" operation="generate_scene_effect_stack" artifactCount={6} deterministic sourcePreserved />
       <PixelPaletteStrip label="HARMONIZED PALETTE" colors={[{ color: "#3155D8", count: 12 }, { color: "#8AA0F0" }]} />
       <PixelContactSheet src="/assets/variants-sheet.png" assets={6} columns={3} rows={2} cellWidth={32} cellHeight={32} manifestUrl="/assets/variants-sheet.json" />
+      <PixelQualityMatrix assets={[{ filename: "hero.png", valid: true }, { filename: "hero-rain.gif", valid: false, violations: ["4 isolated pixels"] }]} summary={{ total: 2, valid: 1, invalid: 1, failed: 0 }} />
     </main>
   );
 }
@@ -159,6 +161,7 @@ export function PixelUiShowcase() {
 | `PixelOperationSummary` | Resumen reutilizable de operación, cantidad de artifacts y garantías deterministas. |
 | `PixelPaletteStrip` | Swatches accesibles para visualizar la paleta generada por una operación de armonización. |
 | `PixelContactSheet` | Preview pixelado de una rejilla de sprites con cantidad de assets, celdas y manifest. |
+| `PixelQualityMatrix` | Matriz compacta para revisar pass/review/failed de una colección completa. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
