@@ -1,8 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAssetCard, PixelAssetGrid, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast } from "../src/components.js";
+import { PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
+  it("composes native button attributes without a component superclass", () => {
+    const result = PixelButton({ tone: "amber", type: "submit", className: "custom-action" });
+    expect(result.type).toBe("button");
+    expect(result.props.type).toBe("submit");
+    expect(result.props.className).toBe("pixel-button pixel-button--amber custom-action");
+    expect(pixelClassNames("base", false, "", "modifier")).toBe("base modifier");
+  });
+
   it("clamps progress values so visual state cannot overflow", () => {
     const result = PixelProgress({ value: 140, label: "JOB" });
     expect(result.props.children[1].props.children.props.style.width).toBe("100%");

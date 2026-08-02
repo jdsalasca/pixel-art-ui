@@ -1,4 +1,5 @@
 import type { CSSProperties, HTMLAttributes } from "react";
+import { pixelClassNames } from "../model/pixelClassNames.js";
 
 export interface PixelCompareProps extends HTMLAttributes<HTMLDivElement> {
   before: string;
@@ -17,7 +18,7 @@ function boundedPosition(value: number): number {
 export function PixelCompare({ before, after, beforeAlt = "Original asset", afterAlt = "Enhanced asset", position = 50, onPositionChange, className = "", ...props }: PixelCompareProps) {
   const bounded = boundedPosition(position);
   const style = { "--pixel-compare-position": `${bounded}%` } as CSSProperties;
-  return <div className={`pixel-compare ${className}`.trim()} style={style} {...props}>
+  return <div className={pixelClassNames("pixel-compare", className)} style={style} {...props}>
     <img className="pixel-compare__image" src={before} alt={beforeAlt} />
     <div className="pixel-compare__after" aria-hidden="true"><img className="pixel-compare__image" src={after} alt={afterAlt} /></div>
     <div className="pixel-compare__labels" aria-hidden="true"><span>ORIGINAL</span><span>OUTPUT</span></div>

@@ -1,0 +1,19 @@
+@use "tokens" as t;
+
+@mixin pixel-border($color: var(--pixel-cyan), $shadow: 4px) {
+  border: 2px solid $color;
+  box-shadow: $shadow $shadow 0 var(--pixel-shadow);
+}
+
+@mixin pixel-focus {
+  outline: 2px solid var(--pixel-text);
+  outline-offset: 2px;
+}
+
+@mixin pixel-control {
+  background: var(--pixel-ink);
+  color: var(--pixel-text);
+  font: inherit;
+  min-width: 0;
+  width: 100%;
+}

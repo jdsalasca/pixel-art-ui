@@ -1,4 +1,7 @@
-import { copyFileSync, mkdirSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { compile } from "sass";
 
 mkdirSync("dist", { recursive: true });
-copyFileSync("packages/pixel-ui/src/styles.css", "dist/styles.css");
+const modularStyles = compile("packages/pixel-ui/src/styles.scss", { style: "expanded" }).css;
+const legacyStyles = readFileSync("packages/pixel-ui/src/styles.css", "utf8");
+writeFileSync("dist/styles.css", `${legacyStyles}\n/* Modular SCSS layer. */\n${modularStyles}`);

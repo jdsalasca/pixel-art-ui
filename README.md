@@ -14,6 +14,12 @@ Importa los estilos una sola vez en la entrada de tu aplicación:
 import "@jdsalasc/pixel-ui/styles.css";
 ```
 
+La hoja distribuida se genera desde `packages/pixel-ui/src/styles.scss`, organizada en
+tokens, foundation, mixins y componentes. El CSS histórico se conserva como capa de
+compatibilidad para no romper componentes existentes durante la migración. Los
+componentes no usan superclases: cada uno implementa su contrato HTML tipado y compone
+clases con `pixelClassNames`.
+
 ## Ejemplo completo
 
 Este ejemplo muestra todos los primitives disponibles en una pantalla pequeña de producción:
