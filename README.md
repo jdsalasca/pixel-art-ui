@@ -26,6 +26,7 @@ import {
   PixelCompare,
   PixelDropzone,
   PixelField,
+  PixelFrameStrip,
   PixelNotice,
   PixelPanel,
   PixelProgress,
@@ -65,6 +66,11 @@ export function PixelUiShowcase() {
         afterAlt="Enhanced output"
       />
 
+      <PixelFrameStrip
+        frames={[{ src: "/assets/frame-01.png", durationMs: 120 }, { src: "/assets/frame-02.png", durationMs: 120 }]}
+        onSelectedIndexChange={(index) => console.log("selected frame", index)}
+      />
+
       <PixelQualityGate valid={false} violations={["3 isolated pixels", "contrast below threshold"]} />
 
       <PixelToolCard
@@ -87,6 +93,7 @@ export function PixelUiShowcase() {
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
+| `PixelFrameStrip` | Navegación de thumbnails y selección de frames con teclado. |
 | `PixelNotice` | Mensajes operativos con `status` o `alert` semántico. |
 | `PixelPanel` | Contenedor visual con título y acento pixel art. |
 | `PixelProgress` | Progreso normalizado entre 0 y 100. |

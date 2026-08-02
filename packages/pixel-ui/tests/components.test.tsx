@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelCompare, PixelNotice, PixelProgress, PixelQualityGate, PixelSelect } from "../src/components.js";
+import { PixelCompare, PixelFrameStrip, PixelNotice, PixelProgress, PixelQualityGate, PixelSelect } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -40,5 +40,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain('aria-valuenow="100"');
     expect(markup).toContain('aria-label="Compare original and output"');
     expect(markup).toContain("pixel-compare__after");
+  });
+
+  it("clamps frame selection and exposes keyboard-friendly pressed state", () => {
+    const markup = renderToStaticMarkup(<PixelFrameStrip selectedIndex={99} frames={[{ src: "one.png" }, { src: "two.png", durationMs: 120 }]} />);
+
+    expect(markup).toContain('aria-label="Frame 2"');
+    expect(markup).toContain('aria-pressed="true"');
+    expect(markup).toContain("120ms");
   });
 });
