@@ -28,6 +28,7 @@ export { PixelProgressSteps } from "./ux/PixelProgressSteps.js";
 export { PixelCheckboxGroup } from "./ux/PixelCheckboxGroup.js";
 export { PixelPresetStrip } from "./ux/PixelPresetStrip.js";
 export { PixelPaddingControl } from "./ux/PixelPaddingControl.js";
+export { PixelTimeline } from "./ux/PixelTimeline.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
 export type { PixelBadgeProps } from "./ux/PixelBadge.js";
@@ -59,4 +60,5 @@ export type { PixelProgressStep, PixelProgressStepsProps } from "./ux/PixelProgr
 export type { PixelCheckboxOption, PixelCheckboxGroupProps } from "./ux/PixelCheckboxGroup.js";
 export type { PixelPresetOption, PixelPresetStripProps } from "./ux/PixelPresetStrip.js";
 export type { PixelPaddingValue, PixelPaddingControlProps } from "./ux/PixelPaddingControl.js";
+export type { PixelTimelineItem, PixelTimelineProps, PixelTimelineState } from "./ux/PixelTimeline.js";
 export type { PixelClassNameProps } from "./model/pixelClassNames.js";

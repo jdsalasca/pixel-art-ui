@@ -54,6 +54,7 @@ import {
   PixelProgressSteps,
   PixelCheckboxGroup,
   PixelAssetGrid,
+  PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
 
@@ -142,6 +143,7 @@ export function PixelUiShowcase() {
 | `PixelAssetGrid` | Rejilla accesible y reusable para explorar bibliotecas de assets. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
+| `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
 
 Todos los props están tipados y los componentes aceptan los atributos HTML relevantes. Los primitives de feedback incluyen roles ARIA; los estilos respetan `prefers-reduced-motion`.
 
@@ -152,6 +154,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelKpi label="OPERATIONS" value={12} detail="this session" />
 <PixelProgressSteps steps={[{ id: "upload", label: "UPLOAD", state: "complete" }, { id: "apply", label: "APPLY", state: "current" }]} />
 <PixelCommandBar value={query} onValueChange={setQuery} placeholder="Search tools..." />
+<PixelTimeline activeId="sunset" items={[{ id: "day", label: "DAY", state: "complete" }, { id: "sunset", label: "SUNSET", state: "current" }, { id: "night", label: "NIGHT" }]} />
 ```
 
 ## Desarrollo y publicación

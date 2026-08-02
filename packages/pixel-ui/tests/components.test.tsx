@@ -1,8 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
+  it("renders a typed accessible timeline without inheritance coupling", () => {
+    const markup = renderToStaticMarkup(<PixelTimeline aria-label="Time of day" activeId="sunset" items={[{ id: "day", label: "DAY", state: "complete" }, { id: "sunset", label: "SUNSET", state: "current", detail: "warm light" }, { id: "night", label: "NIGHT", state: "pending" }]} onSelect={() => undefined} />);
+    expect(markup).toContain('aria-label="Time of day"');
+    expect(markup).toContain("SUNSET");
+    expect(markup).toContain("warm light");
+    expect(markup).toContain('aria-current="step"');
+  });
+
   it("composes native button attributes without a component superclass", () => {
     const result = PixelButton({ tone: "amber", type: "submit", className: "custom-action" });
     expect(result.type).toBe("button");

@@ -54,6 +54,27 @@
   &--neutral { color: var(--pixel-muted); }
 }
 
+.pixel-timeline {
+  display: grid;
+  gap: .45rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item { min-width: 0; position: relative; }
+  &__item:not(:last-child)::after { background: var(--pixel-muted); content: ""; height: 1px; left: 62%; opacity: .45; position: absolute; right: -38%; top: .85rem; }
+  &__button { align-items: center; background: transparent; border: 0; color: var(--pixel-muted); cursor: pointer; display: grid; gap: .3rem; justify-items: center; padding: .2rem; position: relative; text-align: center; width: 100%; z-index: 1; }
+  &__button:disabled { cursor: default; }
+  &__button:focus-visible { @include m.pixel-focus; }
+  &__marker { background: var(--pixel-muted); border: 1px solid var(--pixel-ink); height: .7rem; width: .7rem; }
+  &__item--complete &__marker, &__item--current &__marker { background: var(--pixel-cyan); }
+  &__item--error &__marker { background: var(--pixel-danger); }
+  &__item.is-active strong, &__item--current strong { color: var(--pixel-cyan); }
+  strong { font-size: .7rem; letter-spacing: .06em; }
+  small { font-size: .65rem; line-height: 1.2; }
+}
+
 .pixel-field, .pixel-select, .pixel-textarea {
   color: var(--pixel-muted);
   display: grid;
