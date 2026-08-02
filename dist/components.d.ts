@@ -26,6 +26,7 @@ export { PixelArtifactStrip } from "./ux/PixelArtifactStrip.js";
 export { PixelOperationSummary } from "./ux/PixelOperationSummary.js";
 export { PixelPaletteStrip } from "./ux/PixelPaletteStrip.js";
 export { PixelContactSheet } from "./ux/PixelContactSheet.js";
+export { PixelQualityMatrix } from "./ux/PixelQualityMatrix.js";
 export { PixelCommandBar } from "./ux/PixelCommandBar.js";
 export { PixelProgressSteps } from "./ux/PixelProgressSteps.js";
 export { PixelCheckboxGroup } from "./ux/PixelCheckboxGroup.js";
@@ -63,6 +64,7 @@ export type { PixelArtifactStripItem, PixelArtifactStripProps } from "./ux/Pixel
 export type { PixelOperationSummaryProps } from "./ux/PixelOperationSummary.js";
 export type { PixelPaletteSwatch, PixelPaletteStripProps } from "./ux/PixelPaletteStrip.js";
 export type { PixelContactSheetProps } from "./ux/PixelContactSheet.js";
+export type { PixelQualityMatrixAsset, PixelQualityMatrixProps, PixelQualityMatrixSummary } from "./ux/PixelQualityMatrix.js";
 export type { PixelCommandBarProps } from "./ux/PixelCommandBar.js";
 export type { PixelProgressStep, PixelProgressStepsProps } from "./ux/PixelProgressSteps.js";
 export type { PixelCheckboxOption, PixelCheckboxGroupProps } from "./ux/PixelCheckboxGroup.js";

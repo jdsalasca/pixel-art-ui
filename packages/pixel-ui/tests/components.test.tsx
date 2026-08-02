@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -157,5 +157,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("6 ASSETS");
     expect(markup).toContain("3 × 2");
     expect(markup).toContain("preview-sheet.json");
+  });
+
+  it("renders a compact batch quality matrix with pass and failure counts", () => {
+    const markup = renderToStaticMarkup(<PixelQualityMatrix assets={[{ filename: "hero.png", valid: true }, { filename: "broken.png", valid: false, violations: ["too many colors"] }]} summary={{ total: 2, valid: 1, invalid: 1, failed: 0 }} />);
+    expect(markup).toContain('aria-label="Batch quality report"');
+    expect(markup).toContain("1 PASS");
+    expect(markup).toContain("broken.png");
+    expect(markup).toContain("1 ISSUE(S)");
   });
 });
