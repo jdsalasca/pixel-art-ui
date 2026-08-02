@@ -1,9 +1,7 @@
 import type { HTMLAttributes, PropsWithChildren } from "react";
-import type { PixelTone } from "../model/PixelTone.js";
-import { pixelClassNames } from "../model/pixelClassNames.js";
+import { pixelClassNames, type PixelToneProps } from "../model/pixelClassNames.js";
 
-export interface PixelNoticeProps extends HTMLAttributes<HTMLDivElement> {
-  tone?: PixelTone;
+export interface PixelNoticeProps extends HTMLAttributes<HTMLDivElement>, PixelToneProps {
   title?: string;
 }
 

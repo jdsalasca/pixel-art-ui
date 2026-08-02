@@ -20,6 +20,13 @@ describe("pixel-ui motion contract", () => {
     expect(styles).toContain('@use "./styles/feedback"');
     expect(styles).toContain('@use "./styles/components"');
     expect(styles).not.toContain("@extend");
+    const controls = await readFile(new URL("../src/styles/_controls.scss", import.meta.url), "utf8");
+    const components = await readFile(new URL("../src/styles/_components.scss", import.meta.url), "utf8");
+    expect(controls).toContain(".pixel-button {");
+    expect(controls).toContain(".pixel-field");
+    expect(components).toContain(".pixel-panel {");
+    expect(components).toContain(".pixel-badge {");
+    expect(components).not.toContain("@extend");
   });
 
   it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {

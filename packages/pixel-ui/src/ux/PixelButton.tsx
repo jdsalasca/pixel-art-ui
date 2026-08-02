@@ -1,8 +1,7 @@
 import type { ButtonHTMLAttributes } from "react";
-import type { PixelTone } from "../model/PixelTone.js";
-import { pixelClassNames } from "../model/pixelClassNames.js";
+import { pixelClassNames, type PixelToneProps } from "../model/pixelClassNames.js";
 
-export interface PixelButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> { tone?: PixelTone; }
+export interface PixelButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, PixelToneProps {}
 
 export function PixelButton({ tone = "cyan", className = "", ...props }: PixelButtonProps) {
   return <button className={pixelClassNames("pixel-button", `pixel-button--${tone}`, className)} {...props} />;
