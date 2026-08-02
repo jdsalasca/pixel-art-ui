@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
 
 describe("pixel-ui motion contract", () => {
@@ -26,5 +26,14 @@ describe("pixel-ui motion contract", () => {
     expect(source).toContain("export function pixelClassNames");
     expect(button).toContain("ButtonHTMLAttributes<HTMLButtonElement>");
     expect(button).toContain("pixelClassNames(");
+  });
+
+  it("ships the declared dist entrypoints for Git and npm consumers", async () => {
+    const packageJson = JSON.parse(await readFile(new URL("../../../package.json", import.meta.url), "utf8")) as { main?: string; types?: string; files?: string[] };
+    expect(packageJson.main).toBe("./dist/index.js");
+    expect(packageJson.types).toBe("./dist/index.d.ts");
+    expect(packageJson.files).toContain("dist");
+    await access(new URL("../../../dist/index.js", import.meta.url));
+    await access(new URL("../../../dist/index.d.ts", import.meta.url));
   });
 });
