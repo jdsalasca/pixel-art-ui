@@ -355,3 +355,13 @@
   .pixel-color-ramp-controls { grid-template-columns: 1fr; }
   .pixel-color-ramp-controls__threshold { grid-column: auto; }
 }
+
+.pixel-grain-controls { display: grid; gap: .55rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pixel-grain-controls__seed, .pixel-grain-controls__intensity, .pixel-grain-controls__scale { color: var(--pixel-muted); display: grid; gap: .3rem; font-size: .68rem; }
+.pixel-grain-controls__seed span, .pixel-grain-controls__intensity span, .pixel-grain-controls__scale span { letter-spacing: .06em; }
+.pixel-grain-controls__seed input { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); color: var(--pixel-text); font: inherit; min-width: 0; padding: .4rem; }
+.pixel-grain-controls__intensity input, .pixel-grain-controls__scale input { accent-color: var(--pixel-amber); width: 100%; }
+
+@media (max-width: 620px) {
+  .pixel-grain-controls { grid-template-columns: 1fr; }
+}

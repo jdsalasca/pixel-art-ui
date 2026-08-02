@@ -1,0 +1,7 @@
+import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
+import { pixelClassNames } from "../model/pixelClassNames.js";
+export function PixelGrainControls({ seed, intensity, scale, disabled = false, onSeedChange, onIntensityChange, onScaleChange, className = "", ...props }) {
+    const boundedIntensity = Math.max(0, Math.min(1, Number.isFinite(intensity) ? intensity : 0.45));
+    const boundedScale = Math.max(1, Math.min(8, Number.isInteger(scale) ? scale : 1));
+    return _jsxs("div", { className: pixelClassNames("pixel-grain-controls", className), "aria-label": "Sprite grain controls", ...props, children: [_jsxs("label", { className: "pixel-grain-controls__seed", children: [_jsxs("span", { children: ["SEED \u00B7 ", seed] }), _jsx("input", { type: "number", value: seed, disabled: disabled, onChange: (event) => onSeedChange(Number(event.target.value)) })] }), _jsxs("label", { className: "pixel-grain-controls__intensity", children: [_jsxs("span", { children: ["INTENSITY \u00B7 ", boundedIntensity] }), _jsx("input", { type: "range", min: 0, max: 1, step: 0.05, value: boundedIntensity, disabled: disabled, onChange: (event) => onIntensityChange(Number(event.target.value)) })] }), _jsxs("label", { className: "pixel-grain-controls__scale", children: [_jsxs("span", { children: ["SCALE \u00B7 ", boundedScale] }), _jsx("input", { type: "range", min: 1, max: 8, step: 1, value: boundedScale, disabled: disabled, onChange: (event) => onScaleChange(Number(event.target.value)) })] })] });
+}
