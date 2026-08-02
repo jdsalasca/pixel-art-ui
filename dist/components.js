@@ -42,4 +42,5 @@ export { PixelSpriteHitboxes } from "./ux/PixelSpriteHitboxes.js";
 export { PixelSpriteRuntimeBundle } from "./ux/PixelSpriteRuntimeBundle.js";
 export { PixelSpriteAnchors } from "./ux/PixelSpriteAnchors.js";
 export { PixelLibraryAudit } from "./ux/PixelLibraryAudit.js";
+export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";

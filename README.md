@@ -69,6 +69,7 @@ import {
   PixelSpriteRuntimeBundle,
   PixelSpriteAnchors,
   PixelLibraryAudit,
+  PixelLibrarySummary,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -137,6 +138,7 @@ export function PixelUiShowcase() {
       <PixelSpriteRuntimeBundle frameCount={8} artifactCount={2} sourceFilename="hero.gif" manifestUrl="/assets/hero-runtime.json" />
       <PixelSpriteAnchors frameCount={8} anchorTypes={6} baselineDrift={2} manifestUrl="/assets/hero-anchors.json" />
       <PixelLibraryAudit totalItems={339} totalCategories={24} totalPresets={12} totalFolders={339} readmePaths={339} previewPaths={339} spritePaths={339} valid />
+      <PixelLibrarySummary totalItems={339} totalCategories={24} totalPresets={12} categories={[{ id: "flora", title: "Flora", itemCount: 42, examples: ["oak", "pine"] }]} presets={[{ id: "grove", title: "Living grove", category: "flora", itemCount: 8 }]} />
     </main>
   );
 }
@@ -186,6 +188,7 @@ export function PixelUiShowcase() {
 | `PixelSpriteRuntimeBundle` | Resumen compacto de sheet, hitboxes, frames, manifest y garantías de exportación runtime. |
 | `PixelSpriteAnchors` | Resumen de puntos de placement, drift de baseline, manifest y garantías deterministas. |
 | `PixelLibraryAudit` | Métricas compactas de integridad del catálogo y lista acotada de referencias rotas. |
+| `PixelLibrarySummary` | Mapa compacto de categorías, ejemplos y presets para navegar bibliotecas con menos tokens. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
