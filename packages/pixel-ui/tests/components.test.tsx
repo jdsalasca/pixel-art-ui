@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteGeometry, PixelSpriteNormalization, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -197,5 +197,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("BASELINE DRIFT 2PX");
     expect(markup).toContain("2 COMPONENT(S)");
     expect(markup).toContain("BOUNDS REVIEW");
+  });
+
+  it("renders a compact deterministic sprite hitbox manifest summary", () => {
+    const markup = renderToStaticMarkup(<PixelSpriteHitboxes frameCount={8} mode="components" padding={1} hitboxes={24} manifestUrl="hero-hitboxes.json" />);
+    expect(markup).toContain('aria-label="Sprite hitbox manifest"');
+    expect(markup).toContain("24 HITBOXES");
+    expect(markup).toContain("COMPONENTS");
+    expect(markup).toContain("hero-hitboxes.json");
   });
 });

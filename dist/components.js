@@ -38,4 +38,5 @@ export { PixelTimeline } from "./ux/PixelTimeline.js";
 export { PixelSpriteNormalization } from "./ux/PixelSpriteNormalization.js";
 export { PixelAnimationSheet } from "./ux/PixelAnimationSheet.js";
 export { PixelSpriteGeometry } from "./ux/PixelSpriteGeometry.js";
+export { PixelSpriteHitboxes } from "./ux/PixelSpriteHitboxes.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
