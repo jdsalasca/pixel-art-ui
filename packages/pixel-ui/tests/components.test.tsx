@@ -86,6 +86,7 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("OPS");
     expect(markup).toContain("NO ASSETS");
     expect(markup).toContain('role="dialog"');
+    expect(markup).toMatch(/aria-labelledby="[^"]+"/);
     expect(markup).toContain("hero.png");
     expect(markup).toContain('aria-label="Command search"');
     expect(markup).toContain("UPLOAD");
