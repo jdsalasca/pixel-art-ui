@@ -44,6 +44,7 @@ export { PixelLibraryAudit } from "./ux/PixelLibraryAudit.js";
 export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
 export { PixelScenePlan } from "./ux/PixelScenePlan.js";
 export { PixelSceneComposition } from "./ux/PixelSceneComposition.js";
+export { PixelSceneAnimation } from "./ux/PixelSceneAnimation.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
 export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
@@ -93,5 +94,6 @@ export type { PixelLibraryAuditProps } from "./ux/PixelLibraryAudit.js";
 export type { PixelLibrarySummaryCategory, PixelLibrarySummaryPreset, PixelLibrarySummaryProps } from "./ux/PixelLibrarySummary.js";
 export type { PixelScenePlanLayer, PixelScenePlanProps } from "./ux/PixelScenePlan.js";
 export type { PixelSceneCompositionLayer, PixelSceneCompositionProps } from "./ux/PixelSceneComposition.js";
+export type { PixelSceneAnimationProps } from "./ux/PixelSceneAnimation.js";
 export type { PixelClassNameProps } from "./model/pixelClassNames.js";
 //# sourceMappingURL=components.d.ts.map

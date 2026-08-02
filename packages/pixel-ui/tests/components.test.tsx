@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneComposition, PixelScenePlan, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneComposition, PixelScenePlan, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -252,5 +252,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("OPEN MANIFEST");
     expect(markup).toContain("4,8");
     expect(markup).toContain("DETERMINISTIC");
+  });
+
+  it("renders animated scene metadata and a frame manifest link", () => {
+    const markup = renderToStaticMarkup(<PixelSceneAnimation src="scene.gif" manifestUrl="scene.json" width={64} height={48} frames={8} delayMs={90} layers={[{ assetId: "rain", title: "Rain", role: "effect", order: 0, x: 4, y: 4, width: 56, height: 40 }]} />);
+    expect(markup).toContain('aria-label="Asset scene animation"');
+    expect(markup).toContain("8 FRAMES");
+    expect(markup).toContain("OPEN FRAME MANIFEST");
+    expect(markup).toContain("EFFECT · rain");
   });
 });

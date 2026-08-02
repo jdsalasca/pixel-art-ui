@@ -45,4 +45,5 @@ export { PixelLibraryAudit } from "./ux/PixelLibraryAudit.js";
 export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
 export { PixelScenePlan } from "./ux/PixelScenePlan.js";
 export { PixelSceneComposition } from "./ux/PixelSceneComposition.js";
+export { PixelSceneAnimation } from "./ux/PixelSceneAnimation.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
