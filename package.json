@@ -1,5 +1,5 @@
 {
-  "name": "@jdsalas/pixel-ui",
+  "name": "@jdsalasc/pixel-ui",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -20,7 +20,8 @@
     "prepare": "npm run build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "pack:check": "npm pack --dry-run"
+    "pack:check": "npm pack --dry-run",
+    "publish:public": "npm publish --access public"
   },
   "peerDependencies": {
     "react": ">=18",
