@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAssetCard, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast } from "../src/components.js";
+import { PixelAssetCard, PixelAssetGrid, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -79,6 +79,7 @@ describe("pixel-ui primitives", () => {
       <PixelCommandBar value="lighting" onValueChange={() => undefined} />
       <PixelProgressSteps steps={[{ id: "a", label: "UPLOAD", state: "complete" }, { id: "b", label: "APPLY", state: "current" }]} />
       <PixelCheckboxGroup label="PASSES" options={[{ value: "outline", label: "OUTLINE" }]} values={["outline"]} onChange={() => undefined} />
+      <PixelAssetGrid items={[{ id: "oak", name: "OAK" }]} onSelect={() => undefined} />
     </>);
     expect(markup).toContain('type="range"');
     expect(markup).toContain('type="radio"');
@@ -92,5 +93,7 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain('aria-label="Command search"');
     expect(markup).toContain("UPLOAD");
     expect(markup).toContain("PASSES");
+    expect(markup).toContain("OAK");
+    expect(markup).toContain('aria-label="Asset library"');
   });
 });

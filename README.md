@@ -47,6 +47,7 @@ import {
   PixelCommandBar,
   PixelProgressSteps,
   PixelCheckboxGroup,
+  PixelAssetGrid,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
 
@@ -132,6 +133,7 @@ export function PixelUiShowcase() {
 | `PixelCommandBar` | Campo de búsqueda/command con acción lateral. |
 | `PixelProgressSteps` | Pipeline con estados complete/current/pending/error. |
 | `PixelCheckboxGroup` | Selección múltiple tipada para pasos de recetas. |
+| `PixelAssetGrid` | Rejilla accesible y reusable para explorar bibliotecas de assets. |
 
 Todos los props están tipados y los componentes aceptan los atributos HTML relevantes. Los primitives de feedback incluyen roles ARIA; los estilos respetan `prefers-reduced-motion`.
 
