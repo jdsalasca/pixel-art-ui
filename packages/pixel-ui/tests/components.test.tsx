@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -126,5 +126,12 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain('aria-label="Scene padding"');
     expect(markup).toContain("TOP");
     expect(markup).toContain('value="8"');
+  });
+
+  it("renders artifact previews as a reusable accessible strip", () => {
+    const markup = renderToStaticMarkup(<PixelArtifactStrip label="Variant previews" items={[{ id: "rain", name: "RAIN", preview: "rain.gif", detail: "8 FRAMES" }]} />);
+    expect(markup).toContain("Variant previews");
+    expect(markup).toContain("RAIN");
+    expect(markup).toContain('aria-label="Variant previews"');
   });
 });

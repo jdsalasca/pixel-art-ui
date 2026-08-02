@@ -54,6 +54,7 @@ import {
   PixelProgressSteps,
   PixelCheckboxGroup,
   PixelAssetGrid,
+  PixelArtifactStrip,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -105,6 +106,11 @@ export function PixelUiShowcase() {
         status={<PixelBadge tone="cyan">AVAILABLE</PixelBadge>}
         onRun={() => console.log("run water_flow")}
       />
+
+      <PixelArtifactStrip
+        label="VARIANT PREVIEWS"
+        items={[{ id: "rain", name: "RAIN", preview: "/assets/rain.gif", detail: "8 FRAMES" }]}
+      />
     </main>
   );
 }
@@ -141,6 +147,7 @@ export function PixelUiShowcase() {
 | `PixelProgressSteps` | Pipeline con estados complete/current/pending/error. |
 | `PixelCheckboxGroup` | Selección múltiple tipada para pasos de recetas. |
 | `PixelAssetGrid` | Rejilla accesible y reusable para explorar bibliotecas de assets. |
+| `PixelArtifactStrip` | Galería horizontal accesible para comparar outputs de una operación o pack. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
