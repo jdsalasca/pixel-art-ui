@@ -28,6 +28,7 @@ import {
   PixelField,
   PixelFrameStrip,
   PixelLogViewer,
+  PixelSchemaHint,
   PixelNotice,
   PixelPanel,
   PixelProgress,
@@ -75,6 +76,7 @@ export function PixelUiShowcase() {
 
       <PixelTextarea label="TOOL ARGUMENTS" value='{"filename":"asset.png"}' readOnly />
       <PixelLogViewer entries={[{ id: "run-1", timestamp: new Date().toISOString(), title: "inspect_asset", status: "success", detail: "42ms" }]} />
+      <PixelSchemaHint schema={{ type: "object", properties: { filename: { type: "string" } }, required: ["filename"] }} />
 
       <PixelQualityGate valid={false} violations={["3 isolated pixels", "contrast below threshold"]} />
 
@@ -100,6 +102,7 @@ export function PixelUiShowcase() {
 | `PixelField` | Input etiquetado y accesible. |
 | `PixelFrameStrip` | Navegación de thumbnails y selección de frames con teclado. |
 | `PixelLogViewer` | Bitácora accesible de ejecuciones, duración y errores. |
+| `PixelSchemaHint` | Visualiza contratos JSON de herramientas sin acoplarse a MCP. |
 | `PixelNotice` | Mensajes operativos con `status` o `alert` semántico. |
 | `PixelPanel` | Contenedor visual con título y acento pixel art. |
 | `PixelProgress` | Progreso normalizado entre 0 y 100. |

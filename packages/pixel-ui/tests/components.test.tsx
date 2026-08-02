@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelCompare, PixelFrameStrip, PixelLogViewer, PixelNotice, PixelProgress, PixelQualityGate, PixelSelect, PixelTextarea } from "../src/components.js";
+import { PixelCompare, PixelFrameStrip, PixelLogViewer, PixelNotice, PixelProgress, PixelQualityGate, PixelSchemaHint, PixelSelect, PixelTextarea } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -56,5 +56,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain('for="');
     expect(markup).toContain('aria-label="Operation log"');
     expect(markup).toContain("inspect_asset");
+  });
+
+  it("renders a compact contract for tool arguments", () => {
+    const markup = renderToStaticMarkup(<PixelSchemaHint schema={{ type: "object", properties: { filename: { type: "string", description: "Input asset" }, seed: { type: "integer" } }, required: ["filename"] }} />);
+
+    expect(markup).toContain("ARGUMENT CONTRACT");
+    expect(markup).toContain("filename");
+    expect(markup).toContain("string · required");
   });
 });
