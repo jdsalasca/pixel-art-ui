@@ -36,6 +36,7 @@ export { PixelPresetStrip } from "./ux/PixelPresetStrip.js";
 export { PixelPaddingControl } from "./ux/PixelPaddingControl.js";
 export { PixelTimeline } from "./ux/PixelTimeline.js";
 export { PixelSpriteNormalization } from "./ux/PixelSpriteNormalization.js";
+export { PixelAnimationSheet } from "./ux/PixelAnimationSheet.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
 export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
@@ -76,4 +77,5 @@ export type { PixelPresetOption, PixelPresetStripProps } from "./ux/PixelPresetS
 export type { PixelPaddingValue, PixelPaddingControlProps } from "./ux/PixelPaddingControl.js";
 export type { PixelTimelineItem, PixelTimelineProps, PixelTimelineState } from "./ux/PixelTimeline.js";
 export type { PixelSpriteNormalizationProps, PixelSpritePivotMode } from "./ux/PixelSpriteNormalization.js";
+export type { PixelAnimationSheetProps } from "./ux/PixelAnimationSheet.js";
 export type { PixelClassNameProps } from "./model/pixelClassNames.js";

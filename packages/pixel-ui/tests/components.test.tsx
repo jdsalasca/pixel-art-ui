@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteNormalization, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteNormalization, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -181,5 +181,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("24×28");
     expect(markup).toContain("bottom_center");
     expect(markup).toContain("SOURCE PRESERVED");
+  });
+
+  it("renders animation sheet geometry and manifest navigation", () => {
+    const markup = renderToStaticMarkup(<PixelAnimationSheet src="hero-sheet.png" frames={8} columns={4} rows={2} width={132} height={66} cellWidth={32} cellHeight={32} padding={1} manifestUrl="hero-sheet.json" />);
+    expect(markup).toContain('aria-label="Animation sheet preview"');
+    expect(markup).toContain("8 FRAMES");
+    expect(markup).toContain("4 × 2");
+    expect(markup).toContain("hero-sheet.json");
   });
 });

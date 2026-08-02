@@ -36,4 +36,5 @@ export { PixelPresetStrip } from "./ux/PixelPresetStrip.js";
 export { PixelPaddingControl } from "./ux/PixelPaddingControl.js";
 export { PixelTimeline } from "./ux/PixelTimeline.js";
 export { PixelSpriteNormalization } from "./ux/PixelSpriteNormalization.js";
+export { PixelAnimationSheet } from "./ux/PixelAnimationSheet.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";

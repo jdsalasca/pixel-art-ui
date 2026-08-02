@@ -63,6 +63,7 @@ import {
   PixelQualityMatrix,
   PixelAnimationAudit,
   PixelSpriteNormalization,
+  PixelAnimationSheet,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -125,6 +126,7 @@ export function PixelUiShowcase() {
       <PixelQualityMatrix assets={[{ filename: "hero.png", valid: true }, { filename: "hero-rain.gif", valid: false, violations: ["4 isolated pixels"] }]} summary={{ total: 2, valid: 1, invalid: 1, failed: 0 }} />
       <PixelAnimationAudit frameCount={8} duplicateFrames={[3]} loopClosed={false} loopChangedPixels={4} timingConsistent={false} paletteStable={true} valid={false} violations={["duplicate frames: 3"]} />
       <PixelSpriteNormalization width={24} height={28} frames={8} padding={2} bounds={{ x: 2, y: 3, width: 20, height: 24 }} pivot={{ mode: "bottom_center", x: 12, y: 26 }} />
+      <PixelAnimationSheet src="/assets/hero-sheet.png" frames={8} columns={4} rows={2} width={132} height={66} cellWidth={32} cellHeight={32} padding={1} manifestUrl="/assets/hero-sheet.json" />
     </main>
   );
 }
@@ -168,6 +170,7 @@ export function PixelUiShowcase() {
 | `PixelQualityMatrix` | Matriz compacta para revisar pass/review/failed de una colección completa. |
 | `PixelAnimationAudit` | Checks visuales de frames duplicados, timing, paleta y costura de loop. |
 | `PixelSpriteNormalization` | Resultado compacto de crop por alfa, padding, pivote y garantías de exportación. |
+| `PixelAnimationSheet` | Preview y metadata de una rejilla de frames con navegación al manifest. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |

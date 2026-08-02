@@ -1128,6 +1128,67 @@ button, input, select, textarea {
   color: var(--pixel-amber);
 }
 
+.pixel-animation-sheet {
+  border: 1px solid var(--pixel-panel-2);
+  margin-top: 0.8rem;
+  padding: 0.65rem;
+}
+
+.pixel-animation-sheet__heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pixel-animation-sheet__heading h2 {
+  color: var(--pixel-pink);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.pixel-animation-sheet__heading span, .pixel-animation-sheet__meta {
+  color: var(--pixel-muted);
+  font-size: 0.68rem;
+}
+
+.pixel-animation-sheet__image {
+  background: var(--pixel-ink);
+  display: block;
+  image-rendering: pixelated;
+  margin-top: 0.6rem;
+  max-height: 420px;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.pixel-animation-sheet__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0.6rem 0 0;
+}
+
+.pixel-animation-sheet__meta div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.pixel-animation-sheet__meta dt {
+  color: var(--pixel-pink);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+}
+
+.pixel-animation-sheet__meta dd {
+  margin: 0;
+}
+
+.pixel-animation-sheet__meta a {
+  color: var(--pixel-amber);
+}
+
 .pixel-panel {
   border: 2px solid var(--pixel-cyan);
   box-shadow: 4px 4px 0 var(--pixel-shadow);
