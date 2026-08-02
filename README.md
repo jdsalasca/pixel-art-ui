@@ -39,6 +39,7 @@ import {
   PixelSpecularHighlightControls,
   PixelColorRampControls,
   PixelGrainControls,
+  PixelDitherControls,
   PixelCompare,
   PixelDropzone,
   PixelField,
@@ -192,6 +193,7 @@ export function PixelUiShowcase() {
 | `PixelSpecularHighlightControls` | Color, dirección, radio y fuerza para una banda de brillo especular hacia el interior del sprite. |
 | `PixelColorRampControls` | Paleta de sombra, medio tono y brillo con umbrales de luminancia para estilizar sprites de forma determinista. |
 | `PixelGrainControls` | Semilla, intensidad y escala para granularidad reproducible en tierra, agua, piedra, follaje y superficies envejecidas. |
+| `PixelDitherControls` | Dos colores, fuerza y escala para dithering Bayer reproducible y reducción de bandas. |
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
@@ -261,6 +263,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelSpecularHighlightControls color="#FFFFFF" direction="north" radius={2} strength={0.8} onColorChange={() => undefined} onDirectionChange={() => undefined} onRadiusChange={() => undefined} onStrengthChange={() => undefined} />
 <PixelColorRampControls shadowColor="#101020" midColor="#6080A0" highlightColor="#FFFFFF" shadowThreshold={0.3} highlightThreshold={0.7} onShadowColorChange={() => undefined} onMidColorChange={() => undefined} onHighlightColorChange={() => undefined} onShadowThresholdChange={() => undefined} onHighlightThresholdChange={() => undefined} />
 <PixelGrainControls seed={17} intensity={0.8} scale={2} onSeedChange={() => undefined} onIntensityChange={() => undefined} onScaleChange={() => undefined} />
+<PixelDitherControls darkColor="#202030" lightColor="#F0E8C8" strength={1} scale={2} onDarkColorChange={() => undefined} onLightColorChange={() => undefined} onStrengthChange={() => undefined} onScaleChange={() => undefined} />
 ```
 
 ## Desarrollo y publicación
