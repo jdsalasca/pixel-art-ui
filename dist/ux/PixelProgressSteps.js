@@ -1,0 +1,2 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export function PixelProgressSteps({ steps }) { return _jsx("ol", { className: "pixel-progress-steps", "aria-label": "Progress steps", children: steps.map((step) => _jsxs("li", { className: `pixel-progress-steps__item pixel-progress-steps__item--${step.state}`, "aria-current": step.state === "current" ? "step" : undefined, children: [_jsx("span", { children: step.label }), _jsx("small", { children: step.state.toUpperCase() })] }, step.id)) }); }

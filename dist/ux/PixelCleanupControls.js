@@ -1,0 +1,7 @@
+import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
+import { pixelClassNames } from "../model/pixelClassNames.js";
+export function PixelCleanupControls({ minNeighbors, iterations, disabled = false, onMinNeighborsChange, onIterationsChange, className = "", ...props }) {
+    const boundedNeighbors = Math.max(1, Math.min(8, Number.isFinite(minNeighbors) ? Math.round(minNeighbors) : 1));
+    const boundedIterations = Math.max(1, Math.min(4, Number.isFinite(iterations) ? Math.round(iterations) : 1));
+    return _jsxs("div", { className: pixelClassNames("pixel-cleanup-controls", className), "aria-label": "Isolated pixel cleanup controls", ...props, children: [_jsxs("label", { className: "pixel-cleanup-controls__neighbors", children: [_jsxs("span", { children: ["MIN NEIGHBORS \u00B7 ", boundedNeighbors] }), _jsx("input", { type: "range", min: 1, max: 8, step: 1, value: boundedNeighbors, disabled: disabled, onChange: (event) => onMinNeighborsChange(Number(event.target.value)) })] }), _jsxs("label", { className: "pixel-cleanup-controls__iterations", children: [_jsxs("span", { children: ["ITERATIONS \u00B7 ", boundedIterations] }), _jsx("input", { type: "range", min: 1, max: 4, step: 1, value: boundedIterations, disabled: disabled, onChange: (event) => onIterationsChange(Number(event.target.value)) })] }), _jsx("small", { children: "Removes isolated opaque pixels and preserves connected clusters." })] });
+}

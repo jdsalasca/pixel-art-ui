@@ -1,93 +1,113 @@
-import type { ButtonHTMLAttributes, HTMLAttributes, InputHTMLAttributes, PropsWithChildren, ReactNode } from "react";
-import { useId } from "react";
-
-export type PixelTone = "cyan" | "amber" | "pink" | "danger" | "neutral";
-
-export interface PixelButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  tone?: PixelTone;
-}
-
-export function PixelButton({ tone = "cyan", className = "", ...props }: PixelButtonProps) {
-  return <button className={`pixel-button pixel-button--${tone} ${className}`.trim()} {...props} />;
-}
-
-export interface PixelPanelProps extends HTMLAttributes<HTMLElement> {
-  title?: string;
-  accent?: PixelTone;
-}
-
-export function PixelPanel({ title, accent = "cyan", className = "", children, ...props }: PropsWithChildren<PixelPanelProps>) {
-  return (
-    <section className={`pixel-panel pixel-panel--${accent} ${className}`.trim()} {...props}>
-      {title ? <h2 className="pixel-panel__title">{title}</h2> : null}
-      {children}
-    </section>
-  );
-}
-
-export interface PixelBadgeProps extends HTMLAttributes<HTMLSpanElement> {
-  tone?: PixelTone;
-}
-
-export function PixelBadge({ tone = "neutral", className = "", ...props }: PixelBadgeProps) {
-  return <span className={`pixel-badge pixel-badge--${tone} ${className}`.trim()} {...props} />;
-}
-
-export interface PixelProgressProps extends HTMLAttributes<HTMLDivElement> {
-  value: number;
-  label?: string;
-}
-
-export function PixelProgress({ value, label, className = "", ...props }: PixelProgressProps) {
-  const bounded = Math.max(0, Math.min(100, value));
-  return (
-    <div className={`pixel-progress ${className}`.trim()} {...props}>
-      {label ? <div className="pixel-progress__label"><span>{label}</span><span>{bounded}%</span></div> : null}
-      <div className="pixel-progress__track"><div className="pixel-progress__fill" style={{ width: `${bounded}%` }} /></div>
-    </div>
-  );
-}
-
-export interface PixelFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-}
-
-export function PixelField({ label, id, className = "", ...props }: PixelFieldProps) {
-  const generatedId = useId();
-  return (
-    <label className={`pixel-field ${className}`.trim()} htmlFor={id ?? generatedId}>
-      <span className="pixel-field__label">{label}</span>
-      <input id={id ?? generatedId} {...props} />
-    </label>
-  );
-}
-
-export interface PixelToolCardProps {
-  name: string;
-  description: string;
-  status?: ReactNode;
-  onRun?: () => void;
-}
-
-export function PixelToolCard({ name, description, status, onRun }: PixelToolCardProps) {
-  return (
-    <article className="pixel-tool-card">
-      <div><h3>{name}</h3><p>{description}</p></div>
-      <div className="pixel-tool-card__actions">{status}{onRun ? <PixelButton onClick={onRun}>RUN</PixelButton> : null}</div>
-    </article>
-  );
-}
-
-export interface PixelDropzoneProps extends HTMLAttributes<HTMLLabelElement> {
-  accept?: string;
-  onFiles?: (files: File[]) => void;
-}
-
-export function PixelDropzone({ accept = ".png,.gif,.webp,.aseprite", onFiles, className = "", children, ...props }: PropsWithChildren<PixelDropzoneProps>) {
-  return (
-    <label className={`pixel-dropzone ${className}`.trim()} {...props}>
-      <input type="file" accept={accept} multiple hidden onChange={(event) => onFiles?.([...event.target.files ?? []])} />
-      {children ?? <><strong>DROP ASSET</strong><span>PNG · GIF · WEBP · ASEPRITE</span></>}
-    </label>
-  );
-}
+// Compatibility barrel. Concrete UX components live in independent modules.
+export { PixelBadge } from "./ux/PixelBadge.js";
+export { PixelButton } from "./ux/PixelButton.js";
+export { PixelBackgroundRemoval } from "./ux/PixelBackgroundRemoval.js";
+export { PixelCleanupControls } from "./ux/PixelCleanupControls.js";
+export { PixelDropzone } from "./ux/PixelDropzone.js";
+export { PixelCompare } from "./ux/PixelCompare.js";
+export { PixelField } from "./ux/PixelField.js";
+export { PixelFrameStrip } from "./ux/PixelFrameStrip.js";
+export { PixelLogViewer } from "./ux/PixelLogViewer.js";
+export { PixelSchemaHint } from "./ux/PixelSchemaHint.js";
+export { PixelPanel } from "./ux/PixelPanel.js";
+export { PixelNotice } from "./ux/PixelNotice.js";
+export { PixelProgress } from "./ux/PixelProgress.js";
+export { PixelQualityGate } from "./ux/PixelQualityGate.js";
+export { PixelSelect } from "./ux/PixelSelect.js";
+export { PixelToolCard } from "./ux/PixelToolCard.js";
+export { PixelTextarea } from "./ux/PixelTextarea.js";
+export { PixelSlider } from "./ux/PixelSlider.js";
+export { PixelRadioGroup } from "./ux/PixelRadioGroup.js";
+export { PixelTabs } from "./ux/PixelTabs.js";
+export { PixelToast } from "./ux/PixelToast.js";
+export { PixelKpi } from "./ux/PixelKpi.js";
+export { PixelEmptyState } from "./ux/PixelEmptyState.js";
+export { PixelConfirmDialog } from "./ux/PixelConfirmDialog.js";
+export { PixelAssetCard } from "./ux/PixelAssetCard.js";
+export { PixelAssetGrid } from "./ux/PixelAssetGrid.js";
+export { PixelArtifactStrip } from "./ux/PixelArtifactStrip.js";
+export { PixelOperationSummary } from "./ux/PixelOperationSummary.js";
+export { PixelPaletteStrip } from "./ux/PixelPaletteStrip.js";
+export { PixelContactSheet } from "./ux/PixelContactSheet.js";
+export { PixelQualityMatrix } from "./ux/PixelQualityMatrix.js";
+export { PixelEnhancementBatch } from "./ux/PixelEnhancementBatch.js";
+export { PixelAnimationAudit } from "./ux/PixelAnimationAudit.js";
+export { PixelCommandBar } from "./ux/PixelCommandBar.js";
+export { PixelProgressSteps } from "./ux/PixelProgressSteps.js";
+export { PixelCheckboxGroup } from "./ux/PixelCheckboxGroup.js";
+export { PixelPresetStrip } from "./ux/PixelPresetStrip.js";
+export { PixelPaddingControl } from "./ux/PixelPaddingControl.js";
+export { PixelTimeline } from "./ux/PixelTimeline.js";
+export { PixelSpriteNormalization } from "./ux/PixelSpriteNormalization.js";
+export { PixelAnimationSheet } from "./ux/PixelAnimationSheet.js";
+export { PixelSpriteGeometry } from "./ux/PixelSpriteGeometry.js";
+export { PixelSpriteHitboxes } from "./ux/PixelSpriteHitboxes.js";
+export { PixelSpriteRuntimeBundle } from "./ux/PixelSpriteRuntimeBundle.js";
+export { PixelSpriteAnchors } from "./ux/PixelSpriteAnchors.js";
+export { PixelLibraryAudit } from "./ux/PixelLibraryAudit.js";
+export { PixelLibrarySummary } from "./ux/PixelLibrarySummary.js";
+export { PixelLibraryVariantPack } from "./ux/PixelLibraryVariantPack.js";
+export { PixelManifestAudit } from "./ux/PixelManifestAudit.js";
+export { PixelSceneRecommendations } from "./ux/PixelSceneRecommendations.js";
+export { PixelSceneBundle } from "./ux/PixelSceneBundle.js";
+export { PixelScenePlan } from "./ux/PixelScenePlan.js";
+export { PixelSceneComposition } from "./ux/PixelSceneComposition.js";
+export { PixelSceneAnimation } from "./ux/PixelSceneAnimation.js";
+export { pixelClassNames } from "./model/pixelClassNames.js";
+export type { PixelToneProps } from "./model/pixelClassNames.js";
+export type { PixelTone } from "./model/PixelTone.js";
+export type { PixelBadgeProps } from "./ux/PixelBadge.js";
+export type { PixelButtonProps } from "./ux/PixelButton.js";
+export type { PixelBackgroundRemovalProps } from "./ux/PixelBackgroundRemoval.js";
+export type { PixelCleanupControlsProps } from "./ux/PixelCleanupControls.js";
+export type { PixelDropzoneProps } from "./ux/PixelDropzone.js";
+export type { PixelCompareProps } from "./ux/PixelCompare.js";
+export type { PixelFieldProps } from "./ux/PixelField.js";
+export type { PixelFrameItem, PixelFrameStripProps } from "./ux/PixelFrameStrip.js";
+export type { PixelLogEntry, PixelLogStatus, PixelLogViewerProps } from "./ux/PixelLogViewer.js";
+export type { PixelSchemaHintProps } from "./ux/PixelSchemaHint.js";
+export type { PixelPanelProps } from "./ux/PixelPanel.js";
+export type { PixelNoticeProps } from "./ux/PixelNotice.js";
+export type { PixelProgressProps } from "./ux/PixelProgress.js";
+export type { PixelQualityGateProps } from "./ux/PixelQualityGate.js";
+export type { PixelSelectProps } from "./ux/PixelSelect.js";
+export type { PixelToolCardProps } from "./ux/PixelToolCard.js";
+export type { PixelTextareaProps } from "./ux/PixelTextarea.js";
+export type { PixelSliderProps } from "./ux/PixelSlider.js";
+export type { PixelRadioOption, PixelRadioGroupProps } from "./ux/PixelRadioGroup.js";
+export type { PixelTab, PixelTabsProps } from "./ux/PixelTabs.js";
+export type { PixelToastProps } from "./ux/PixelToast.js";
+export type { PixelKpiProps } from "./ux/PixelKpi.js";
+export type { PixelEmptyStateProps } from "./ux/PixelEmptyState.js";
+export type { PixelConfirmDialogProps } from "./ux/PixelConfirmDialog.js";
+export type { PixelAssetCardProps } from "./ux/PixelAssetCard.js";
+export type { PixelAssetGridItem, PixelAssetGridProps } from "./ux/PixelAssetGrid.js";
+export type { PixelArtifactStripItem, PixelArtifactStripProps } from "./ux/PixelArtifactStrip.js";
+export type { PixelOperationSummaryProps } from "./ux/PixelOperationSummary.js";
+export type { PixelPaletteSwatch, PixelPaletteStripProps } from "./ux/PixelPaletteStrip.js";
+export type { PixelContactSheetProps } from "./ux/PixelContactSheet.js";
+export type { PixelQualityMatrixAsset, PixelQualityMatrixProps, PixelQualityMatrixSummary } from "./ux/PixelQualityMatrix.js";
+export type { PixelEnhancementBatchItem, PixelEnhancementBatchProps } from "./ux/PixelEnhancementBatch.js";
+export type { PixelAnimationAuditProps } from "./ux/PixelAnimationAudit.js";
+export type { PixelCommandBarProps } from "./ux/PixelCommandBar.js";
+export type { PixelProgressStep, PixelProgressStepsProps } from "./ux/PixelProgressSteps.js";
+export type { PixelCheckboxOption, PixelCheckboxGroupProps } from "./ux/PixelCheckboxGroup.js";
+export type { PixelPresetOption, PixelPresetStripProps } from "./ux/PixelPresetStrip.js";
+export type { PixelPaddingValue, PixelPaddingControlProps } from "./ux/PixelPaddingControl.js";
+export type { PixelTimelineItem, PixelTimelineProps, PixelTimelineState } from "./ux/PixelTimeline.js";
+export type { PixelSpriteNormalizationProps, PixelSpritePivotMode } from "./ux/PixelSpriteNormalization.js";
+export type { PixelAnimationSheetProps } from "./ux/PixelAnimationSheet.js";
+export type { PixelSpriteGeometryFrame, PixelSpriteGeometryProps } from "./ux/PixelSpriteGeometry.js";
+export type { PixelSpriteHitboxesProps } from "./ux/PixelSpriteHitboxes.js";
+export type { PixelSpriteRuntimeBundleProps } from "./ux/PixelSpriteRuntimeBundle.js";
+export type { PixelSpriteAnchorsProps } from "./ux/PixelSpriteAnchors.js";
+export type { PixelLibraryAuditProps } from "./ux/PixelLibraryAudit.js";
+export type { PixelLibrarySummaryCategory, PixelLibrarySummaryPreset, PixelLibrarySummaryProps } from "./ux/PixelLibrarySummary.js";
+export type { PixelLibraryVariantPackAsset, PixelLibraryVariantPackProps } from "./ux/PixelLibraryVariantPack.js";
+export type { PixelManifestAuditArtifact, PixelManifestAuditProps } from "./ux/PixelManifestAudit.js";
+export type { PixelSceneRecommendation, PixelSceneRecommendationsProps } from "./ux/PixelSceneRecommendations.js";
+export type { PixelSceneBundleProps } from "./ux/PixelSceneBundle.js";
+export type { PixelScenePlanLayer, PixelScenePlanProps } from "./ux/PixelScenePlan.js";
+export type { PixelSceneCompositionLayer, PixelSceneCompositionProps } from "./ux/PixelSceneComposition.js";
+export type { PixelSceneAnimationProps } from "./ux/PixelSceneAnimation.js";
+export type { PixelClassNameProps } from "./model/pixelClassNames.js";

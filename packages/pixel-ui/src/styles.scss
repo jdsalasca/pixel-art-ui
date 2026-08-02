@@ -1,0 +1,8 @@
+// SCSS entrypoint: each module owns one presentation responsibility.
+@use "./styles/tokens";
+@use "./styles/foundation";
+@use "./styles/controls";
+@use "./styles/feedback";
+@use "./styles/assets";
+@use "./styles/workflow";
+@use "./styles/components";

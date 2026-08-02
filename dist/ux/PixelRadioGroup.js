@@ -1,0 +1,2 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export function PixelRadioGroup({ label, options, value, onChange, disabled = false }) { return _jsxs("fieldset", { className: "pixel-radio-group", children: [_jsx("legend", { children: label }), options.map((option) => _jsxs("label", { children: [_jsx("input", { type: "radio", name: label, value: option.value, checked: value === option.value, disabled: disabled, onChange: (event) => onChange(event.target.value) }), option.label] }, option.value))] }); }

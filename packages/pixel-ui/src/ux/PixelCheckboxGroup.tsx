@@ -1,0 +1,3 @@
+export interface PixelCheckboxOption { value: string; label: string; }
+export interface PixelCheckboxGroupProps { label: string; options: PixelCheckboxOption[]; values: string[]; onChange(values: string[]): void; disabled?: boolean; }
+export function PixelCheckboxGroup({ label, options, values, onChange, disabled = false }: PixelCheckboxGroupProps) { return <fieldset className="pixel-checkbox-group"><legend>{label}</legend>{options.map((option) => <label key={option.value}><input type="checkbox" value={option.value} checked={values.includes(option.value)} disabled={disabled} onChange={(event) => onChange(event.target.checked ? [...values, option.value] : values.filter((value) => value !== option.value))} />{option.label}</label>)}</fieldset>; }

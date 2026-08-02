@@ -1,0 +1,1 @@
+{"version":3,"file":"PixelBadge.d.ts","sourceRoot":"","sources":["../../packages/pixel-ui/src/ux/PixelBadge.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,OAAO,CAAC;AAC5C,OAAO,EAAmB,KAAK,cAAc,EAAE,MAAM,6BAA6B,CAAC;AAEnF,MAAM,WAAW,eAAgB,SAAQ,cAAc,CAAC,eAAe,CAAC,EAAE,cAAc;CAAG;AAE3F,wBAAgB,UAAU,CAAC,EAAE,IAAgB,EAAE,SAAc,EAAE,GAAG,KAAK,EAAE,EAAE,eAAe,+BAEzF"}

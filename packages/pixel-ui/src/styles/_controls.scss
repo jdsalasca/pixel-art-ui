@@ -1,0 +1,110 @@
+@use "mixins" as m;
+
+// Native-control composition: every visual primitive keeps browser semantics
+// and only adds a focused pixel-art skin.
+.pixel-button {
+  @include m.pixel-border;
+  background: var(--pixel-panel);
+  color: var(--pixel-text);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: .65rem .8rem;
+  image-rendering: pixelated;
+
+  &:hover, &:focus-visible {
+    @include m.pixel-focus;
+    background: var(--pixel-cyan);
+    color: var(--pixel-ink);
+  }
+
+  &:disabled { cursor: not-allowed; opacity: .55; }
+  &--amber { border-color: var(--pixel-amber); }
+  &--pink { border-color: var(--pixel-pink); }
+  &--danger { border-color: var(--pixel-danger); }
+  &--neutral { border-color: var(--pixel-muted); }
+}
+
+.pixel-field, .pixel-select, .pixel-textarea {
+  color: var(--pixel-muted);
+  display: grid;
+  gap: .35rem;
+  font-size: .75rem;
+
+  &__label { letter-spacing: .08em; }
+
+  input, select, textarea {
+    @include m.pixel-border($shadow: 3px);
+    @include m.pixel-control;
+    padding: .55rem;
+  }
+
+  input:focus-visible, select:focus-visible, textarea:focus-visible { @include m.pixel-focus; }
+}
+
+.pixel-textarea textarea { line-height: 1.45; min-height: 112px; resize: vertical; }
+
+.pixel-command-bar {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+
+  input {
+    @include m.pixel-border($shadow: 3px);
+    @include m.pixel-control;
+    flex: 1;
+    padding: .6rem;
+
+    &:focus-visible { @include m.pixel-focus; }
+  }
+}
+
+.pixel-slider {
+  color: var(--pixel-muted);
+  display: grid;
+  gap: .35rem;
+  font-size: .75rem;
+
+  &__label { letter-spacing: .08em; }
+  input { accent-color: var(--pixel-cyan); width: 100%; }
+}
+
+.pixel-radio-group, .pixel-checkbox-group {
+  border: 2px solid var(--pixel-panel-2);
+  color: var(--pixel-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  padding: .7rem;
+
+  legend { font-size: .72rem; letter-spacing: .08em; }
+  label { align-items: center; display: flex; gap: .3rem; font-size: .72rem; }
+  input { accent-color: var(--pixel-cyan); }
+}
+
+.pixel-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  legend { grid-column: 1 / -1; }
+  input { accent-color: var(--pixel-pink); }
+}
+
+.pixel-tabs {
+  &__list { display: flex; gap: .4rem; overflow-x: auto; }
+  &__list button {
+    background: var(--pixel-panel);
+    border: 2px solid var(--pixel-muted);
+    color: var(--pixel-muted);
+    cursor: pointer;
+    font: inherit;
+    padding: .55rem .7rem;
+
+    &:focus-visible, &.is-active {
+      border-color: var(--pixel-cyan);
+      color: var(--pixel-cyan);
+      @include m.pixel-focus;
+    }
+  }
+  &__panel { border: 2px solid var(--pixel-panel-2); margin-top: .6rem; padding: .8rem; }
+}

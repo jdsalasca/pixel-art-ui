@@ -1,0 +1,2 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export function PixelToast({ tone = "cyan", title, children, onDismiss }) { return _jsxs("div", { className: `pixel-toast pixel-toast--${tone}`, role: "status", "aria-live": "polite", children: [_jsx("strong", { children: title }), _jsx("span", { children: children }), onDismiss ? _jsx("button", { type: "button", onClick: onDismiss, "aria-label": "Dismiss notification", children: "\u00D7" }) : null] }); }

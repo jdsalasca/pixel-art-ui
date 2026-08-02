@@ -1,0 +1,94 @@
+@use "mixins" as m;
+
+.pixel-notice, .pixel-quality-gate, .pixel-toast, .pixel-log-viewer {
+  background: var(--pixel-ink);
+  color: var(--pixel-text);
+}
+
+.pixel-notice {
+  border: 2px solid var(--pixel-muted);
+  box-shadow: 3px 3px 0 var(--pixel-shadow);
+  display: grid;
+  gap: .35rem;
+  padding: .7rem;
+
+  @each $tone, $color in ("cyan": var(--pixel-cyan), "amber": var(--pixel-amber), "pink": var(--pixel-pink), "danger": var(--pixel-danger), "neutral": var(--pixel-muted)) {
+    &--#{$tone} { border-color: $color; }
+    &--#{$tone} .pixel-notice__title { color: $color; }
+  }
+
+  &__title { color: var(--pixel-cyan); font-size: .72rem; letter-spacing: .12em; }
+  &__body { font-size: .78rem; line-height: 1.5; }
+}
+
+.pixel-progress {
+  &__label { color: var(--pixel-muted); display: flex; font-size: .75rem; justify-content: space-between; margin-bottom: .25rem; }
+  &__track { background: var(--pixel-ink); border: 1px solid var(--pixel-panel-2); height: 12px; padding: 2px; }
+  &__fill { background: var(--pixel-cyan); height: 100%; transition: width .15s steps(5); }
+}
+
+.pixel-quality-gate {
+  border: 2px solid var(--pixel-muted);
+  box-shadow: 3px 3px 0 var(--pixel-shadow);
+  display: grid;
+  gap: .55rem;
+  padding: .7rem;
+
+  &--valid { border-color: var(--pixel-cyan); }
+  &--invalid { border-color: var(--pixel-danger); }
+  &__summary { display: flex; font-size: .75rem; justify-content: space-between; letter-spacing: .08em; }
+  &--valid &__summary strong { color: var(--pixel-cyan); }
+  &--invalid &__summary strong, &--invalid &__summary span { color: var(--pixel-danger); }
+  &__violations { color: var(--pixel-amber); font-size: .75rem; line-height: 1.5; margin: 0; padding-left: 1.2rem; }
+}
+
+.pixel-log-viewer {
+  border: 2px solid var(--pixel-muted);
+  max-height: 300px;
+  overflow: auto;
+  padding: .5rem;
+
+  ol { display: grid; gap: .45rem; list-style: none; margin: 0; padding: 0; }
+  &__entry { border-left: 3px solid var(--pixel-muted); display: grid; gap: .18rem; padding: .4rem .5rem; }
+  &__entry--started { border-color: var(--pixel-amber); }
+  &__entry--success { border-color: var(--pixel-cyan); }
+  &__entry--failure { border-color: var(--pixel-danger); }
+  &__entry time, &__entry span { color: var(--pixel-muted); font-size: .66rem; overflow-wrap: anywhere; }
+  &__entry strong { font-size: .74rem; }
+  &__empty { color: var(--pixel-muted); font-size: .72rem; margin: .3rem; }
+}
+
+.pixel-toast {
+  align-items: center;
+  border: 2px solid var(--pixel-cyan);
+  box-shadow: 3px 3px 0 var(--pixel-shadow);
+  display: flex;
+  gap: .7rem;
+  padding: .7rem;
+
+  @each $tone, $color in ("amber": var(--pixel-amber), "pink": var(--pixel-pink), "danger": var(--pixel-danger)) {
+    &--#{$tone} { border-color: $color; }
+  }
+  strong { color: var(--pixel-cyan); font-size: .72rem; }
+  span { color: var(--pixel-text); font-size: .75rem; }
+  button { background: none; border: 0; color: var(--pixel-muted); cursor: pointer; font-size: 1.2rem; margin-left: auto; }
+}
+
+.pixel-kpi {
+  background: var(--pixel-panel);
+  border-left: 4px solid var(--pixel-cyan);
+  box-shadow: 3px 3px 0 var(--pixel-shadow);
+  display: grid;
+  gap: .2rem;
+  padding: .7rem;
+
+  @each $tone, $color in ("amber": var(--pixel-amber), "pink": var(--pixel-pink), "danger": var(--pixel-danger)) {
+    &--#{$tone} { border-color: $color; & strong { color: $color; } }
+  }
+  span, small { color: var(--pixel-muted); font-size: .65rem; }
+  strong { color: var(--pixel-cyan); font-size: 1.25rem; }
+}
+
+.pixel-empty-state { background: var(--pixel-ink); border: 2px dashed var(--pixel-muted); color: var(--pixel-muted); display: grid; gap: .5rem; justify-items: center; padding: 1.3rem; text-align: center; }
+.pixel-empty-state strong { color: var(--pixel-cyan); }
+.pixel-empty-state p { font-size: .75rem; margin: 0; }

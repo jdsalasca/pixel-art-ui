@@ -1,0 +1,23 @@
+$pixel-ink: #101522;
+$pixel-panel: #1b2638;
+$pixel-panel-2: #243550;
+$pixel-cyan: #7de2d1;
+$pixel-amber: #f7c873;
+$pixel-pink: #ff8fab;
+$pixel-danger: #ff6b6b;
+$pixel-text: #f3f7ff;
+$pixel-muted: #a9b7cf;
+$pixel-shadow: #080b13;
+
+:root {
+  --pixel-ink: #{$pixel-ink};
+  --pixel-panel: #{$pixel-panel};
+  --pixel-panel-2: #{$pixel-panel-2};
+  --pixel-cyan: #{$pixel-cyan};
+  --pixel-amber: #{$pixel-amber};
+  --pixel-pink: #{$pixel-pink};
+  --pixel-danger: #{$pixel-danger};
+  --pixel-text: #{$pixel-text};
+  --pixel-muted: #{$pixel-muted};
+  --pixel-shadow: #{$pixel-shadow};
+}

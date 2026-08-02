@@ -1,0 +1,1 @@
+{"version":3,"file":"PixelTextarea.d.ts","sourceRoot":"","sources":["../../packages/pixel-ui/src/ux/PixelTextarea.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,sBAAsB,EAAE,MAAM,OAAO,CAAC;AAIpD,MAAM,WAAW,kBAAmB,SAAQ,sBAAsB,CAAC,mBAAmB,CAAC;IACrF,KAAK,EAAE,MAAM,CAAC;CACf;AAED,wBAAgB,aAAa,CAAC,EAAE,KAAK,EAAE,EAAE,EAAE,SAAc,EAAE,GAAG,KAAK,EAAE,EAAE,kBAAkB,+BAIxF"}
