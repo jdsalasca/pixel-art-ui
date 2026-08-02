@@ -31,6 +31,7 @@ import { useState } from "react";
 import {
   PixelBadge,
   PixelButton,
+  PixelBackgroundRemoval,
   PixelCompare,
   PixelDropzone,
   PixelField,
@@ -96,8 +97,17 @@ export function PixelUiShowcase() {
           <option value="atlas">ATLAS</option>
         </PixelSelect>
         <PixelDropzone onFiles={(files) => console.log(files)} />
-        <PixelButton tone="amber" onClick={() => console.log("run", recipe)}>RUN RECIPE</PixelButton>
+      <PixelButton tone="amber" onClick={() => console.log("run", recipe)}>RUN RECIPE</PixelButton>
       </PixelPanel>
+
+      <PixelBackgroundRemoval
+        color="#142850"
+        tolerance={12}
+        connectedOnly
+        onColorChange={(nextColor) => console.log("background", nextColor)}
+        onToleranceChange={(nextTolerance) => console.log("tolerance", nextTolerance)}
+        onConnectedOnlyChange={(nextMode) => console.log("connected only", nextMode)}
+      />
 
       <PixelNotice tone="cyan" title="LATEST EVENT">
         Plan determinista listo para revisión.
@@ -165,6 +175,7 @@ export function PixelUiShowcase() {
 | --- | --- |
 | `PixelBadge` | Estado corto como `READY`, `FAILED` o `AVAILABLE`. |
 | `PixelButton` | Acciones con tonos `cyan`, `amber`, `pink`, `danger` y `neutral`. |
+| `PixelBackgroundRemoval` | Control tipado para color de fondo, tolerancia y modo conectado para eliminación determinista. |
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
@@ -226,6 +237,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelProgressSteps steps={[{ id: "upload", label: "UPLOAD", state: "complete" }, { id: "apply", label: "APPLY", state: "current" }]} />
 <PixelCommandBar value={query} onValueChange={setQuery} placeholder="Search tools..." />
 <PixelTimeline activeId="sunset" items={[{ id: "day", label: "DAY", state: "complete" }, { id: "sunset", label: "SUNSET", state: "current" }, { id: "night", label: "NIGHT" }]} />
+<PixelBackgroundRemoval color="#142850" tolerance={12} connectedOnly onColorChange={() => undefined} onToleranceChange={() => undefined} onConnectedOnlyChange={() => undefined} />
 ```
 
 ## Desarrollo y publicación
