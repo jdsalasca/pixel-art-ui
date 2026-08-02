@@ -230,8 +230,9 @@ describe("pixel-ui primitives", () => {
   });
 
   it("renders compact library integrity metrics and bounded violations", () => {
-    const markup = renderToStaticMarkup(<PixelLibraryAudit totalItems={339} totalCategories={24} totalPresets={12} totalFolders={339} readmePaths={339} previewPaths={338} spritePaths={339} valid={false} violations={["preset:coastal references missing item", "item:bad has unsafe readme path"]} />);
+    const markup = renderToStaticMarkup(<PixelLibraryAudit totalItems={339} totalCategories={24} totalPresets={12} totalFolders={339} readmePaths={339} previewPaths={338} spritePaths={339} animationPaths={339} valid={false} violations={["preset:coastal references missing item", "item:bad has unsafe readme path"]} />);
     expect(markup).toContain('aria-label="Asset library audit"');
+    expect(markup).toContain("GIF 339/339");
     expect(markup).toContain("339</strong> ASSETS");
     expect(markup).toContain("REVIEW REQUIRED");
     expect(markup).toContain("missing item");
