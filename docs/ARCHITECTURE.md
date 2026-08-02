@@ -8,6 +8,8 @@ contracts/tokens → componentes pequeños → aplicación consumidora
 
 No contiene persistencia, controladores HTTP ni nombres concretos de Aseprite. `asset-studio` decide cómo conectar los eventos de los componentes con sus casos de uso.
 
+El lote actual añade `PixelSlider`, `PixelRadioGroup`, `PixelTabs`, `PixelToast`, `PixelKpi`, `PixelEmptyState`, `PixelConfirmDialog`, `PixelAssetCard`, `PixelCommandBar` y `PixelProgressSteps`. Todos son adapters presentacionales: exponen props TypeScript y semántica ARIA, pero no conocen MCP, Aseprite ni filesystem.
+
 ## Plan de implementación
 
 ### Fase 1 · Foundation — implementada

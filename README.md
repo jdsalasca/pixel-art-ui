@@ -36,6 +36,16 @@ import {
   PixelSelect,
   PixelTextarea,
   PixelToolCard,
+  PixelSlider,
+  PixelRadioGroup,
+  PixelTabs,
+  PixelToast,
+  PixelKpi,
+  PixelEmptyState,
+  PixelConfirmDialog,
+  PixelAssetCard,
+  PixelCommandBar,
+  PixelProgressSteps,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
 
@@ -110,8 +120,27 @@ export function PixelUiShowcase() {
 | `PixelSelect` | Selector etiquetado para recetas y opciones. |
 | `PixelToolCard` | Catálogo de herramientas con estado y acción opcional. |
 | `PixelTextarea` | Área etiquetada para JSON, scripts o parámetros largos. |
+| `PixelSlider` | Control range accesible para intensidad, escala y umbrales. |
+| `PixelRadioGroup` | Opciones exclusivas con `fieldset` y radios tipados. |
+| `PixelTabs` | Navegación compacta de paneles con roles de tabs. |
+| `PixelToast` | Feedback breve con estado y dismiss opcional. |
+| `PixelKpi` | Métrica compacta para operaciones, frames o latencia. |
+| `PixelEmptyState` | Estado vacío con copy y acción opcional. |
+| `PixelConfirmDialog` | Confirmación modal accesible para acciones destructivas. |
+| `PixelAssetCard` | Preview, metadata y estado de un asset seleccionable. |
+| `PixelCommandBar` | Campo de búsqueda/command con acción lateral. |
+| `PixelProgressSteps` | Pipeline con estados complete/current/pending/error. |
 
 Todos los props están tipados y los componentes aceptan los atributos HTML relevantes. Los primitives de feedback incluyen roles ARIA; los estilos respetan `prefers-reduced-motion`.
+
+### Nuevos controles de workflow
+
+```tsx
+<PixelSlider label="INTENSITY" min={0} max={1} step={0.05} value={0.6} onChange={() => undefined} />
+<PixelKpi label="OPERATIONS" value={12} detail="this session" />
+<PixelProgressSteps steps={[{ id: "upload", label: "UPLOAD", state: "complete" }, { id: "apply", label: "APPLY", state: "current" }]} />
+<PixelCommandBar value={query} onValueChange={setQuery} placeholder="Search tools..." />
+```
 
 ## Desarrollo y publicación
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelCompare, PixelFrameStrip, PixelLogViewer, PixelNotice, PixelProgress, PixelQualityGate, PixelSchemaHint, PixelSelect, PixelTextarea } from "../src/components.js";
+import { PixelAssetCard, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelToast } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -64,5 +64,30 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("ARGUMENT CONTRACT");
     expect(markup).toContain("filename");
     expect(markup).toContain("string · required");
+  });
+
+  it("renders the ten workflow primitives with typed accessible contracts", () => {
+    const markup = renderToStaticMarkup(<>
+      <PixelSlider label="INTENSITY" min={0} max={1} step={0.1} value={0.5} onChange={() => undefined} />
+      <PixelRadioGroup label="MATERIAL" options={[{ value: "water", label: "WATER" }]} value="water" onChange={() => undefined} />
+      <PixelTabs tabs={[{ id: "one", label: "ONE", content: "content" }]} />
+      <PixelToast title="DONE">Saved</PixelToast>
+      <PixelKpi label="OPS" value={4} />
+      <PixelEmptyState title="NO ASSETS" />
+      <PixelConfirmDialog open title="CONFIRM" onConfirm={() => undefined} onCancel={() => undefined}>Delete?</PixelConfirmDialog>
+      <PixelAssetCard name="hero.png" detail="32×32" />
+      <PixelCommandBar value="lighting" onValueChange={() => undefined} />
+      <PixelProgressSteps steps={[{ id: "a", label: "UPLOAD", state: "complete" }, { id: "b", label: "APPLY", state: "current" }]} />
+    </>);
+    expect(markup).toContain('type="range"');
+    expect(markup).toContain('type="radio"');
+    expect(markup).toContain('role="tablist"');
+    expect(markup).toContain('role="status"');
+    expect(markup).toContain("OPS");
+    expect(markup).toContain("NO ASSETS");
+    expect(markup).toContain('role="dialog"');
+    expect(markup).toContain("hero.png");
+    expect(markup).toContain('aria-label="Command search"');
+    expect(markup).toContain("UPLOAD");
   });
 });

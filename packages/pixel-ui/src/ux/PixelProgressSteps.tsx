@@ -1,0 +1,3 @@
+export interface PixelProgressStep { id: string; label: string; state: "complete" | "current" | "pending" | "error"; }
+export interface PixelProgressStepsProps { steps: PixelProgressStep[]; }
+export function PixelProgressSteps({ steps }: PixelProgressStepsProps) { return <ol className="pixel-progress-steps" aria-label="Progress steps">{steps.map((step) => <li key={step.id} className={`pixel-progress-steps__item pixel-progress-steps__item--${step.state}`} aria-current={step.state === "current" ? "step" : undefined}><span>{step.label}</span><small>{step.state.toUpperCase()}</small></li>)}</ol>; }

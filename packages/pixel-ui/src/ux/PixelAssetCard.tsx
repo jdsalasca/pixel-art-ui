@@ -1,0 +1,3 @@
+import type { ReactNode } from "react";
+export interface PixelAssetCardProps { name: string; preview?: string; detail?: ReactNode; status?: ReactNode; onSelect?(): void; }
+export function PixelAssetCard({ name, preview, detail, status, onSelect }: PixelAssetCardProps) { return <article className="pixel-asset-card" onClick={onSelect} onKeyDown={(event) => { if (onSelect && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); onSelect(); } }} tabIndex={onSelect ? 0 : undefined} role={onSelect ? "button" : undefined}>{preview ? <img src={preview} alt="" /> : <div className="pixel-asset-card__placeholder" aria-hidden="true">◇</div>}<div><h3>{name}</h3>{detail ? <p>{detail}</p> : null}</div>{status}</article>; }
