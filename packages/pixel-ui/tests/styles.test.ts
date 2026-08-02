@@ -15,8 +15,18 @@ describe("pixel-ui motion contract", () => {
   it("keeps the style entry modular and free of inheritance directives", async () => {
     const styles = await readFile(new URL("../src/styles.scss", import.meta.url), "utf8");
     expect(styles).toContain('@use "./styles/tokens"');
+    expect(styles).toContain('@use "./styles/foundation"');
+    expect(styles).toContain('@use "./styles/controls"');
+    expect(styles).toContain('@use "./styles/feedback"');
     expect(styles).toContain('@use "./styles/components"');
     expect(styles).not.toContain("@extend");
+  });
+
+  it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {
+    const script = await readFile(new URL("../../../scripts/copy-styles.mjs", import.meta.url), "utf8");
+    expect(script).toContain('compile("packages/pixel-ui/src/styles.scss"');
+    expect(script).not.toContain("readFileSync");
+    expect(script).not.toContain("legacyStyles");
   });
 
   it("defines a typed class-name contract instead of duplicating string joins", async () => {

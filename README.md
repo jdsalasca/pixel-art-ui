@@ -14,11 +14,13 @@ Importa los estilos una sola vez en la entrada de tu aplicación:
 import "@jdsalasc/pixel-ui/styles.css";
 ```
 
-La hoja distribuida se genera desde `packages/pixel-ui/src/styles.scss`, organizada en
-tokens, foundation, mixins y componentes. El CSS histórico se conserva como capa de
-compatibilidad para no romper componentes existentes durante la migración. Los
+La hoja distribuida se genera exclusivamente desde `packages/pixel-ui/src/styles.scss`.
+La entrada compone módulos SCSS por responsabilidad: `tokens`, `foundation`, `controls`,
+`feedback`, `assets`, `workflow` y `components`, con `mixins` reutilizables. Los
 componentes no usan superclases: cada uno implementa su contrato HTML tipado y compone
-clases con `pixelClassNames`.
+clases con `pixelClassNames`. Por ejemplo, `PixelButtonProps` extiende los atributos
+nativos de `HTMLButtonElement`; la implementación renderiza un `<button>` real y solo
+añade el modificador visual de tono.
 
 ## Ejemplo completo
 

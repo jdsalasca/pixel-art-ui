@@ -1,0 +1,26 @@
+.pixel-preset-strip { display: grid; gap: .35rem; }
+.pixel-preset-strip__label { color: var(--pixel-muted); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+.pixel-preset-strip__options { display: flex; flex-wrap: wrap; gap: .4rem; }
+.pixel-preset-strip__option { background: var(--pixel-panel); border: 1px solid var(--pixel-panel-2); color: var(--pixel-text); cursor: pointer; font: inherit; image-rendering: pixelated; padding: .45rem .6rem; }
+.pixel-preset-strip__option:hover, .pixel-preset-strip__option.is-selected { border-color: var(--pixel-cyan); box-shadow: 2px 2px 0 var(--pixel-shadow); color: var(--pixel-cyan); }
+.pixel-preset-strip__option:disabled { cursor: not-allowed; opacity: .55; }
+
+.pixel-padding-control { border: 0; margin: .8rem 0 0; min-width: 0; padding: 0; }
+.pixel-padding-control__label { color: var(--pixel-muted); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+.pixel-padding-control__grid { display: grid; gap: .45rem; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: .35rem; }
+
+.pixel-schema-hint { background: var(--pixel-ink); border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .5rem; }
+.pixel-schema-hint summary { color: var(--pixel-cyan); cursor: pointer; font-size: .65rem; letter-spacing: .08em; }
+.pixel-schema-hint ul { display: grid; gap: .35rem; list-style: none; margin: .6rem 0 0; padding: 0; }
+.pixel-schema-hint li { display: grid; gap: .15rem; }
+.pixel-schema-hint code { color: var(--pixel-amber); font-size: .7rem; }
+.pixel-schema-hint span, .pixel-schema-hint small { color: var(--pixel-muted); font-size: .65rem; }
+.pixel-schema-hint small { line-height: 1.4; }
+
+.pixel-progress-steps { display: grid; gap: .5rem; list-style: none; margin: 0; padding: 0; }
+.pixel-progress-steps__item { align-items: center; border-left: 4px solid var(--pixel-muted); display: flex; justify-content: space-between; padding: .5rem .7rem; }
+.pixel-progress-steps__item--complete { border-color: var(--pixel-cyan); }
+.pixel-progress-steps__item--current { border-color: var(--pixel-pink); }
+.pixel-progress-steps__item--error { border-color: var(--pixel-danger); }
+.pixel-progress-steps__item span { font-size: .75rem; }
+.pixel-progress-steps__item small { color: var(--pixel-muted); font-size: .62rem; }
