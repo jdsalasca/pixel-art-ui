@@ -58,6 +58,7 @@ import {
   PixelAssetGrid,
   PixelArtifactStrip,
   PixelOperationSummary,
+  PixelPaletteStrip,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -115,6 +116,7 @@ export function PixelUiShowcase() {
         items={[{ id: "rain", name: "RAIN", preview: "/assets/rain.gif", detail: "8 FRAMES" }]}
       />
       <PixelOperationSummary label="SCENE STACK" operation="generate_scene_effect_stack" artifactCount={6} deterministic sourcePreserved />
+      <PixelPaletteStrip label="HARMONIZED PALETTE" colors={[{ color: "#3155D8", count: 12 }, { color: "#8AA0F0" }]} />
     </main>
   );
 }
@@ -153,6 +155,7 @@ export function PixelUiShowcase() {
 | `PixelAssetGrid` | Rejilla accesible y reusable para explorar bibliotecas de assets. |
 | `PixelArtifactStrip` | Galería horizontal accesible para comparar outputs de una operación o pack. |
 | `PixelOperationSummary` | Resumen reutilizable de operación, cantidad de artifacts y garantías deterministas. |
+| `PixelPaletteStrip` | Swatches accesibles para visualizar la paleta generada por una operación de armonización. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
