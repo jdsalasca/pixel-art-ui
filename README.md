@@ -37,6 +37,7 @@ import {
   PixelRimLightControls,
   PixelAmbientOcclusionControls,
   PixelSpecularHighlightControls,
+  PixelColorRampControls,
   PixelCompare,
   PixelDropzone,
   PixelField,
@@ -188,6 +189,7 @@ export function PixelUiShowcase() {
 | `PixelRimLightControls` | Color, dirección y fuerza para iluminación de borde direccional en sprites. |
 | `PixelAmbientOcclusionControls` | Color, radio y fuerza para sombrear cavidades y bordes internos de sprites. |
 | `PixelSpecularHighlightControls` | Color, dirección, radio y fuerza para una banda de brillo especular hacia el interior del sprite. |
+| `PixelColorRampControls` | Paleta de sombra, medio tono y brillo con umbrales de luminancia para estilizar sprites de forma determinista. |
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
@@ -255,6 +257,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelRimLightControls color="#FFD166" direction="north_east" strength={0.75} onColorChange={() => undefined} onDirectionChange={() => undefined} onStrengthChange={() => undefined} />
 <PixelAmbientOcclusionControls color="#000000" radius={1} strength={0.6} onColorChange={() => undefined} onRadiusChange={() => undefined} onStrengthChange={() => undefined} />
 <PixelSpecularHighlightControls color="#FFFFFF" direction="north" radius={2} strength={0.8} onColorChange={() => undefined} onDirectionChange={() => undefined} onRadiusChange={() => undefined} onStrengthChange={() => undefined} />
+<PixelColorRampControls shadowColor="#101020" midColor="#6080A0" highlightColor="#FFFFFF" shadowThreshold={0.3} highlightThreshold={0.7} onShadowColorChange={() => undefined} onMidColorChange={() => undefined} onHighlightColorChange={() => undefined} onShadowThresholdChange={() => undefined} onHighlightThresholdChange={() => undefined} />
 ```
 
 ## Desarrollo y publicación
