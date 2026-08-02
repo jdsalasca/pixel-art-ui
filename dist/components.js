@@ -25,6 +25,7 @@ export { PixelAssetCard } from "./ux/PixelAssetCard.js";
 export { PixelAssetGrid } from "./ux/PixelAssetGrid.js";
 export { PixelArtifactStrip } from "./ux/PixelArtifactStrip.js";
 export { PixelOperationSummary } from "./ux/PixelOperationSummary.js";
+export { PixelPaletteStrip } from "./ux/PixelPaletteStrip.js";
 export { PixelCommandBar } from "./ux/PixelCommandBar.js";
 export { PixelProgressSteps } from "./ux/PixelProgressSteps.js";
 export { PixelCheckboxGroup } from "./ux/PixelCheckboxGroup.js";

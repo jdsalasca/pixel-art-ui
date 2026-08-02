@@ -24,3 +24,9 @@
 .pixel-progress-steps__item--error { border-color: var(--pixel-danger); }
 .pixel-progress-steps__item span { font-size: .75rem; }
 .pixel-progress-steps__item small { color: var(--pixel-muted); font-size: .62rem; }
+
+.pixel-palette-strip { border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .65rem; }
+.pixel-palette-strip__label { color: var(--pixel-cyan); font-size: .7rem; letter-spacing: .1em; margin: 0 0 .5rem; }
+.pixel-palette-strip__swatches { display: flex; flex-wrap: wrap; gap: .35rem; }
+.pixel-palette-strip__swatch { border: 2px solid var(--pixel-text); box-shadow: 2px 2px 0 var(--pixel-shadow); display: block; height: 1.45rem; width: 1.45rem; }
+.pixel-palette-strip__empty { color: var(--pixel-muted); font-size: .7rem; margin: 0; }
