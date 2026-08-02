@@ -2667,6 +2667,41 @@ button, input, select, textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.pixel-shadow-controls {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pixel-shadow-controls label {
+  color: var(--pixel-muted);
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+}
+
+.pixel-shadow-controls label span {
+  letter-spacing: 0.06em;
+}
+
+.pixel-shadow-controls__color input {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  height: 2rem;
+  padding: 0.15rem;
+  width: 100%;
+}
+
+.pixel-shadow-controls input[type=range] {
+  accent-color: var(--pixel-shadow);
+  width: 100%;
+}
+
+@media (max-width: 620px) {
+  .pixel-shadow-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .pixel-panel {
   border: 2px solid var(--pixel-cyan);
   box-shadow: 4px 4px 0 var(--pixel-shadow);
