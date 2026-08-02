@@ -26,6 +26,7 @@ export { PixelAssetGrid } from "./ux/PixelAssetGrid.js";
 export { PixelCommandBar } from "./ux/PixelCommandBar.js";
 export { PixelProgressSteps } from "./ux/PixelProgressSteps.js";
 export { PixelCheckboxGroup } from "./ux/PixelCheckboxGroup.js";
+export { PixelPresetStrip } from "./ux/PixelPresetStrip.js";
 export type { PixelTone } from "./model/PixelTone.js";
 export type { PixelBadgeProps } from "./ux/PixelBadge.js";
 export type { PixelButtonProps } from "./ux/PixelButton.js";
@@ -54,3 +55,4 @@ export type { PixelAssetGridItem, PixelAssetGridProps } from "./ux/PixelAssetGri
 export type { PixelCommandBarProps } from "./ux/PixelCommandBar.js";
 export type { PixelProgressStep, PixelProgressStepsProps } from "./ux/PixelProgressSteps.js";
 export type { PixelCheckboxOption, PixelCheckboxGroupProps } from "./ux/PixelCheckboxGroup.js";
+export type { PixelPresetOption, PixelPresetStripProps } from "./ux/PixelPresetStrip.js";

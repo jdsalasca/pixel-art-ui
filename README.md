@@ -134,6 +134,7 @@ export function PixelUiShowcase() {
 | `PixelProgressSteps` | Pipeline con estados complete/current/pending/error. |
 | `PixelCheckboxGroup` | Selección múltiple tipada para pasos de recetas. |
 | `PixelAssetGrid` | Rejilla accesible y reusable para explorar bibliotecas de assets. |
+| `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 
 Todos los props están tipados y los componentes aceptan los atributos HTML relevantes. Los primitives de feedback incluyen roles ARIA; los estilos respetan `prefers-reduced-motion`.
 
