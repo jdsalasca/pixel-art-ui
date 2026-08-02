@@ -55,6 +55,7 @@ import {
   PixelCheckboxGroup,
   PixelAssetGrid,
   PixelArtifactStrip,
+  PixelOperationSummary,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -111,6 +112,7 @@ export function PixelUiShowcase() {
         label="VARIANT PREVIEWS"
         items={[{ id: "rain", name: "RAIN", preview: "/assets/rain.gif", detail: "8 FRAMES" }]}
       />
+      <PixelOperationSummary label="SCENE STACK" operation="generate_scene_effect_stack" artifactCount={6} deterministic sourcePreserved />
     </main>
   );
 }
@@ -148,6 +150,7 @@ export function PixelUiShowcase() {
 | `PixelCheckboxGroup` | Selección múltiple tipada para pasos de recetas. |
 | `PixelAssetGrid` | Rejilla accesible y reusable para explorar bibliotecas de assets. |
 | `PixelArtifactStrip` | Galería horizontal accesible para comparar outputs de una operación o pack. |
+| `PixelOperationSummary` | Resumen reutilizable de operación, cantidad de artifacts y garantías deterministas. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |

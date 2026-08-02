@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -133,5 +133,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("Variant previews");
     expect(markup).toContain("RAIN");
     expect(markup).toContain('aria-label="Variant previews"');
+  });
+
+  it("renders deterministic operation guarantees as a reusable summary", () => {
+    const markup = renderToStaticMarkup(<PixelOperationSummary label="SCENE STACK" operation="generate_scene_effect_stack" artifactCount={6} deterministic sourcePreserved />);
+    expect(markup).toContain("SCENE STACK");
+    expect(markup).toContain("generate_scene_effect_stack");
+    expect(markup).toContain("6 ARTIFACTS");
+    expect(markup).toContain("SOURCE PRESERVED");
   });
 });
