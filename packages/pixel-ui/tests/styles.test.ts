@@ -40,6 +40,8 @@ describe("pixel-ui motion contract", () => {
     expect(components.match(/\.pixel-operation-summary \{/g)?.length).toBe(1);
     expect(components).not.toContain(".pixel-button {");
     expect(components).not.toContain(".pixel-field, .pixel-select, .pixel-textarea {");
+    const workflow = await readFile(new URL("../src/styles/_workflow.scss", import.meta.url), "utf8");
+    expect(workflow).toContain(".pixel-silhouette-controls {");
   });
 
   it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {

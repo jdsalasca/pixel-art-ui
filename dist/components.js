@@ -23,6 +23,7 @@ export { PixelProgress } from "./ux/PixelProgress.js";
 export { PixelQualityGate } from "./ux/PixelQualityGate.js";
 export { PixelSelect } from "./ux/PixelSelect.js";
 export { PixelShadowControls } from "./ux/PixelShadowControls.js";
+export { PixelSilhouetteControls } from "./ux/PixelSilhouetteControls.js";
 export { PixelToolCard } from "./ux/PixelToolCard.js";
 export { PixelTextarea } from "./ux/PixelTextarea.js";
 export { PixelSlider } from "./ux/PixelSlider.js";
