@@ -66,6 +66,7 @@ import {
   PixelAnimationSheet,
   PixelSpriteGeometry,
   PixelSpriteHitboxes,
+  PixelSpriteRuntimeBundle,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -131,6 +132,7 @@ export function PixelUiShowcase() {
       <PixelAnimationSheet src="/assets/hero-sheet.png" frames={8} columns={4} rows={2} width={132} height={66} cellWidth={32} cellHeight={32} padding={1} manifestUrl="/assets/hero-sheet.json" />
       <PixelSpriteGeometry frameCount={8} width={32} height={32} stableBounds={false} baselineDrift={2} valid frames={[{ index: 0, bounds: { x: 4, y: 8, width: 20, height: 22 }, baselineY: 29, pivot: { x: 16, y: 29 }, componentCount: 2 }]} />
       <PixelSpriteHitboxes frameCount={8} mode="components" padding={1} hitboxes={24} manifestUrl="/assets/hero-hitboxes.json" />
+      <PixelSpriteRuntimeBundle frameCount={8} artifactCount={2} sourceFilename="hero.gif" manifestUrl="/assets/hero-runtime.json" />
     </main>
   );
 }
@@ -177,6 +179,7 @@ export function PixelUiShowcase() {
 | `PixelAnimationSheet` | Preview y metadata de una rejilla de frames con navegación al manifest. |
 | `PixelSpriteGeometry` | Reporte visual de bounds, baseline, pivotes y componentes conectados por frame. |
 | `PixelSpriteHitboxes` | Resumen de hitboxes por componentes o unión, padding, manifest y garantías deterministas. |
+| `PixelSpriteRuntimeBundle` | Resumen compacto de sheet, hitboxes, frames, manifest y garantías de exportación runtime. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |

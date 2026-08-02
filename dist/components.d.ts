@@ -38,6 +38,7 @@ export { PixelSpriteNormalization } from "./ux/PixelSpriteNormalization.js";
 export { PixelAnimationSheet } from "./ux/PixelAnimationSheet.js";
 export { PixelSpriteGeometry } from "./ux/PixelSpriteGeometry.js";
 export { PixelSpriteHitboxes } from "./ux/PixelSpriteHitboxes.js";
+export { PixelSpriteRuntimeBundle } from "./ux/PixelSpriteRuntimeBundle.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
 export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
@@ -81,5 +82,6 @@ export type { PixelSpriteNormalizationProps, PixelSpritePivotMode } from "./ux/P
 export type { PixelAnimationSheetProps } from "./ux/PixelAnimationSheet.js";
 export type { PixelSpriteGeometryFrame, PixelSpriteGeometryProps } from "./ux/PixelSpriteGeometry.js";
 export type { PixelSpriteHitboxesProps } from "./ux/PixelSpriteHitboxes.js";
+export type { PixelSpriteRuntimeBundleProps } from "./ux/PixelSpriteRuntimeBundle.js";
 export type { PixelClassNameProps } from "./model/pixelClassNames.js";
 //# sourceMappingURL=components.d.ts.map

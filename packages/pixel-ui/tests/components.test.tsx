@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -205,5 +205,12 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("24 HITBOXES");
     expect(markup).toContain("COMPONENTS");
     expect(markup).toContain("hero-hitboxes.json");
+  });
+
+  it("renders a reusable runtime bundle summary", () => {
+    const markup = renderToStaticMarkup(<PixelSpriteRuntimeBundle frameCount={8} artifactCount={2} sourceFilename="hero.gif" manifestUrl="hero-runtime.json" />);
+    expect(markup).toContain('aria-label="Sprite runtime bundle"');
+    expect(markup).toContain("2 ARTIFACTS");
+    expect(markup).toContain("hero-runtime.json");
   });
 });
