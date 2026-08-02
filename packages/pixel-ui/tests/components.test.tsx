@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAmbientOcclusionControls, PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelColorRampControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelGlowControls, PixelGrainControls, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelRimLightControls, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpecularHighlightControls, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAmbientOcclusionControls, PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelColorRampControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelDitherControls, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelGlowControls, PixelGrainControls, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelRimLightControls, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpecularHighlightControls, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders typed isolated-pixel cleanup controls", () => {
@@ -50,6 +50,13 @@ describe("pixel-ui primitives", () => {
     const markup = renderToStaticMarkup(<PixelGrainControls seed={17} intensity={0.8} scale={2} onSeedChange={() => undefined} onIntensityChange={() => undefined} onScaleChange={() => undefined} />);
     expect(markup).toContain('aria-label="Sprite grain controls"');
     expect(markup).toContain("SEED · 17");
+    expect(markup).toContain("SCALE · 2");
+  });
+
+  it("renders typed Bayer dither controls", () => {
+    const markup = renderToStaticMarkup(<PixelDitherControls darkColor="#202030" lightColor="#F0E8C8" strength={1} scale={2} onDarkColorChange={() => undefined} onLightColorChange={() => undefined} onStrengthChange={() => undefined} onScaleChange={() => undefined} />);
+    expect(markup).toContain('aria-label="Sprite dither controls"');
+    expect(markup).toContain("DARK COLOR");
     expect(markup).toContain("SCALE · 2");
   });
 
