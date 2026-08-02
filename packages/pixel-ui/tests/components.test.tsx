@@ -61,6 +61,12 @@ describe("pixel-ui primitives", () => {
     expect(pixelClassNames("base", false, "", "modifier")).toBe("base modifier");
   });
 
+  it("composes native container attributes on tabs through a typed interface", () => {
+    const markup = renderToStaticMarkup(<PixelTabs aria-label="Workflow tabs" className="custom-tabs" tabs={[{ id: "one", label: "ONE", content: "content" }]} />);
+    expect(markup).toContain('aria-label="Workflow tabs"');
+    expect(markup).toContain('class="pixel-tabs custom-tabs"');
+  });
+
   it("clamps progress values so visual state cannot overflow", () => {
     const result = PixelProgress({ value: 140, label: "JOB" });
     expect(result.props.children[1].props.children.props.style.width).toBe("100%");
