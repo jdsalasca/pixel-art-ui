@@ -41,6 +41,7 @@ export { PixelSpriteGeometry } from "./ux/PixelSpriteGeometry.js";
 export { PixelSpriteHitboxes } from "./ux/PixelSpriteHitboxes.js";
 export { PixelSpriteRuntimeBundle } from "./ux/PixelSpriteRuntimeBundle.js";
 export { PixelSpriteAnchors } from "./ux/PixelSpriteAnchors.js";
+export { PixelLibraryAudit } from "./ux/PixelLibraryAudit.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
 export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
@@ -86,4 +87,5 @@ export type { PixelSpriteGeometryFrame, PixelSpriteGeometryProps } from "./ux/Pi
 export type { PixelSpriteHitboxesProps } from "./ux/PixelSpriteHitboxes.js";
 export type { PixelSpriteRuntimeBundleProps } from "./ux/PixelSpriteRuntimeBundle.js";
 export type { PixelSpriteAnchorsProps } from "./ux/PixelSpriteAnchors.js";
+export type { PixelLibraryAuditProps } from "./ux/PixelLibraryAudit.js";
 export type { PixelClassNameProps } from "./model/pixelClassNames.js";

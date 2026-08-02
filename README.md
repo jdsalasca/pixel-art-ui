@@ -68,6 +68,7 @@ import {
   PixelSpriteHitboxes,
   PixelSpriteRuntimeBundle,
   PixelSpriteAnchors,
+  PixelLibraryAudit,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -135,6 +136,7 @@ export function PixelUiShowcase() {
       <PixelSpriteHitboxes frameCount={8} mode="components" padding={1} hitboxes={24} manifestUrl="/assets/hero-hitboxes.json" />
       <PixelSpriteRuntimeBundle frameCount={8} artifactCount={2} sourceFilename="hero.gif" manifestUrl="/assets/hero-runtime.json" />
       <PixelSpriteAnchors frameCount={8} anchorTypes={6} baselineDrift={2} manifestUrl="/assets/hero-anchors.json" />
+      <PixelLibraryAudit totalItems={339} totalCategories={24} totalPresets={12} totalFolders={339} readmePaths={339} previewPaths={339} spritePaths={339} valid />
     </main>
   );
 }
@@ -183,6 +185,7 @@ export function PixelUiShowcase() {
 | `PixelSpriteHitboxes` | Resumen de hitboxes por componentes o unión, padding, manifest y garantías deterministas. |
 | `PixelSpriteRuntimeBundle` | Resumen compacto de sheet, hitboxes, frames, manifest y garantías de exportación runtime. |
 | `PixelSpriteAnchors` | Resumen de puntos de placement, drift de baseline, manifest y garantías deterministas. |
+| `PixelLibraryAudit` | Métricas compactas de integridad del catálogo y lista acotada de referencias rotas. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
