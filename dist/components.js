@@ -6,6 +6,7 @@ export { PixelCleanupControls } from "./ux/PixelCleanupControls.js";
 export { PixelGlowControls } from "./ux/PixelGlowControls.js";
 export { PixelRimLightControls } from "./ux/PixelRimLightControls.js";
 export { PixelAmbientOcclusionControls } from "./ux/PixelAmbientOcclusionControls.js";
+export { PixelSpecularHighlightControls } from "./ux/PixelSpecularHighlightControls.js";
 export { PixelDropzone } from "./ux/PixelDropzone.js";
 export { PixelCompare } from "./ux/PixelCompare.js";
 export { PixelField } from "./ux/PixelField.js";
