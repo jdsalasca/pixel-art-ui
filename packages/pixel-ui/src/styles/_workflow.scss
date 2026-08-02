@@ -264,6 +264,12 @@
 .pixel-rim-light-controls__direction select { background: var(--pixel-panel); border: 1px solid var(--pixel-amber); color: var(--pixel-text); font: inherit; padding: .3rem; }
 .pixel-rim-light-controls input[type="range"] { accent-color: var(--pixel-amber); }
 
+.pixel-ambient-occlusion-controls { border: 1px solid var(--pixel-panel-2); display: grid; gap: .55rem; margin-top: .6rem; padding: .55rem; }
+.pixel-ambient-occlusion-controls label { color: var(--pixel-muted); display: grid; font-size: .62rem; gap: .25rem; letter-spacing: .06em; }
+.pixel-ambient-occlusion-controls__color { align-items: center; display: flex !important; flex-direction: row; justify-content: space-between; }
+.pixel-ambient-occlusion-controls__color input { background: var(--pixel-panel); border: 1px solid var(--pixel-cyan); height: 1.5rem; padding: .1rem; width: 3rem; }
+.pixel-ambient-occlusion-controls input[type="range"] { accent-color: var(--pixel-cyan); }
+
 .pixel-manifest-audit { border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .65rem; }
 .pixel-manifest-audit--valid { border-color: var(--pixel-cyan); }
 .pixel-manifest-audit--invalid { border-color: var(--pixel-amber); }

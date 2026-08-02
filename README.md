@@ -35,6 +35,7 @@ import {
   PixelCleanupControls,
   PixelGlowControls,
   PixelRimLightControls,
+  PixelAmbientOcclusionControls,
   PixelCompare,
   PixelDropzone,
   PixelField,
@@ -184,6 +185,7 @@ export function PixelUiShowcase() {
 | `PixelCleanupControls` | Umbral e iteraciones para eliminar píxeles aislados preservando grupos conectados. |
 | `PixelGlowControls` | Color, radio y opacidad para auras deterministas alrededor de sprites. |
 | `PixelRimLightControls` | Color, dirección y fuerza para iluminación de borde direccional en sprites. |
+| `PixelAmbientOcclusionControls` | Color, radio y fuerza para sombrear cavidades y bordes internos de sprites. |
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
@@ -249,6 +251,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelCleanupControls minNeighbors={1} iterations={2} onMinNeighborsChange={() => undefined} onIterationsChange={() => undefined} />
 <PixelGlowControls color="#FFD166" radius={2} opacity={0.8} onColorChange={() => undefined} onRadiusChange={() => undefined} onOpacityChange={() => undefined} />
 <PixelRimLightControls color="#FFD166" direction="north_east" strength={0.75} onColorChange={() => undefined} onDirectionChange={() => undefined} onStrengthChange={() => undefined} />
+<PixelAmbientOcclusionControls color="#000000" radius={1} strength={0.6} onColorChange={() => undefined} onRadiusChange={() => undefined} onStrengthChange={() => undefined} />
 ```
 
 ## Desarrollo y publicación

@@ -2111,6 +2111,41 @@ button, input, select, textarea {
   accent-color: var(--pixel-amber);
 }
 
+.pixel-ambient-occlusion-controls {
+  border: 1px solid var(--pixel-panel-2);
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.6rem;
+  padding: 0.55rem;
+}
+
+.pixel-ambient-occlusion-controls label {
+  color: var(--pixel-muted);
+  display: grid;
+  font-size: 0.62rem;
+  gap: 0.25rem;
+  letter-spacing: 0.06em;
+}
+
+.pixel-ambient-occlusion-controls__color {
+  align-items: center;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pixel-ambient-occlusion-controls__color input {
+  background: var(--pixel-panel);
+  border: 1px solid var(--pixel-cyan);
+  height: 1.5rem;
+  padding: 0.1rem;
+  width: 3rem;
+}
+
+.pixel-ambient-occlusion-controls input[type=range] {
+  accent-color: var(--pixel-cyan);
+}
+
 .pixel-manifest-audit {
   border: 1px solid var(--pixel-panel-2);
   margin-top: 0.8rem;

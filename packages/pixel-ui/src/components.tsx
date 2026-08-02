@@ -5,6 +5,7 @@ export { PixelBackgroundRemoval } from "./ux/PixelBackgroundRemoval.js";
 export { PixelCleanupControls } from "./ux/PixelCleanupControls.js";
 export { PixelGlowControls } from "./ux/PixelGlowControls.js";
 export { PixelRimLightControls } from "./ux/PixelRimLightControls.js";
+export { PixelAmbientOcclusionControls } from "./ux/PixelAmbientOcclusionControls.js";
 export { PixelDropzone } from "./ux/PixelDropzone.js";
 export { PixelCompare } from "./ux/PixelCompare.js";
 export { PixelField } from "./ux/PixelField.js";
@@ -64,6 +65,7 @@ export type { PixelBackgroundRemovalProps } from "./ux/PixelBackgroundRemoval.js
 export type { PixelCleanupControlsProps } from "./ux/PixelCleanupControls.js";
 export type { PixelGlowControlsProps } from "./ux/PixelGlowControls.js";
 export type { PixelRimLightControlsProps, PixelRimLightDirection } from "./ux/PixelRimLightControls.js";
+export type { PixelAmbientOcclusionControlsProps } from "./ux/PixelAmbientOcclusionControls.js";
 export type { PixelDropzoneProps } from "./ux/PixelDropzone.js";
 export type { PixelCompareProps } from "./ux/PixelCompare.js";
 export type { PixelFieldProps } from "./ux/PixelField.js";
