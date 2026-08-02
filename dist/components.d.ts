@@ -33,6 +33,7 @@ export { PixelPresetStrip } from "./ux/PixelPresetStrip.js";
 export { PixelPaddingControl } from "./ux/PixelPaddingControl.js";
 export { PixelTimeline } from "./ux/PixelTimeline.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
+export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
 export type { PixelBadgeProps } from "./ux/PixelBadge.js";
 export type { PixelButtonProps } from "./ux/PixelButton.js";

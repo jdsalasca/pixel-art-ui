@@ -1,6 +1,7 @@
 import type { HTMLAttributes, PropsWithChildren } from "react";
 import type { PixelTone } from "../model/PixelTone.js";
-export interface PixelPanelProps extends HTMLAttributes<HTMLElement> {
+import { type PixelToneProps } from "../model/pixelClassNames.js";
+export interface PixelPanelProps extends HTMLAttributes<HTMLElement>, PixelToneProps {
     title?: string;
     accent?: PixelTone;
 }
