@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSelect, PixelSlider, PixelSpriteNormalization, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -173,5 +173,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("8 FRAMES");
     expect(markup).toContain("1 DUPLICATE");
     expect(markup).toContain("TIMING REVIEW");
+  });
+
+  it("renders deterministic sprite normalization metadata without a domain dependency", () => {
+    const markup = renderToStaticMarkup(<PixelSpriteNormalization width={24} height={28} frames={8} padding={2} bounds={{ x: 2, y: 3, width: 20, height: 24 }} pivot={{ mode: "bottom_center", x: 12, y: 26 }} />);
+    expect(markup).toContain('aria-label="Sprite normalization result"');
+    expect(markup).toContain("24×28");
+    expect(markup).toContain("bottom_center");
+    expect(markup).toContain("SOURCE PRESERVED");
   });
 });
