@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { PixelNotice, PixelProgress, PixelQualityGate } from "../src/components.js";
+import { renderToStaticMarkup } from "react-dom/server";
+import { PixelNotice, PixelProgress, PixelQualityGate, PixelSelect } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("clamps progress values so visual state cannot overflow", () => {
@@ -26,5 +27,11 @@ describe("pixel-ui primitives", () => {
     expect(result.props.role).toBe("alert");
     expect(result.props["aria-live"]).toBe("assertive");
     expect(result.props.children[1].props.children).toHaveLength(2);
+  });
+
+  it("associates select labels with their generated control id", () => {
+    const markup = renderToStaticMarkup(<PixelSelect label="RECIPE" id="recipe-input">options</PixelSelect>);
+    expect(markup).toContain('for="recipe-input"');
+    expect(markup).toContain('id="recipe-input"');
   });
 });
