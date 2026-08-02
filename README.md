@@ -34,6 +34,7 @@ import {
   PixelBackgroundRemoval,
   PixelCleanupControls,
   PixelGlowControls,
+  PixelRimLightControls,
   PixelCompare,
   PixelDropzone,
   PixelField,
@@ -182,6 +183,7 @@ export function PixelUiShowcase() {
 | `PixelBackgroundRemoval` | Control tipado para color de fondo, tolerancia y modo conectado para eliminación determinista. |
 | `PixelCleanupControls` | Umbral e iteraciones para eliminar píxeles aislados preservando grupos conectados. |
 | `PixelGlowControls` | Color, radio y opacidad para auras deterministas alrededor de sprites. |
+| `PixelRimLightControls` | Color, dirección y fuerza para iluminación de borde direccional en sprites. |
 | `PixelCompare` | Revisión interactiva antes/después con slider accesible. |
 | `PixelDropzone` | Selección y drag-and-drop de archivos. |
 | `PixelField` | Input etiquetado y accesible. |
@@ -246,6 +248,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelBackgroundRemoval color="#142850" tolerance={12} connectedOnly onColorChange={() => undefined} onToleranceChange={() => undefined} onConnectedOnlyChange={() => undefined} />
 <PixelCleanupControls minNeighbors={1} iterations={2} onMinNeighborsChange={() => undefined} onIterationsChange={() => undefined} />
 <PixelGlowControls color="#FFD166" radius={2} opacity={0.8} onColorChange={() => undefined} onRadiusChange={() => undefined} onOpacityChange={() => undefined} />
+<PixelRimLightControls color="#FFD166" direction="north_east" strength={0.75} onColorChange={() => undefined} onDirectionChange={() => undefined} onStrengthChange={() => undefined} />
 ```
 
 ## Desarrollo y publicación

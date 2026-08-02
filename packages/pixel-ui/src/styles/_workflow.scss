@@ -257,6 +257,13 @@
 .pixel-glow-controls__color input { background: var(--pixel-panel); border: 1px solid var(--pixel-pink); height: 1.5rem; padding: .1rem; width: 3rem; }
 .pixel-glow-controls input[type="range"] { accent-color: var(--pixel-pink); }
 
+.pixel-rim-light-controls { border: 1px solid var(--pixel-panel-2); display: grid; gap: .55rem; margin-top: .6rem; padding: .55rem; }
+.pixel-rim-light-controls label { color: var(--pixel-muted); display: grid; font-size: .62rem; gap: .25rem; letter-spacing: .06em; }
+.pixel-rim-light-controls__color { align-items: center; display: flex !important; flex-direction: row; justify-content: space-between; }
+.pixel-rim-light-controls__color input { background: var(--pixel-panel); border: 1px solid var(--pixel-amber); height: 1.5rem; padding: .1rem; width: 3rem; }
+.pixel-rim-light-controls__direction select { background: var(--pixel-panel); border: 1px solid var(--pixel-amber); color: var(--pixel-text); font: inherit; padding: .3rem; }
+.pixel-rim-light-controls input[type="range"] { accent-color: var(--pixel-amber); }
+
 .pixel-manifest-audit { border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .65rem; }
 .pixel-manifest-audit--valid { border-color: var(--pixel-cyan); }
 .pixel-manifest-audit--invalid { border-color: var(--pixel-amber); }
