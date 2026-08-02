@@ -29,6 +29,19 @@ describe("pixel-ui motion contract", () => {
     expect(components).not.toContain("@extend");
   });
 
+  it("keeps each visual primitive owned by one SCSS module", async () => {
+    const controls = await readFile(new URL("../src/styles/_controls.scss", import.meta.url), "utf8");
+    const components = await readFile(new URL("../src/styles/_components.scss", import.meta.url), "utf8");
+    expect(controls.match(/\.pixel-button \{/g)?.length).toBe(1);
+    expect(controls.match(/\.pixel-field, \.pixel-select, \.pixel-textarea \{/g)?.length).toBe(1);
+    expect(components.match(/\.pixel-panel \{/g)?.length).toBe(1);
+    expect(components.match(/\.pixel-timeline \{/g)?.length).toBe(1);
+    expect(components.match(/\.pixel-artifact-strip \{/g)?.length).toBe(1);
+    expect(components.match(/\.pixel-operation-summary \{/g)?.length).toBe(1);
+    expect(components).not.toContain(".pixel-button {");
+    expect(components).not.toContain(".pixel-field, .pixel-select, .pixel-textarea {");
+  });
+
   it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {
     const script = await readFile(new URL("../../../scripts/copy-styles.mjs", import.meta.url), "utf8");
     expect(script).toContain('compile("packages/pixel-ui/src/styles.scss"');
