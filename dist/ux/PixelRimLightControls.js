@@ -1,0 +1,8 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { pixelClassNames } from "../model/pixelClassNames.js";
+const DIRECTIONS = ["north", "north_east", "east", "south_east", "south", "south_west", "west", "north_west"];
+export function PixelRimLightControls({ color, direction, strength, disabled = false, onColorChange, onDirectionChange, onStrengthChange, className = "", ...props }) {
+    const boundedStrength = Math.max(0, Math.min(1, Number.isFinite(strength) ? strength : 0.75));
+    const boundedDirection = DIRECTIONS.includes(direction) ? direction : "north";
+    return _jsxs("div", { className: pixelClassNames("pixel-rim-light-controls", className), "aria-label": "Sprite rim light controls", ...props, children: [_jsxs("label", { className: "pixel-rim-light-controls__color", children: [_jsx("span", { children: "RIM COLOR" }), _jsx("input", { type: "color", value: color, disabled: disabled, onChange: (event) => onColorChange(event.target.value) })] }), _jsxs("label", { className: "pixel-rim-light-controls__direction", children: [_jsxs("span", { children: ["DIRECTION \u00B7 ", boundedDirection.replace("_", " ").toUpperCase()] }), _jsx("select", { value: boundedDirection, disabled: disabled, onChange: (event) => onDirectionChange(event.target.value), children: DIRECTIONS.map((value) => _jsx("option", { value: value, children: value.replace("_", " ").toUpperCase() }, value)) })] }), _jsxs("label", { className: "pixel-rim-light-controls__strength", children: [_jsxs("span", { children: ["STRENGTH \u00B7 ", boundedStrength] }), _jsx("input", { type: "range", min: 0, max: 1, step: 0.05, value: boundedStrength, disabled: disabled, onChange: (event) => onStrengthChange(Number(event.target.value)) })] })] });
+}
