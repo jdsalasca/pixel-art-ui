@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { pixelClassNames } from "../model/pixelClassNames.js";
+export function PixelContactSheet({ src, assets, columns, rows, cellWidth, cellHeight, manifestUrl, className = "", ...props }) {
+    return _jsxs("section", { className: pixelClassNames("pixel-contact-sheet", className), "aria-label": "Contact sheet preview", ...props, children: [_jsxs("div", { className: "pixel-contact-sheet__heading", children: [_jsx("h2", { children: "CONTACT SHEET" }), _jsxs("span", { children: [assets, " ASSETS"] })] }), _jsx("img", { src: src, alt: "Generated contact sheet", className: "pixel-contact-sheet__image" }), _jsxs("dl", { className: "pixel-contact-sheet__meta", children: [_jsxs("div", { children: [_jsx("dt", { children: "GRID" }), _jsxs("dd", { children: [columns, " \u00D7 ", rows] })] }), _jsxs("div", { children: [_jsx("dt", { children: "CELL" }), _jsxs("dd", { children: [cellWidth, " \u00D7 ", cellHeight] })] }), manifestUrl ? _jsxs("div", { children: [_jsx("dt", { children: "MANIFEST" }), _jsx("dd", { children: _jsx("a", { href: manifestUrl, children: "OPEN JSON" }) })] }) : null] })] });
+}
