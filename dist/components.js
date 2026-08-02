@@ -4,6 +4,7 @@ export { PixelButton } from "./ux/PixelButton.js";
 export { PixelBackgroundRemoval } from "./ux/PixelBackgroundRemoval.js";
 export { PixelCleanupControls } from "./ux/PixelCleanupControls.js";
 export { PixelColorRampControls } from "./ux/PixelColorRampControls.js";
+export { PixelColorTemperatureControls } from "./ux/PixelColorTemperatureControls.js";
 export { PixelDitherControls } from "./ux/PixelDitherControls.js";
 export { PixelGrainControls } from "./ux/PixelGrainControls.js";
 export { PixelGlowControls } from "./ux/PixelGlowControls.js";
