@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneComposition, PixelScenePlan, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneComposition, PixelScenePlan, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -268,5 +268,12 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("1 ASSETS");
     expect(markup).toContain("rain · walk");
     expect(markup).toContain("OPEN MANIFEST");
+  });
+
+  it("renders missing and empty manifest artifacts with integrity metadata", () => {
+    const markup = renderToStaticMarkup(<PixelManifestAudit manifest="out/scene.json" valid={false} missingArtifacts={1} emptyArtifacts={1} artifacts={[{ filename: "out/scene.png", status: "ok", sizeBytes: 12, format: "png", sha256: "abcdef1234567890" }, { filename: "out/missing.gif", status: "missing", sizeBytes: 0, format: "gif", sha256: null }]} />);
+    expect(markup).toContain("MANIFEST INTEGRITY");
+    expect(markup).toContain("MISSING");
+    expect(markup).toContain("out/missing.gif");
   });
 });
