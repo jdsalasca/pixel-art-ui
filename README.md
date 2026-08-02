@@ -72,6 +72,7 @@ import {
   PixelLibrarySummary,
   PixelScenePlan,
   PixelSceneComposition,
+  PixelSceneAnimation,
   PixelTimeline,
 } from "@jdsalasc/pixel-ui";
 import "@jdsalasc/pixel-ui/styles.css";
@@ -143,6 +144,7 @@ export function PixelUiShowcase() {
       <PixelLibrarySummary totalItems={339} totalCategories={24} totalPresets={12} categories={[{ id: "flora", title: "Flora", itemCount: 42, examples: ["oak", "pine"] }]} presets={[{ id: "grove", title: "Living grove", category: "flora", itemCount: 8 }]} />
       <PixelScenePlan libraryVersion="catalog-scene-v1" layers={[{ id: "scene-oak", assetId: "oak", title: "Oak", role: "background", order: 0 }]} />
       <PixelSceneComposition src="/assets/scene.png" manifestUrl="/assets/scene.json" width={64} height={64} layers={[{ assetId: "oak", title: "Oak", role: "background", order: 0, x: 2, y: 2, width: 60, height: 60 }]} />
+      <PixelSceneAnimation src="/assets/scene.gif" manifestUrl="/assets/scene-animation.json" width={64} height={64} frames={8} delayMs={90} layers={[{ assetId: "rain", title: "Rain", role: "effect", order: 0, x: 2, y: 2, width: 60, height: 60 }]} />
     </main>
   );
 }
@@ -195,6 +197,7 @@ export function PixelUiShowcase() {
 | `PixelLibrarySummary` | Mapa compacto de categorías, ejemplos y presets para navegar bibliotecas con menos tokens. |
 | `PixelScenePlan` | Capas ordenadas de una escena seleccionada con roles y garantías deterministas. |
 | `PixelSceneComposition` | Preview PNG pixelado, placements por capa y enlace al manifest generado por el compositor. |
+| `PixelSceneAnimation` | Preview GIF pixelado con frames, delay, capas y enlace al manifest por frame. |
 | `PixelPresetStrip` | Selector accesible y tipado para presets de escenas. |
 | `PixelPaddingControl` | Control compuesto y tipado para padding top/right/bottom/left de mapas. |
 | `PixelTimeline` | Timeline accesible para etapas de ciclo, progreso visual y selección humana. |
