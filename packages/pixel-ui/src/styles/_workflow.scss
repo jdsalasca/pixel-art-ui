@@ -286,3 +286,21 @@
 .pixel-scene-bundle__guarantees span { border: 1px solid currentColor; color: var(--pixel-muted); font-size: .62rem; padding: .25rem .35rem; }
 .pixel-scene-bundle__guarantees .is-ok { color: var(--pixel-cyan); }
 .pixel-scene-bundle__guarantees .is-warning { color: var(--pixel-amber); }
+
+.pixel-enhancement-batch { border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .65rem; }
+.pixel-enhancement-batch__heading { align-items: center; display: flex; justify-content: space-between; }
+.pixel-enhancement-batch__heading h2 { color: var(--pixel-pink); font-size: .7rem; letter-spacing: .1em; margin: 0; }
+.pixel-enhancement-batch__heading span, .pixel-enhancement-batch__summary { color: var(--pixel-muted); font-size: .68rem; }
+.pixel-enhancement-batch__summary { display: flex; flex-wrap: wrap; gap: .55rem; margin: .6rem 0; }
+.pixel-enhancement-batch__items { display: grid; gap: .35rem; list-style: none; margin: 0; padding: 0; }
+.pixel-enhancement-batch__items li { align-items: center; border-left: 3px solid var(--pixel-muted); display: flex; gap: .6rem; justify-content: space-between; padding: .35rem .5rem; }
+.pixel-enhancement-batch__items li > div { display: grid; gap: .1rem; min-width: 0; }
+.pixel-enhancement-batch__items strong { font-size: .68rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pixel-enhancement-batch__items small, .pixel-enhancement-batch__items li > span { color: var(--pixel-muted); font-size: .62rem; overflow-wrap: anywhere; }
+.pixel-enhancement-batch__items .is-success { border-color: var(--pixel-cyan); }
+.pixel-enhancement-batch__items .is-failed { border-color: var(--pixel-danger); }
+.pixel-enhancement-batch__summary .is-success, .pixel-enhancement-batch__guarantees .is-success { color: var(--pixel-cyan); }
+.pixel-enhancement-batch__summary .is-failed { color: var(--pixel-danger); }
+.pixel-enhancement-batch__guarantees { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .6rem; }
+.pixel-enhancement-batch__guarantees span { border: 1px solid currentColor; color: var(--pixel-muted); font-size: .62rem; padding: .25rem .35rem; }
+.pixel-enhancement-batch__guarantees .is-warning { color: var(--pixel-amber); }

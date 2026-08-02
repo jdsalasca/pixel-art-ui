@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
+import { PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelButton, PixelCheckboxGroup, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelSlider, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders a typed accessible timeline without inheritance coupling", () => {
@@ -165,6 +165,14 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("1 PASS");
     expect(markup).toContain("broken.png");
     expect(markup).toContain("1 ISSUE(S)");
+  });
+
+  it("renders enhancement batch outcomes and source guarantees", () => {
+    const markup = renderToStaticMarkup(<PixelEnhancementBatch items={[{ filename: "hero.png", outputFilename: "hero-out.png", ok: true, passesApplied: ["cleanup"] }, { filename: "broken.png", outputFilename: "broken-out.png", ok: false, error: "decode failed" }]} summary={{ total: 2, succeeded: 1, failed: 1 }} />);
+    expect(markup).toContain('aria-label="Enhancement batch report"');
+    expect(markup).toContain("1 DONE");
+    expect(markup).toContain("decode failed");
+    expect(markup).toContain("SOURCE PRESERVED");
   });
 
   it("renders animation audit checks without coupling to a provider", () => {

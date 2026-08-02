@@ -2225,6 +2225,107 @@ button, input, select, textarea {
   color: var(--pixel-amber);
 }
 
+.pixel-enhancement-batch {
+  border: 1px solid var(--pixel-panel-2);
+  margin-top: 0.8rem;
+  padding: 0.65rem;
+}
+
+.pixel-enhancement-batch__heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pixel-enhancement-batch__heading h2 {
+  color: var(--pixel-pink);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.pixel-enhancement-batch__heading span, .pixel-enhancement-batch__summary {
+  color: var(--pixel-muted);
+  font-size: 0.68rem;
+}
+
+.pixel-enhancement-batch__summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.6rem 0;
+}
+
+.pixel-enhancement-batch__items {
+  display: grid;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pixel-enhancement-batch__items li {
+  align-items: center;
+  border-left: 3px solid var(--pixel-muted);
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between;
+  padding: 0.35rem 0.5rem;
+}
+
+.pixel-enhancement-batch__items li > div {
+  display: grid;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.pixel-enhancement-batch__items strong {
+  font-size: 0.68rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pixel-enhancement-batch__items small, .pixel-enhancement-batch__items li > span {
+  color: var(--pixel-muted);
+  font-size: 0.62rem;
+  overflow-wrap: anywhere;
+}
+
+.pixel-enhancement-batch__items .is-success {
+  border-color: var(--pixel-cyan);
+}
+
+.pixel-enhancement-batch__items .is-failed {
+  border-color: var(--pixel-danger);
+}
+
+.pixel-enhancement-batch__summary .is-success, .pixel-enhancement-batch__guarantees .is-success {
+  color: var(--pixel-cyan);
+}
+
+.pixel-enhancement-batch__summary .is-failed {
+  color: var(--pixel-danger);
+}
+
+.pixel-enhancement-batch__guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+}
+
+.pixel-enhancement-batch__guarantees span {
+  border: 1px solid currentColor;
+  color: var(--pixel-muted);
+  font-size: 0.62rem;
+  padding: 0.25rem 0.35rem;
+}
+
+.pixel-enhancement-batch__guarantees .is-warning {
+  color: var(--pixel-amber);
+}
+
 .pixel-panel {
   border: 2px solid var(--pixel-cyan);
   box-shadow: 4px 4px 0 var(--pixel-shadow);

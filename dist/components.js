@@ -28,6 +28,7 @@ export { PixelOperationSummary } from "./ux/PixelOperationSummary.js";
 export { PixelPaletteStrip } from "./ux/PixelPaletteStrip.js";
 export { PixelContactSheet } from "./ux/PixelContactSheet.js";
 export { PixelQualityMatrix } from "./ux/PixelQualityMatrix.js";
+export { PixelEnhancementBatch } from "./ux/PixelEnhancementBatch.js";
 export { PixelAnimationAudit } from "./ux/PixelAnimationAudit.js";
 export { PixelCommandBar } from "./ux/PixelCommandBar.js";
 export { PixelProgressSteps } from "./ux/PixelProgressSteps.js";

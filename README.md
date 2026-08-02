@@ -61,6 +61,7 @@ import {
   PixelPaletteStrip,
   PixelContactSheet,
   PixelQualityMatrix,
+  PixelEnhancementBatch,
   PixelAnimationAudit,
   PixelSpriteNormalization,
   PixelAnimationSheet,
@@ -194,6 +195,7 @@ export function PixelUiShowcase() {
 | `PixelPaletteStrip` | Swatches accesibles para visualizar la paleta generada por una operación de armonización. |
 | `PixelContactSheet` | Preview pixelado de una rejilla de sprites con cantidad de assets, celdas y manifest. |
 | `PixelQualityMatrix` | Matriz compacta para revisar pass/review/failed de una colección completa. |
+| `PixelEnhancementBatch` | Resultado compacto de mejoras batch, fallos aislados y garantías de determinismo/preservación. |
 | `PixelAnimationAudit` | Checks visuales de frames duplicados, timing, paleta y costura de loop. |
 | `PixelSpriteNormalization` | Resultado compacto de crop por alfa, padding, pivote y garantías de exportación. |
 | `PixelAnimationSheet` | Preview y metadata de una rejilla de frames con navegación al manifest. |
