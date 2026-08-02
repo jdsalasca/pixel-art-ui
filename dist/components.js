@@ -40,4 +40,5 @@ export { PixelAnimationSheet } from "./ux/PixelAnimationSheet.js";
 export { PixelSpriteGeometry } from "./ux/PixelSpriteGeometry.js";
 export { PixelSpriteHitboxes } from "./ux/PixelSpriteHitboxes.js";
 export { PixelSpriteRuntimeBundle } from "./ux/PixelSpriteRuntimeBundle.js";
+export { PixelSpriteAnchors } from "./ux/PixelSpriteAnchors.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";

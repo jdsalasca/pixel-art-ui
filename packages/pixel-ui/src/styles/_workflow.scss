@@ -133,3 +133,17 @@
 .pixel-sprite-runtime-bundle__guarantees .is-ok { color: var(--pixel-cyan); }
 .pixel-sprite-runtime-bundle__guarantees .is-warning { color: var(--pixel-amber); }
 .pixel-sprite-runtime-bundle__guarantees a { color: var(--pixel-amber); }
+
+.pixel-sprite-anchors { border: 1px solid var(--pixel-panel-2); margin-top: .8rem; padding: .65rem; }
+.pixel-sprite-anchors__heading { align-items: center; display: flex; justify-content: space-between; }
+.pixel-sprite-anchors__heading h2 { color: var(--pixel-amber); font-size: .7rem; letter-spacing: .1em; margin: 0; }
+.pixel-sprite-anchors__heading span { color: var(--pixel-muted); font-size: .68rem; }
+.pixel-sprite-anchors__metrics { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .6rem; }
+.pixel-sprite-anchors__metrics span, .pixel-sprite-anchors__metrics strong { border: 1px solid currentColor; font-size: .62rem; padding: .25rem .35rem; }
+.pixel-sprite-anchors__metrics span { color: var(--pixel-muted); }
+.pixel-sprite-anchors__metrics strong { color: var(--pixel-amber); }
+.pixel-sprite-anchors__guarantees { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .6rem; }
+.pixel-sprite-anchors__guarantees span, .pixel-sprite-anchors__guarantees a { border: 1px solid currentColor; font-size: .62rem; padding: .25rem .35rem; }
+.pixel-sprite-anchors__guarantees .is-ok { color: var(--pixel-cyan); }
+.pixel-sprite-anchors__guarantees .is-warning { color: var(--pixel-amber); }
+.pixel-sprite-anchors__guarantees a { color: var(--pixel-amber); }
