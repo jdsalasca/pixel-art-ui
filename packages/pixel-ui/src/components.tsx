@@ -27,6 +27,7 @@ export { PixelSilhouetteControls } from "./ux/PixelSilhouetteControls.js";
 export { PixelWindSwayControls } from "./ux/PixelWindSwayControls.js";
 export { PixelEffectStackPreview } from "./ux/PixelEffectStackPreview.js";
 export { PixelFogControls } from "./ux/PixelFogControls.js";
+export { PixelSnowControls } from "./ux/PixelSnowControls.js";
 export { PixelToolCard } from "./ux/PixelToolCard.js";
 export { PixelTextarea } from "./ux/PixelTextarea.js";
 export { PixelSlider } from "./ux/PixelSlider.js";
@@ -98,6 +99,7 @@ export type { PixelSilhouetteControlsProps } from "./ux/PixelSilhouetteControls.
 export type { PixelWindSwayControlsProps, PixelWindSwayDirection } from "./ux/PixelWindSwayControls.js";
 export type { PixelEffectStackItem, PixelEffectStackPreviewProps } from "./ux/PixelEffectStackPreview.js";
 export type { PixelFogControlsProps } from "./ux/PixelFogControls.js";
+export type { PixelSnowControlsProps } from "./ux/PixelSnowControls.js";
 export type { PixelToolCardProps } from "./ux/PixelToolCard.js";
 export type { PixelTextareaProps } from "./ux/PixelTextarea.js";
 export type { PixelSliderProps } from "./ux/PixelSlider.js";

@@ -41,6 +41,7 @@ import {
   PixelColorTemperatureControls,
   PixelSilhouetteControls,
   PixelWindSwayControls,
+  PixelSnowControls,
   PixelEffectStackPreview,
   PixelGrainControls,
   PixelDitherControls,
@@ -200,6 +201,7 @@ export function PixelUiShowcase() {
 | `PixelColorTemperatureControls` | Temperatura fría/cálida e intensidad para ambientación nocturna, atardecer y fuego. |
 | `PixelSilhouetteControls` | Color y opacidad para generar máscaras, sombras, previews y capas de colisión de sprites. |
 | `PixelWindSwayControls` | Frames, semilla, amplitud y dirección para animar viento en árboles, follaje, banderas y props colgantes. |
+| `PixelSnowControls` | Frames, semilla, densidad, viento y color para nieve determinista en montañas, aldeas y escenas invernales. |
 | `PixelEffectStackPreview` | Muestra el orden determinista de las pasadas de una composición de escena. |
 | `PixelGrainControls` | Semilla, intensidad y escala para granularidad reproducible en tierra, agua, piedra, follaje y superficies envejecidas. |
 | `PixelDitherControls` | Dos colores, fuerza y escala para dithering Bayer reproducible y reducción de bandas. |
