@@ -43,6 +43,8 @@ describe("pixel-ui motion contract", () => {
     const workflow = await readFile(new URL("../src/styles/_workflow.scss", import.meta.url), "utf8");
     expect(workflow).toContain(".pixel-silhouette-controls {");
     expect(workflow).toContain(".pixel-wind-sway-controls {");
+    expect(workflow).toContain(".pixel-effect-stack-preview {");
+    expect(workflow).not.toContain("@extend");
   });
 
   it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {
