@@ -46,6 +46,7 @@ import {
   PixelFireControls,
   PixelLightningControls,
   PixelWaveControls,
+  PixelWaterSprayControls,
   PixelEffectStackPreview,
   PixelGrainControls,
   PixelDitherControls,
@@ -210,6 +211,7 @@ export function PixelUiShowcase() {
 | `PixelFireControls` | Frames, semilla, intensidad, parpadeo y color para fuego/brasas deterministas en antorchas, fogatas, volcanes e incendios. |
 | `PixelLightningControls` | Frames, semilla, intensidad, flash y color para relámpagos deterministas en lluvias, tormentas y escenas nocturnas. |
 | `PixelWaveControls` | Frames, semilla, densidad, amplitud y color para oleaje y espuma deterministas en playas, océanos y mapas costeros. |
+| `PixelWaterSprayControls` | Frames, semilla, densidad, deriva y color para gotas de spray marino deterministas en oleaje, cascadas e impactos. |
 | `PixelEffectStackPreview` | Muestra el orden determinista de las pasadas de una composición de escena. |
 | `PixelGrainControls` | Semilla, intensidad y escala para granularidad reproducible en tierra, agua, piedra, follaje y superficies envejecidas. |
 | `PixelDitherControls` | Dos colores, fuerza y escala para dithering Bayer reproducible y reducción de bandas. |
@@ -293,6 +295,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 
 <PixelLightningControls frames={8} seed={67} intensity={0.72} flash={0.8} color="#D8F3FF" onFramesChange={console.log} onSeedChange={console.log} onIntensityChange={console.log} onFlashChange={console.log} onColorChange={console.log} />
 <PixelWaveControls frames={6} seed={79} density={0.78} amplitude={3} color="#E6FAFF" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onAmplitudeChange={console.log} onColorChange={console.log} />
+<PixelWaterSprayControls frames={5} seed={83} density={0.7} drift={0.4} color="#F4FDFF" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onDriftChange={console.log} onColorChange={console.log} />
 <PixelGrainControls seed={17} intensity={0.8} scale={2} onSeedChange={() => undefined} onIntensityChange={() => undefined} onScaleChange={() => undefined} />
 <PixelDitherControls darkColor="#202030" lightColor="#F0E8C8" strength={1} scale={2} onDarkColorChange={() => undefined} onLightColorChange={() => undefined} onStrengthChange={() => undefined} onScaleChange={() => undefined} />
 <PixelShadowControls color="#000000" offsetX={2} offsetY={3} opacity={0.45} onColorChange={() => undefined} onOffsetXChange={() => undefined} onOffsetYChange={() => undefined} onOpacityChange={() => undefined} />
