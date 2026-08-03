@@ -3116,25 +3116,25 @@ button, input, select, textarea {
   width: 100%;
 }
 
-.pixel-dust-controls {
+.pixel-leaf-fall-controls {
   display: grid;
   gap: 0.55rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: 0.8rem;
 }
 
-.pixel-dust-controls label {
+.pixel-leaf-fall-controls label {
   color: var(--pixel-muted);
   display: grid;
   gap: 0.3rem;
   font-size: 0.68rem;
 }
 
-.pixel-dust-controls label span {
+.pixel-leaf-fall-controls label span {
   letter-spacing: 0.06em;
 }
 
-.pixel-dust-controls input[type=number] {
+.pixel-leaf-fall-controls input[type=number] {
   background: var(--pixel-ink);
   border: 2px solid var(--pixel-panel-2);
   color: var(--pixel-text);
@@ -3143,12 +3143,12 @@ button, input, select, textarea {
   padding: 0.4rem;
 }
 
-.pixel-dust-controls input[type=range] {
+.pixel-leaf-fall-controls input[type=range] {
   accent-color: var(--pixel-amber);
   width: 100%;
 }
 
-.pixel-dust-controls__color input {
+.pixel-leaf-fall-controls__color input {
   background: var(--pixel-ink);
   border: 2px solid var(--pixel-panel-2);
   height: 2rem;
@@ -3184,7 +3184,7 @@ button, input, select, textarea {
   .pixel-dust-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .pixel-dust-controls {
+  .pixel-leaf-fall-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

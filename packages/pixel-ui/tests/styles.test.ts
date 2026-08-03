@@ -62,6 +62,7 @@ describe("pixel-ui motion contract", () => {
     expect(workflow).toContain(".pixel-wave-controls {");
     expect(workflow).toContain(".pixel-water-spray-controls {");
     expect(workflow).toContain(".pixel-dust-controls {");
+    expect(workflow).toContain(".pixel-leaf-fall-controls {");
     expect(workflow).toContain(".pixel-effect-stack-preview {");
     expect(workflow).not.toContain("@extend");
   });

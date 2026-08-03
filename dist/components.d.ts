@@ -30,6 +30,7 @@ export { PixelLightningControls } from "./ux/PixelLightningControls.js";
 export { PixelWaveControls } from "./ux/PixelWaveControls.js";
 export { PixelWaterSprayControls } from "./ux/PixelWaterSprayControls.js";
 export { PixelDustControls } from "./ux/PixelDustControls.js";
+export { PixelLeafFallControls } from "./ux/PixelLeafFallControls.js";
 export { PixelFogControls } from "./ux/PixelFogControls.js";
 export { PixelSnowControls } from "./ux/PixelSnowControls.js";
 export { PixelSmokeControls } from "./ux/PixelSmokeControls.js";
