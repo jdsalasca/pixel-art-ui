@@ -40,6 +40,7 @@ import {
   PixelColorRampControls,
   PixelColorTemperatureControls,
   PixelSilhouetteControls,
+  PixelWindSwayControls,
   PixelGrainControls,
   PixelDitherControls,
   PixelShadowControls,
@@ -197,6 +198,7 @@ export function PixelUiShowcase() {
 | `PixelColorRampControls` | Paleta de sombra, medio tono y brillo con umbrales de luminancia para estilizar sprites de forma determinista. |
 | `PixelColorTemperatureControls` | Temperatura fría/cálida e intensidad para ambientación nocturna, atardecer y fuego. |
 | `PixelSilhouetteControls` | Color y opacidad para generar máscaras, sombras, previews y capas de colisión de sprites. |
+| `PixelWindSwayControls` | Frames, semilla, amplitud y dirección para animar viento en árboles, follaje, banderas y props colgantes. |
 | `PixelGrainControls` | Semilla, intensidad y escala para granularidad reproducible en tierra, agua, piedra, follaje y superficies envejecidas. |
 | `PixelDitherControls` | Dos colores, fuerza y escala para dithering Bayer reproducible y reducción de bandas. |
 | `PixelShadowControls` | Color, desplazamiento X/Y y opacidad para sombras deterministas sin acoplarse al MCP. |
@@ -270,6 +272,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelColorRampControls shadowColor="#101020" midColor="#6080A0" highlightColor="#FFFFFF" shadowThreshold={0.3} highlightThreshold={0.7} onShadowColorChange={() => undefined} onMidColorChange={() => undefined} onHighlightColorChange={() => undefined} onShadowThresholdChange={() => undefined} onHighlightThresholdChange={() => undefined} />
 <PixelColorTemperatureControls temperature={-1} intensity={0.7} onTemperatureChange={() => undefined} onIntensityChange={() => undefined} />
 <PixelSilhouetteControls color="#08111F" opacity={0.6} onColorChange={() => undefined} onOpacityChange={() => undefined} />
+<PixelWindSwayControls frames={6} seed={19} amplitude={2} direction="right" onFramesChange={() => undefined} onSeedChange={() => undefined} onAmplitudeChange={() => undefined} onDirectionChange={() => undefined} />
 <PixelGrainControls seed={17} intensity={0.8} scale={2} onSeedChange={() => undefined} onIntensityChange={() => undefined} onScaleChange={() => undefined} />
 <PixelDitherControls darkColor="#202030" lightColor="#F0E8C8" strength={1} scale={2} onDarkColorChange={() => undefined} onLightColorChange={() => undefined} onStrengthChange={() => undefined} onScaleChange={() => undefined} />
 <PixelShadowControls color="#000000" offsetX={2} offsetY={3} opacity={0.45} onColorChange={() => undefined} onOffsetXChange={() => undefined} onOffsetYChange={() => undefined} onOpacityChange={() => undefined} />
