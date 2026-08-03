@@ -27,6 +27,7 @@ export { PixelSilhouetteControls } from "./ux/PixelSilhouetteControls.js";
 export { PixelWindSwayControls } from "./ux/PixelWindSwayControls.js";
 export { PixelEffectStackPreview } from "./ux/PixelEffectStackPreview.js";
 export { PixelFireControls } from "./ux/PixelFireControls.js";
+export { PixelLightningControls } from "./ux/PixelLightningControls.js";
 export { PixelFogControls } from "./ux/PixelFogControls.js";
 export { PixelSnowControls } from "./ux/PixelSnowControls.js";
 export { PixelSmokeControls } from "./ux/PixelSmokeControls.js";
@@ -101,6 +102,7 @@ export type { PixelSilhouetteControlsProps } from "./ux/PixelSilhouetteControls.
 export type { PixelWindSwayControlsProps, PixelWindSwayDirection } from "./ux/PixelWindSwayControls.js";
 export type { PixelEffectStackItem, PixelEffectStackPreviewProps } from "./ux/PixelEffectStackPreview.js";
 export type { PixelFireControlsProps } from "./ux/PixelFireControls.js";
+export type { PixelLightningControlsProps } from "./ux/PixelLightningControls.js";
 export type { PixelFogControlsProps } from "./ux/PixelFogControls.js";
 export type { PixelSnowControlsProps } from "./ux/PixelSnowControls.js";
 export type { PixelSmokeControlsProps } from "./ux/PixelSmokeControls.js";

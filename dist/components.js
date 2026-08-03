@@ -27,6 +27,7 @@ export { PixelSilhouetteControls } from "./ux/PixelSilhouetteControls.js";
 export { PixelWindSwayControls } from "./ux/PixelWindSwayControls.js";
 export { PixelEffectStackPreview } from "./ux/PixelEffectStackPreview.js";
 export { PixelFireControls } from "./ux/PixelFireControls.js";
+export { PixelLightningControls } from "./ux/PixelLightningControls.js";
 export { PixelFogControls } from "./ux/PixelFogControls.js";
 export { PixelSnowControls } from "./ux/PixelSnowControls.js";
 export { PixelSmokeControls } from "./ux/PixelSmokeControls.js";
