@@ -10,6 +10,7 @@ export interface PixelLogEntry {
 export interface PixelLogViewerProps extends HTMLAttributes<HTMLDivElement> {
     entries: readonly PixelLogEntry[];
     emptyLabel?: string;
+    maxEntries?: number;
 }
-export declare function PixelLogViewer({ entries, emptyLabel, className, ...props }: PixelLogViewerProps): import("react").JSX.Element;
+export declare function PixelLogViewer({ entries, emptyLabel, maxEntries, className, ...props }: PixelLogViewerProps): import("react").JSX.Element;
 //# sourceMappingURL=PixelLogViewer.d.ts.map

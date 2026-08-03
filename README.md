@@ -143,7 +143,7 @@ export function PixelUiShowcase() {
       />
 
       <PixelTextarea label="TOOL ARGUMENTS" value='{"filename":"asset.png"}' readOnly />
-      <PixelLogViewer entries={[{ id: "run-1", timestamp: new Date().toISOString(), title: "inspect_asset", status: "success", detail: "42ms" }]} />
+      <PixelLogViewer maxEntries={50} entries={[{ id: "run-1", timestamp: new Date().toISOString(), title: "inspect_asset", status: "success", detail: "42ms" }]} />
       <PixelSchemaHint schema={{ type: "object", properties: { filename: { type: "string" } }, required: ["filename"] }} />
 
       <PixelQualityGate valid={false} violations={["3 isolated pixels", "contrast below threshold"]} />

@@ -346,6 +346,12 @@ button, input, select, textarea {
   margin: 0.3rem;
 }
 
+.pixel-log-viewer__omitted {
+  color: var(--pixel-muted);
+  font-size: 0.62rem;
+  margin: 0.45rem 0 0;
+}
+
 .pixel-toast {
   align-items: center;
   border: 2px solid var(--pixel-cyan);

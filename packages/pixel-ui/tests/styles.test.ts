@@ -32,6 +32,7 @@ describe("pixel-ui motion contract", () => {
   it("keeps each visual primitive owned by one SCSS module", async () => {
     const controls = await readFile(new URL("../src/styles/_controls.scss", import.meta.url), "utf8");
     const components = await readFile(new URL("../src/styles/_components.scss", import.meta.url), "utf8");
+    const feedback = await readFile(new URL("../src/styles/_feedback.scss", import.meta.url), "utf8");
     expect(controls.match(/\.pixel-button \{/g)?.length).toBe(1);
     expect(controls.match(/\.pixel-field, \.pixel-select, \.pixel-textarea \{/g)?.length).toBe(1);
     expect(components.match(/\.pixel-panel \{/g)?.length).toBe(1);
@@ -40,6 +41,7 @@ describe("pixel-ui motion contract", () => {
     expect(components.match(/\.pixel-operation-summary \{/g)?.length).toBe(1);
     expect(components).not.toContain(".pixel-button {");
     expect(components).not.toContain(".pixel-field, .pixel-select, .pixel-textarea {");
+    expect(feedback).toContain(".pixel-log-viewer__omitted");
     const workflow = await readFile(new URL("../src/styles/_workflow.scss", import.meta.url), "utf8");
     expect(workflow).toContain(".pixel-silhouette-controls {");
     expect(workflow).toContain(".pixel-wind-sway-controls {");

@@ -179,6 +179,14 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain("inspect_asset");
   });
 
+  it("bounds rendered log entries while preserving the newest events", () => {
+    const markup = renderToStaticMarkup(<PixelLogViewer maxEntries={2} entries={[{ id: "1", timestamp: "2026-08-01T00:00:00.000Z", title: "old", status: "info" }, { id: "2", timestamp: "2026-08-01T00:00:01.000Z", title: "middle", status: "info" }, { id: "3", timestamp: "2026-08-01T00:00:02.000Z", title: "new", status: "success" }]} />);
+    expect(markup).not.toContain(">old<");
+    expect(markup).toContain(">middle<");
+    expect(markup).toContain(">new<");
+    expect(markup).toContain("1 older event omitted");
+  });
+
   it("renders a compact contract for tool arguments", () => {
     const markup = renderToStaticMarkup(<PixelSchemaHint schema={{ type: "object", properties: { filename: { type: "string", description: "Input asset" }, seed: { type: "integer" } }, required: ["filename"] }} />);
 

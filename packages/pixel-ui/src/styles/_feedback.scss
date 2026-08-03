@@ -57,6 +57,7 @@
   &__entry strong { font-size: .74rem; }
   &__empty { color: var(--pixel-muted); font-size: .72rem; margin: .3rem; }
 }
+.pixel-log-viewer__omitted { color: var(--pixel-muted); font-size: .62rem; margin: .45rem 0 0; }
 
 .pixel-toast {
   align-items: center;
