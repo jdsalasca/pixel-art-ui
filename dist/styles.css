@@ -2996,6 +2996,46 @@ button, input, select, textarea {
   width: 100%;
 }
 
+.pixel-wave-controls {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 0.8rem;
+}
+
+.pixel-wave-controls label {
+  color: var(--pixel-muted);
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+}
+
+.pixel-wave-controls label span {
+  letter-spacing: 0.06em;
+}
+
+.pixel-wave-controls input[type=number] {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  color: var(--pixel-text);
+  font: inherit;
+  min-width: 0;
+  padding: 0.4rem;
+}
+
+.pixel-wave-controls input[type=range] {
+  accent-color: var(--pixel-cyan);
+  width: 100%;
+}
+
+.pixel-wave-controls__color input {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  height: 2rem;
+  padding: 0.15rem;
+  width: 100%;
+}
+
 @media (max-width: 620px) {
   .pixel-wind-sway-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3013,6 +3053,9 @@ button, input, select, textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .pixel-lightning-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pixel-wave-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
