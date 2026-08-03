@@ -15,12 +15,12 @@ import "@jdsalasc/pixel-ui/styles.css";
 ```
 
 La hoja distribuida se genera exclusivamente desde `packages/pixel-ui/src/styles.scss`.
-La entrada compone módulos SCSS por responsabilidad: `tokens`, `foundation`, `controls`,
-`feedback`, `assets`, `workflow` y `components`, con `mixins` reutilizables. Los
-componentes no usan superclases: cada uno implementa su contrato HTML tipado y compone
-clases con `pixelClassNames`. Por ejemplo, `PixelButtonProps` extiende los atributos
-nativos de `HTMLButtonElement`; la implementación renderiza un `<button>` real y solo
-añade el modificador visual de tono.
+La entrada compone módulos SCSS por responsabilidad: `tokens`, `foundation`, `buttons`,
+`forms`, `navigation`, `feedback`, `assets`, `workflow` y `components`, con `mixins`
+reutilizables. Los componentes no usan superclases: cada uno implementa su contrato HTML
+tipado y compone clases con `pixelClassNames`. `ButtonProps` representa el contrato
+nativo común y `PixelButtonProps extends ButtonProps` añade únicamente el tono pixel-art;
+la implementación renderiza un `<button>` real y conserva sus atributos HTML.
 
 ## Ejemplo completo
 

@@ -16,25 +16,34 @@ describe("pixel-ui motion contract", () => {
     const styles = await readFile(new URL("../src/styles.scss", import.meta.url), "utf8");
     expect(styles).toContain('@use "./styles/tokens"');
     expect(styles).toContain('@use "./styles/foundation"');
-    expect(styles).toContain('@use "./styles/controls"');
+    expect(styles).toContain('@use "./styles/buttons"');
+    expect(styles).toContain('@use "./styles/forms"');
+    expect(styles).toContain('@use "./styles/navigation"');
     expect(styles).toContain('@use "./styles/feedback"');
     expect(styles).toContain('@use "./styles/components"');
     expect(styles).not.toContain("@extend");
-    const controls = await readFile(new URL("../src/styles/_controls.scss", import.meta.url), "utf8");
+    const buttons = await readFile(new URL("../src/styles/_buttons.scss", import.meta.url), "utf8");
+    const forms = await readFile(new URL("../src/styles/_forms.scss", import.meta.url), "utf8");
+    const navigation = await readFile(new URL("../src/styles/_navigation.scss", import.meta.url), "utf8");
     const components = await readFile(new URL("../src/styles/_components.scss", import.meta.url), "utf8");
-    expect(controls).toContain(".pixel-button {");
-    expect(controls).toContain(".pixel-field");
+    expect(buttons).toContain(".pixel-button {");
+    expect(forms).toContain(".pixel-field");
+    expect(navigation).toContain(".pixel-tabs {");
+    expect(navigation).toContain("&__button");
+    expect(navigation).not.toContain("__list button");
     expect(components).toContain(".pixel-panel {");
     expect(components).toContain(".pixel-badge {");
     expect(components).not.toContain("@extend");
   });
 
   it("keeps each visual primitive owned by one SCSS module", async () => {
-    const controls = await readFile(new URL("../src/styles/_controls.scss", import.meta.url), "utf8");
+    const buttons = await readFile(new URL("../src/styles/_buttons.scss", import.meta.url), "utf8");
+    const forms = await readFile(new URL("../src/styles/_forms.scss", import.meta.url), "utf8");
+    const navigation = await readFile(new URL("../src/styles/_navigation.scss", import.meta.url), "utf8");
     const components = await readFile(new URL("../src/styles/_components.scss", import.meta.url), "utf8");
     const feedback = await readFile(new URL("../src/styles/_feedback.scss", import.meta.url), "utf8");
-    expect(controls.match(/\.pixel-button \{/g)?.length).toBe(1);
-    expect(controls.match(/\.pixel-field, \.pixel-select, \.pixel-textarea \{/g)?.length).toBe(1);
+    expect(buttons.match(/\.pixel-button \{/g)?.length).toBe(1);
+    expect(forms.match(/\.pixel-field, \.pixel-select, \.pixel-textarea \{/g)?.length).toBe(1);
     expect(components.match(/\.pixel-panel \{/g)?.length).toBe(1);
     expect(components.match(/\.pixel-timeline \{/g)?.length).toBe(1);
     expect(components.match(/\.pixel-artifact-strip \{/g)?.length).toBe(1);
@@ -59,10 +68,12 @@ describe("pixel-ui motion contract", () => {
 
   it("defines a typed class-name contract instead of duplicating string joins", async () => {
     const source = await readFile(new URL("../src/model/pixelClassNames.ts", import.meta.url), "utf8");
+    const buttonContract = await readFile(new URL("../src/model/buttonContracts.ts", import.meta.url), "utf8");
     const button = await readFile(new URL("../src/ux/PixelButton.tsx", import.meta.url), "utf8");
     expect(source).toContain("export interface PixelClassNameProps");
     expect(source).toContain("export function pixelClassNames");
-    expect(button).toContain("ButtonHTMLAttributes<HTMLButtonElement>");
+    expect(button).toContain("ButtonProps");
+    expect(buttonContract).toContain("export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>");
     expect(button).toContain("pixelClassNames(");
   });
 

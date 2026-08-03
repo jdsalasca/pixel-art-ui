@@ -1,0 +1,21 @@
+@use "mixins" as m;
+
+// Navigation owns its button class explicitly; no generic descendant selectors.
+.pixel-tabs {
+  &__list { display: flex; gap: .4rem; overflow-x: auto; }
+  &__button {
+    background: var(--pixel-panel);
+    border: 2px solid var(--pixel-muted);
+    color: var(--pixel-muted);
+    cursor: pointer;
+    font: inherit;
+    padding: .55rem .7rem;
+
+    &:focus-visible, &.is-active {
+      border-color: var(--pixel-cyan);
+      color: var(--pixel-cyan);
+      @include m.pixel-focus;
+    }
+  }
+  &__panel { border: 2px solid var(--pixel-panel-2); margin-top: .6rem; padding: .8rem; }
+}

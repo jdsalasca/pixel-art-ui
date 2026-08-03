@@ -180,7 +180,7 @@ button, input, select, textarea {
   gap: 0.4rem;
   overflow-x: auto;
 }
-.pixel-tabs__list button {
+.pixel-tabs__button {
   background: var(--pixel-panel);
   border: 2px solid var(--pixel-muted);
   color: var(--pixel-muted);
@@ -188,7 +188,7 @@ button, input, select, textarea {
   font: inherit;
   padding: 0.55rem 0.7rem;
 }
-.pixel-tabs__list button:focus-visible, .pixel-tabs__list button.is-active {
+.pixel-tabs__button:focus-visible, .pixel-tabs__button.is-active {
   border-color: var(--pixel-cyan);
   color: var(--pixel-cyan);
   outline: 2px solid var(--pixel-text);

@@ -1,3 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { pixelClassNames } from "../model/pixelClassNames.js";
-export function PixelTabs({ tabs, activeId = tabs[0]?.id, onChange, className = "", ...props }) { const active = tabs.find((tab) => tab.id === activeId) ?? tabs[0]; return _jsxs("div", { className: pixelClassNames("pixel-tabs", className), ...props, children: [_jsx("div", { className: "pixel-tabs__list", role: "tablist", children: tabs.map((tab) => _jsx("button", { type: "button", role: "tab", "aria-selected": tab.id === active?.id, className: tab.id === active?.id ? "is-active" : "", onClick: () => onChange?.(tab.id), children: tab.label }, tab.id)) }), _jsx("div", { role: "tabpanel", className: "pixel-tabs__panel", children: active?.content })] }); }
+export function PixelTabs({ tabs, activeId = tabs[0]?.id, onChange, className = "", ...props }) {
+    const active = tabs.find((tab) => tab.id === activeId) ?? tabs[0];
+    return _jsxs("div", { className: pixelClassNames("pixel-tabs", className), ...props, children: [_jsx("div", { className: "pixel-tabs__list", role: "tablist", children: tabs.map((tab) => _jsx("button", { type: "button", role: "tab", "aria-selected": tab.id === active?.id, className: pixelClassNames("pixel-tabs__button", tab.id === active?.id && "is-active"), onClick: () => onChange?.(tab.id), children: tab.label }, tab.id)) }), _jsx("div", { role: "tabpanel", className: "pixel-tabs__panel", children: active?.content })] });
+}

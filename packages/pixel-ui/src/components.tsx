@@ -67,6 +67,7 @@ export { PixelScenePlan } from "./ux/PixelScenePlan.js";
 export { PixelSceneComposition } from "./ux/PixelSceneComposition.js";
 export { PixelSceneAnimation } from "./ux/PixelSceneAnimation.js";
 export { pixelClassNames } from "./model/pixelClassNames.js";
+export type { ButtonProps } from "./model/buttonContracts.js";
 export type { PixelToneProps } from "./model/pixelClassNames.js";
 export type { PixelTone } from "./model/PixelTone.js";
 export type { PixelBadgeProps } from "./ux/PixelBadge.js";

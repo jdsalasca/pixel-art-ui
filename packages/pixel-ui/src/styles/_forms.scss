@@ -1,30 +1,6 @@
 @use "mixins" as m;
 
-// Native-control composition: every visual primitive keeps browser semantics
-// and only adds a focused pixel-art skin.
-.pixel-button {
-  @include m.pixel-border;
-  background: var(--pixel-panel);
-  color: var(--pixel-text);
-  cursor: pointer;
-  font-weight: 700;
-  letter-spacing: .08em;
-  padding: .65rem .8rem;
-  image-rendering: pixelated;
-
-  &:hover, &:focus-visible {
-    @include m.pixel-focus;
-    background: var(--pixel-cyan);
-    color: var(--pixel-ink);
-  }
-
-  &:disabled { cursor: not-allowed; opacity: .55; }
-  &--amber { border-color: var(--pixel-amber); }
-  &--pink { border-color: var(--pixel-pink); }
-  &--danger { border-color: var(--pixel-danger); }
-  &--neutral { border-color: var(--pixel-muted); }
-}
-
+// Form visuals share tokens and focus behavior without selector inheritance.
 .pixel-field, .pixel-select, .pixel-textarea {
   color: var(--pixel-muted);
   display: grid;
@@ -88,23 +64,4 @@
 
   legend { grid-column: 1 / -1; }
   input { accent-color: var(--pixel-pink); }
-}
-
-.pixel-tabs {
-  &__list { display: flex; gap: .4rem; overflow-x: auto; }
-  &__list button {
-    background: var(--pixel-panel);
-    border: 2px solid var(--pixel-muted);
-    color: var(--pixel-muted);
-    cursor: pointer;
-    font: inherit;
-    padding: .55rem .7rem;
-
-    &:focus-visible, &.is-active {
-      border-color: var(--pixel-cyan);
-      color: var(--pixel-cyan);
-      @include m.pixel-focus;
-    }
-  }
-  &__panel { border: 2px solid var(--pixel-panel-2); margin-top: .6rem; padding: .8rem; }
 }
