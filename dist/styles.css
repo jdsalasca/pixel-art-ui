@@ -2879,6 +2879,45 @@ button, input, select, textarea {
   width: 100%;
 }
 
+.pixel-smoke-controls {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.pixel-smoke-controls label {
+  color: var(--pixel-muted);
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+}
+
+.pixel-smoke-controls label span {
+  letter-spacing: 0.06em;
+}
+
+.pixel-smoke-controls input[type=number] {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  color: var(--pixel-text);
+  font: inherit;
+  min-width: 0;
+  padding: 0.4rem;
+}
+
+.pixel-smoke-controls input[type=range] {
+  accent-color: var(--pixel-pink);
+  width: 100%;
+}
+
+.pixel-smoke-controls__color input {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  height: 2rem;
+  padding: 0.15rem;
+  width: 100%;
+}
+
 @media (max-width: 620px) {
   .pixel-wind-sway-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2887,6 +2926,9 @@ button, input, select, textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .pixel-snow-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pixel-smoke-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

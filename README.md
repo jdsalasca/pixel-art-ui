@@ -42,6 +42,7 @@ import {
   PixelSilhouetteControls,
   PixelWindSwayControls,
   PixelSnowControls,
+  PixelSmokeControls,
   PixelEffectStackPreview,
   PixelGrainControls,
   PixelDitherControls,
@@ -202,6 +203,7 @@ export function PixelUiShowcase() {
 | `PixelSilhouetteControls` | Color y opacidad para generar máscaras, sombras, previews y capas de colisión de sprites. |
 | `PixelWindSwayControls` | Frames, semilla, amplitud y dirección para animar viento en árboles, follaje, banderas y props colgantes. |
 | `PixelSnowControls` | Frames, semilla, densidad, viento y color para nieve determinista en montañas, aldeas y escenas invernales. |
+| `PixelSmokeControls` | Frames, semilla, densidad, deriva, elevación y color para humo determinista en chimeneas, volcanes, fogatas y daño ambiental. |
 | `PixelEffectStackPreview` | Muestra el orden determinista de las pasadas de una composición de escena. |
 | `PixelGrainControls` | Semilla, intensidad y escala para granularidad reproducible en tierra, agua, piedra, follaje y superficies envejecidas. |
 | `PixelDitherControls` | Dos colores, fuerza y escala para dithering Bayer reproducible y reducción de bandas. |
@@ -278,6 +280,8 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelSilhouetteControls color="#08111F" opacity={0.6} onColorChange={() => undefined} onOpacityChange={() => undefined} />
 <PixelWindSwayControls frames={6} seed={19} amplitude={2} direction="right" onFramesChange={() => undefined} onSeedChange={() => undefined} onAmplitudeChange={() => undefined} onDirectionChange={() => undefined} />
 <PixelEffectStackPreview label="EXECUTION ORDER" items={[{ id: "grain", label: "MATERIAL GRAIN" }, { id: "wind", label: "WIND SWAY" }, { id: "rain", label: "RAIN" }]} />
+
+<PixelSmokeControls frames={8} seed={41} density={0.65} drift={0.15} rise={0.7} color="#8A91A8" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onDriftChange={console.log} onRiseChange={console.log} onColorChange={console.log} />
 <PixelGrainControls seed={17} intensity={0.8} scale={2} onSeedChange={() => undefined} onIntensityChange={() => undefined} onScaleChange={() => undefined} />
 <PixelDitherControls darkColor="#202030" lightColor="#F0E8C8" strength={1} scale={2} onDarkColorChange={() => undefined} onLightColorChange={() => undefined} onStrengthChange={() => undefined} onScaleChange={() => undefined} />
 <PixelShadowControls color="#000000" offsetX={2} offsetY={3} opacity={0.45} onColorChange={() => undefined} onOffsetXChange={() => undefined} onOffsetYChange={() => undefined} onOpacityChange={() => undefined} />
