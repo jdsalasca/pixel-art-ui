@@ -31,6 +31,7 @@ export { PixelWaveControls } from "./ux/PixelWaveControls.js";
 export { PixelWaterSprayControls } from "./ux/PixelWaterSprayControls.js";
 export { PixelDustControls } from "./ux/PixelDustControls.js";
 export { PixelLeafFallControls } from "./ux/PixelLeafFallControls.js";
+export { PixelRippleControls } from "./ux/PixelRippleControls.js";
 export { PixelFogControls } from "./ux/PixelFogControls.js";
 export { PixelSnowControls } from "./ux/PixelSnowControls.js";
 export { PixelSmokeControls } from "./ux/PixelSmokeControls.js";

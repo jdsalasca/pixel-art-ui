@@ -49,6 +49,7 @@ import {
   PixelWaterSprayControls,
   PixelDustControls,
   PixelLeafFallControls,
+  PixelRippleControls,
   PixelEffectStackPreview,
   PixelGrainControls,
   PixelDitherControls,
@@ -216,6 +217,7 @@ export function PixelUiShowcase() {
 | `PixelWaterSprayControls` | Frames, semilla, densidad, deriva y color para gotas de spray marino deterministas en oleaje, cascadas e impactos. |
 | `PixelDustControls` | Frames, semilla, densidad, deriva, elevación y color para polvo determinista en caminos, ruinas, desiertos y aterrizajes. |
 | `PixelLeafFallControls` | Frames, semilla, densidad, viento y color para hojas otoñales deterministas en bosques, parques y escenas ambientales. |
+| `PixelRippleControls` | Frames, semilla, densidad, amplitud y color para ondas concéntricas deterministas en charcos, impactos de lluvia y agua somera. |
 | `PixelEffectStackPreview` | Muestra el orden determinista de las pasadas de una composición de escena. |
 | `PixelGrainControls` | Semilla, intensidad y escala para granularidad reproducible en tierra, agua, piedra, follaje y superficies envejecidas. |
 | `PixelDitherControls` | Dos colores, fuerza y escala para dithering Bayer reproducible y reducción de bandas. |
@@ -302,6 +304,7 @@ Todos los props están tipados y los componentes aceptan los atributos HTML rele
 <PixelWaterSprayControls frames={5} seed={83} density={0.7} drift={0.4} color="#F4FDFF" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onDriftChange={console.log} onColorChange={console.log} />
 <PixelDustControls frames={6} seed={89} density={0.65} drift={0.12} rise={0.5} color="#C79A68" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onDriftChange={console.log} onRiseChange={console.log} onColorChange={console.log} />
 <PixelLeafFallControls frames={5} seed={103} density={0.68} wind={-0.2} color="#D97732" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onWindChange={console.log} onColorChange={console.log} />
+<PixelRippleControls frames={5} seed={109} density={0.72} amplitude={3} color="#BDEBFF" onFramesChange={console.log} onSeedChange={console.log} onDensityChange={console.log} onAmplitudeChange={console.log} onColorChange={console.log} />
 <PixelGrainControls seed={17} intensity={0.8} scale={2} onSeedChange={() => undefined} onIntensityChange={() => undefined} onScaleChange={() => undefined} />
 <PixelDitherControls darkColor="#202030" lightColor="#F0E8C8" strength={1} scale={2} onDarkColorChange={() => undefined} onLightColorChange={() => undefined} onStrengthChange={() => undefined} onScaleChange={() => undefined} />
 <PixelShadowControls color="#000000" offsetX={2} offsetY={3} opacity={0.45} onColorChange={() => undefined} onOffsetXChange={() => undefined} onOffsetYChange={() => undefined} onOpacityChange={() => undefined} />
