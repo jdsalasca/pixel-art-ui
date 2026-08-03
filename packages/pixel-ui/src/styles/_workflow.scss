@@ -452,6 +452,18 @@
 .pixel-water-spray-controls input[type="number"] { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); color: var(--pixel-text); font: inherit; min-width: 0; padding: .4rem; }
 .pixel-water-spray-controls input[type="range"] { accent-color: var(--pixel-cyan); width: 100%; }
 .pixel-water-spray-controls__color input { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); height: 2rem; padding: .15rem; width: 100%; }
+.pixel-dust-controls { display: grid; gap: .55rem; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: .8rem; }
+.pixel-dust-controls label { color: var(--pixel-muted); display: grid; gap: .3rem; font-size: .68rem; }
+.pixel-dust-controls label span { letter-spacing: .06em; }
+.pixel-dust-controls input[type="number"] { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); color: var(--pixel-text); font: inherit; min-width: 0; padding: .4rem; }
+.pixel-dust-controls input[type="range"] { accent-color: var(--pixel-amber); width: 100%; }
+.pixel-dust-controls__color input { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); height: 2rem; padding: .15rem; width: 100%; }
+.pixel-dust-controls { display: grid; gap: .55rem; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: .8rem; }
+.pixel-dust-controls label { color: var(--pixel-muted); display: grid; gap: .3rem; font-size: .68rem; }
+.pixel-dust-controls label span { letter-spacing: .06em; }
+.pixel-dust-controls input[type="number"] { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); color: var(--pixel-text); font: inherit; min-width: 0; padding: .4rem; }
+.pixel-dust-controls input[type="range"] { accent-color: var(--pixel-amber); width: 100%; }
+.pixel-dust-controls__color input { background: var(--pixel-ink); border: 2px solid var(--pixel-panel-2); height: 2rem; padding: .15rem; width: 100%; }
 
 @media (max-width: 620px) {
   .pixel-wind-sway-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -462,6 +474,8 @@
   .pixel-lightning-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pixel-wave-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pixel-water-spray-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pixel-dust-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pixel-dust-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .pixel-effect-stack-preview { border: 1px solid var(--pixel-panel-2); margin-top: .65rem; padding: .55rem; }
