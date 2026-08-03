@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import { PixelAmbientOcclusionControls, PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelColorRampControls, PixelColorTemperatureControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelDitherControls, PixelEffectStackPreview, PixelEmptyState, PixelEnhancementBatch, PixelFrameStrip, PixelGlowControls, PixelGrainControls, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelRimLightControls, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelShadowControls, PixelSilhouetteControls, PixelSlider, PixelSpecularHighlightControls, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, PixelWindSwayControls, pixelClassNames } from "../src/components.js";
+import { PixelAmbientOcclusionControls, PixelAnimationAudit, PixelAnimationSheet, PixelArtifactStrip, PixelAssetCard, PixelAssetGrid, PixelBackgroundRemoval, PixelButton, PixelCheckboxGroup, PixelCleanupControls, PixelColorRampControls, PixelColorTemperatureControls, PixelCommandBar, PixelCompare, PixelConfirmDialog, PixelContactSheet, PixelDitherControls, PixelEffectStackPreview, PixelEmptyState, PixelEnhancementBatch, PixelFogControls, PixelFrameStrip, PixelGlowControls, PixelGrainControls, PixelKpi, PixelLibraryAudit, PixelLibrarySummary, PixelLibraryVariantPack, PixelLogViewer, PixelManifestAudit, PixelNotice, PixelOperationSummary, PixelPaddingControl, PixelPaletteStrip, PixelPresetStrip, PixelProgress, PixelProgressSteps, PixelQualityGate, PixelQualityMatrix, PixelRadioGroup, PixelRimLightControls, PixelSchemaHint, PixelSceneAnimation, PixelSceneBundle, PixelSceneComposition, PixelScenePlan, PixelSceneRecommendations, PixelSelect, PixelShadowControls, PixelSilhouetteControls, PixelSlider, PixelSpecularHighlightControls, PixelSpriteAnchors, PixelSpriteGeometry, PixelSpriteHitboxes, PixelSpriteNormalization, PixelSpriteRuntimeBundle, PixelTabs, PixelTextarea, PixelTimeline, PixelToast, PixelWindSwayControls, pixelClassNames } from "../src/components.js";
 
 describe("pixel-ui primitives", () => {
   it("renders typed isolated-pixel cleanup controls", () => {
@@ -86,6 +86,13 @@ describe("pixel-ui primitives", () => {
     expect(markup).toContain('aria-label="Wind sway controls"');
     expect(markup).toContain("FRAMES · 6");
     expect(markup).toContain("DIRECTION · RIGHT");
+  });
+
+  it("renders typed fog controls with bounded atmospheric values", () => {
+    const markup = renderToStaticMarkup(<PixelFogControls frames={6} seed={23} density={0.72} drift={-0.35} color="#DDEBFF" onFramesChange={() => undefined} onSeedChange={() => undefined} onDensityChange={() => undefined} onDriftChange={() => undefined} onColorChange={() => undefined} />);
+    expect(markup).toContain('aria-label="Fog overlay controls"');
+    expect(markup).toContain("DENSITY · 0.72");
+    expect(markup).toContain("DRIFT · -0.35");
   });
 
   it("renders a typed effect stack preview with stable execution order", () => {

@@ -2801,8 +2801,50 @@ button, input, select, textarea {
   width: 100%;
 }
 
+.pixel-fog-controls {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.pixel-fog-controls label {
+  color: var(--pixel-muted);
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+}
+
+.pixel-fog-controls label span {
+  letter-spacing: 0.06em;
+}
+
+.pixel-fog-controls input[type=number] {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  color: var(--pixel-text);
+  font: inherit;
+  min-width: 0;
+  padding: 0.4rem;
+}
+
+.pixel-fog-controls input[type=range] {
+  accent-color: var(--pixel-cyan);
+  width: 100%;
+}
+
+.pixel-fog-controls__color input {
+  background: var(--pixel-ink);
+  border: 2px solid var(--pixel-panel-2);
+  height: 2rem;
+  padding: 0.15rem;
+  width: 100%;
+}
+
 @media (max-width: 620px) {
   .pixel-wind-sway-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pixel-fog-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

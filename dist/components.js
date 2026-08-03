@@ -26,6 +26,7 @@ export { PixelShadowControls } from "./ux/PixelShadowControls.js";
 export { PixelSilhouetteControls } from "./ux/PixelSilhouetteControls.js";
 export { PixelWindSwayControls } from "./ux/PixelWindSwayControls.js";
 export { PixelEffectStackPreview } from "./ux/PixelEffectStackPreview.js";
+export { PixelFogControls } from "./ux/PixelFogControls.js";
 export { PixelToolCard } from "./ux/PixelToolCard.js";
 export { PixelTextarea } from "./ux/PixelTextarea.js";
 export { PixelSlider } from "./ux/PixelSlider.js";
