@@ -68,8 +68,27 @@ describe("pixel-ui motion contract", () => {
     expect(workflow).not.toContain("@extend");
   });
 
-  it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {
-    const script = await readFile(new URL("../../../scripts/copy-styles.mjs", import.meta.url), "utf8");
+  it("lets the asset card truncate its title instead of pushing the status out of the card", async () => {
+    // `.pixel-asset-card` es flex [img][texto][status]. Sin `min-width: 0` en el item
+    // de texto, flexbox no le permite encogerse, y con `text-overflow: ellipsis` sin
+    // `white-space: nowrap` la elipsis nunca llega a aplicarse: el titulo empuja el
+    // indicador de estado fuera de la tarjeta y lo corta. Se vio en el Asset Studio,
+    // donde un item marcado enseaba "MARCA..." en vez de "MARCADO".
+    const assets = await readFile(new URL("../src/styles/_assets.scss", import.meta.url), "utf8");
+    expect(assets).toContain(".pixel-asset-card__body {");
+    expect(assets).toMatch(/\.pixel-asset-card__body \{[^}]*min-width: 0;/);
+    expect(assets).toMatch(/\.pixel-asset-card h3 \{[^}]*white-space: nowrap;/);
+    // El `text-overflow` se conserva: es la razon de ser del nowrap.
+    expect(assets).toMatch(/\.pixel-asset-card h3 \{[^}]*text-overflow: ellipsis;/);
+    // Una elipsis sin nowrap en ningun otro sitio seria el mismo bug copiado.
+    const cards = [...assets.matchAll(/([^{}]*)\{([^}]*)\}/g)]
+      .filter(([, , body]) => body.includes("text-overflow: ellipsis"))
+      .map(([, selector, body]) => ({ selector: selector.trim(), nowrap: body.includes("white-space: nowrap") }));
+    expect(cards.length).toBeGreaterThan(0);
+    expect(cards.filter((card) => !card.nowrap)).toEqual([]);
+  });
+
+  it("compiles the SCSS source once instead of layering legacy CSS over it", async () => {    const script = await readFile(new URL("../../../scripts/copy-styles.mjs", import.meta.url), "utf8");
     expect(script).toContain('compile("packages/pixel-ui/src/styles.scss"');
     expect(script).not.toContain("readFileSync");
     expect(script).not.toContain("legacyStyles");
