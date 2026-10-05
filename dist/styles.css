@@ -628,11 +628,16 @@ button, input, select, textarea {
   justify-content: center;
 }
 
+.pixel-asset-card__body {
+  min-width: 0;
+}
+
 .pixel-asset-card h3 {
   font-size: 0.8rem;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pixel-asset-card p {
